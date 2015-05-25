@@ -161,128 +161,128 @@
 						<label for="">Do you have affiliate
 							program</label>
 						<div class="radio">
-							<label> <input type="radio" name="haveaffiliate"
-								id="haveaffiliate" value="yes"> Yes
+							<label> <input type="radio" name="isAffiliateProgram"
+								id="isAffiliateProgram" value="yes"> Yes
 							</label>
 						</div>
 						<div class="radio">
-							<label> <input type="radio" name="haveaffiliate"
-								id="haveaffiliate" value="no"> No
+							<label> <input type="radio" name="isAffiliateProgram"
+								id="isAffiliateProgram" value="no"> No
 							</label>
 						</div>
 					</div>
 
 					<script>
-						$("input[name='haveaffiliate']").change(function() {
+						$("input[name='isAffiliateProgram']").change(function() {
 
 							if ($(this).val() == "yes") {
-								$("#sharepersonalinfo").show();
+								$("#shareAffiliateProgram").show();
 							} else {
-								$("#sharepersonalinfo").hide();
+								$("#shareAffiliateProgram").hide();
 							}
 
 						});
 					</script>
 
-					<div class="form-group" id="sharepersonalinfo"
+					<div class="form-group" id="shareAffiliateProgram"
 						style="display: none">
 						<label for="">Do you share personal
 							information with affiliates?</label>
 						<div class="radio">
-							<label> <input type="radio" name="sharepersonalinfo"
-								id="sharepersonalinfo" value="yes"> Yes
+							<label> <input type="radio" name="shareAffiliateProgram"
+								id="shareAffiliateProgram" value="yes"> Yes
 							</label>
 						</div>
 						<div class="radio">
-							<label> <input type="radio" name="sharepersonalinfo"
-								id="sharepersonalinfo" value="no"> No
+							<label> <input type="radio" name="shareAffiliateProgram"
+								id="shareAffiliateProgram" value="no"> No
 							</label>
 						</div>
 					</div>
 					<script>
-						$("input[name='sharepersonalinfo']").change(function() {
+						$("input[name='shareAffiliateProgram']").change(function() {
 
 							if ($(this).val() == "yes") {
-								$("#whoareyouraffiliates").show();
+								$("#affiliateProgram").show();
 							} else {
-								$("#whoareyouraffiliates").hide();
+								$("#affiliateProgram").hide();
 							}
 
 						});
 					</script>
-					<div class="form-group" id="whoareyouraffiliates"
+					<div class="form-group" id="affiliateProgram"
 						style="display: none">
 						<label for="">Who are your
 							affiliates?</label>
 						<textarea class="form-control" rows="3"
-							name="whoareyouraffiliates"></textarea>
+							name="affiliateProgram"></textarea>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Do you share
+						<label for="">Do you share
 							information with non-affiliates?</label>
 						<div class="radio">
 							<label> <input type="radio"
-								name="sharepersonalinfononaffiliates"
-								id="sharepersonalinfononaffiliates" value="yes"> Yes
+								name="shareNoneAffiliateProgram"
+								id="shareNoneAffiliateProgram" value="yes"> Yes
 							</label>
 						</div>
 						<div class="radio">
 							<label> <input type="radio"
-								name="sharepersonalinfononaffiliates"
-								id="sharepersonalinfononaffiliates" value="no"> No
+								name="shareNoneAffiliateProgram"
+								id="shareNoneAffiliateProgram" value="no"> No
 							</label>
 						</div>
 					</div>
 					<script>
-						$("input[name='sharepersonalinfononaffiliates']")
+						$("input[name='shareNoneAffiliateProgram']")
 								.change(function() {
 
 									if ($(this).val() == "yes") {
-										$("#whoareyournonaffiliates").show();
+										$("#noneAffiliateProgram").show();
 									} else {
-										$(whoareyournonaffiliates).hide();
+										$("#noneAffiliateProgram").hide();
 									}
 
 								});
 					</script>
-					<div class="form-group" id="whoareyournonaffiliates"
+					<div class="form-group" id="noneAffiliateProgram"
 						style="display: none;">
-						<label for="exampleInputPassword1">Who are your
+						<label for="noneAffiliateProgram">Who are your
 							non-affiliates?</label>
 						<textarea class="form-control" rows="3"
-							name="whoareyournonaffiliates"></textarea>
+							name="noneAffiliateProgram" id="noneAffiliateProgram"></textarea>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Do you engage in joint
+						<label for="isJointMarketing">Do you engage in joint
 							marketing?</label>
 						<div class="radio">
-							<label> <input type="radio" name="jointmarketing"
-								id="jointmarketing" value="yes"> Yes
+							<label> <input type="radio" name="isJointMarketing"
+								id="isJointMarketing" value="yes"> Yes
 							</label>
 						</div>
 						<div class="radio">
-							<label> <input type="radio" name="jointmarketing"
-								id="jointmarketing" value="no"> No
+							<label> <input type="radio" name="isJointMarketing"
+								id="isJointMarketing" value="no"> No
 							</label>
 						</div>
 					</div>
 					<script>
-						$("input[name='jointmarketing']").change(function() {
+						$("input[name='isJointMarketing']").change(function() {
 
 							if ($(this).val() == "yes") {
-								$("#whoareyourmarketingpartners").show();
+								$("#jointMarketing").show();
 							} else {
-								$(whoareyourmarketingpartners).hide();
+								$("#jointMarketing").hide();
 							}
 
 						});
 					</script>
-					<div class="form-group" id="whoareyourmarketingpartners"
+					<div class="form-group" id="jointMarketing"
 						style="display: none;">
-						<label for="exampleInputPassword1">Who are your joint
+						<label for="">Who are your joint
 							marketing partners?</label>
 						<textarea class="form-control" rows="3"
-							name="whoareyourmarketingpartners"></textarea>
+							name="jointMarketing"></textarea>
 					</div>
 
 
@@ -302,13 +302,13 @@
 									credit bureaus</td>
 								<td>
 									<div class="radio">
-										<label> <input type="radio" name="EverydayBusiness"
-											id="EverydayBusiness1" value="yes"> Yes
+										<label> <input type="radio" name="doYouShare"
+											id="doYouShare" value="yes"> Yes
 										</label>
 									</div>
 									<div class="radio">
-										<label> <input type="radio" name="EverydayBusiness"
-											id="EverydayBusiness2" value="no"> No
+										<label> <input type="radio" name="doYouShare"
+											id="doYouShare" value="no"> No
 										</label>
 									</div>
 								</td>
@@ -317,7 +317,7 @@
 									<div id="EverydayBusiness_limit_div">
 										<div class="radio">
 											<label> <input type="radio"
-												name="EverydayBusiness_limit" id="EverydayBusiness_limit"
+												name="doYouShare" id="doYouShare"
 												value="yes"> Yes
 											</label>
 										</div>
