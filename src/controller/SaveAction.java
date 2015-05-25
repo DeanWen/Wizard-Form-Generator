@@ -1,22 +1,14 @@
 package controller;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map.Entry;
-
+import org.mybeans.form.FormBeanException;
+import org.mybeans.form.FormBeanFactory;
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException;
-
-import parser.XmlParser;
+import form.Questionair;
 
 public class SaveAction extends Action {
-	private static String filePath = System.getProperty("user.dir").replace("bin", "webapps") + System.getProperty("file.separator")
-			+"form" + System.getProperty("file.separator");
+	private FormBeanFactory<Questionair> formBeanFactory = FormBeanFactory
+			.getInstance(Questionair.class);
+	
 	@Override
 	public String getName() {
 		return "save.do";
@@ -24,25 +16,17 @@ public class SaveAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		
-		
-		XmlParser xml = new XmlParser();
-		try {
-			xml.saveXml(request, "test.xml");
-//			MyZip zip = new MyZip("test.zip");
-//			if (request.getParameter("saveforlater") != null) {
-//				return zip.compress(request, "xml").getName();
-//			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		Questionair form = null;
+		try{
+			form = formBeanFactory.create(request);
+		} catch (FormBeanException e1) {
+			e1.printStackTrace();
 		}
-		
-		if (request.getParameter("saveforlater") != null) {
-			return "test.xml";
+		if(!form.isPresent()) {
+			return "changeEmpPWD.jsp";
 		}
-		
-		return "page2.jsp";
+		request.setAttribute("form", form);
+		return "index.jsp";
 	}
 
 }
