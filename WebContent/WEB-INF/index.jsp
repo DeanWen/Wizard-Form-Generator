@@ -12,7 +12,7 @@
 			<h3 class="text-muted">Interactive Form Builder</h3>
 		</div>
 		<div class="content">
-			<form role="form" method="post" action="save.do">
+			<form role="form" method="post">
 				<div class="form-group">
 					<label for="companyName">Enter the name of financial
 						institution</label> <input type="text" class="form-control"
@@ -23,16 +23,17 @@
 						type="text" class="form-control" name="reviseDate">
 				</div>
 				<div class="form-group">
-					<label for="companyName">What types of personal
-						information you collect and share? (Choose minimum of 5)</label>
+					<label for="companyName">What types of personal information
+						you collect and share? (Choose minimum of 5)</label>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="ssn" value="social security number" checked
-							disabled> social security number
+						<label> <input type="checkbox" name="ssn"
+							value="social security number" checked disabled> social
+							security number
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="personalInfoType" value="income">
-							income
+						<label> <input type="checkbox" name="personalInfoType"
+							value="income"> income
 						</label>
 					</div>
 					<div class="checkbox">
@@ -51,8 +52,9 @@
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="personalInfoType" value="transaction or loss history">
-							transaction or loss history
+						<label> <input type="checkbox" name="personalInfoType"
+							value="transaction or loss history"> transaction or loss
+							history
 						</label>
 					</div>
 					<div class="checkbox">
@@ -66,26 +68,28 @@
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="assets" name="personalInfoType">
-							assets
+						<label> <input type="checkbox" value="assets"
+							name="personalInfoType"> assets
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="investment experience"
-							name="personalInfoType"> investment experience
-						</label>
-					</div>
-
-					<div class="checkbox">
-						<label> <input type="checkbox" value="credit-based insurance scores"
-							name="personalInfoType"> credit-based
-							insurance scores
+						<label> <input type="checkbox"
+							value="investment experience" name="personalInfoType">
+							investment experience
 						</label>
 					</div>
 
 					<div class="checkbox">
-						<label> <input type="checkbox" value="insurance claim history"
-							name="personalInfoType"> insurance claim history
+						<label> <input type="checkbox"
+							value="credit-based insurance scores" name="personalInfoType">
+							credit-based insurance scores
+						</label>
+					</div>
+
+					<div class="checkbox">
+						<label> <input type="checkbox"
+							value="insurance claim history" name="personalInfoType">
+							insurance claim history
 						</label>
 					</div>
 					<div class="checkbox">
@@ -104,8 +108,9 @@
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="account transactions"
-							name="personalInfoType"> account transactions
+						<label> <input type="checkbox"
+							value="account transactions" name="personalInfoType">
+							account transactions
 						</label>
 					</div>
 					<div class="checkbox">
@@ -114,19 +119,22 @@
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="medical-related debts"
-							name="personalInfoType"> medical-related debts
+						<label> <input type="checkbox"
+							value="medical-related debts" name="personalInfoType">
+							medical-related debts
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="credit card or other debt"
-							name="personalInfoType"> credit card or other debt
+						<label> <input type="checkbox"
+							value="credit card or other debt" name="personalInfoType">
+							credit card or other debt
 						</label>
 					</div>
 
 					<div class="checkbox">
-						<label> <input type="checkbox" value="mortgage rates and payments"
-							name="personalInfoType"> mortgage rates and payments
+						<label> <input type="checkbox"
+							value="mortgage rates and payments" name="personalInfoType">
+							mortgage rates and payments
 						</label>
 					</div>
 					<div class="checkbox">
@@ -135,31 +143,26 @@
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="checking account information"
-							name="personalInfoType"> checking account information
+						<label> <input type="checkbox"
+							value="checking account information" name="personalInfoType">
+							checking account information
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="employment information"
-							name="personalInfoType"> employment information
+						<label> <input type="checkbox"
+							value="employment information" name="personalInfoType">
+							employment information
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="wire transfer instructions"
-							name="personalInfoType"> wire transfer instructions
+						<label> <input type="checkbox"
+							value="wire transfer instructions" name="personalInfoType">
+							wire transfer instructions
 						</label>
 					</div>
-					
-					<script>
-						var values = $("input:checkbox:checked").map(function () {
-						  return this.value;
-						}).get();
-						alert(values);
-					</script>
-					
+
 					<div class="form-group">
-						<label for="">Do you have affiliate
-							program</label>
+						<label for="">Do you have affiliate program</label>
 						<div class="radio">
 							<label> <input type="radio" name="isAffiliateProgram"
 								id="isAffiliateProgram" value="yes"> Yes
@@ -173,21 +176,22 @@
 					</div>
 
 					<script>
-						$("input[name='isAffiliateProgram']").change(function() {
+						$("input[name='isAffiliateProgram']").change(
+								function() {
 
-							if ($(this).val() == "yes") {
-								$("#shareAffiliateProgram").show();
-							} else {
-								$("#shareAffiliateProgram").hide();
-							}
+									if ($(this).val() == "yes") {
+										$("#shareAffiliateProgram").show();
+									} else {
+										$("#shareAffiliateProgram").hide();
+									}
 
-						});
+								});
 					</script>
 
 					<div class="form-group" id="shareAffiliateProgram"
 						style="display: none">
-						<label for="">Do you share personal
-							information with affiliates?</label>
+						<label for="">Do you share personal information with
+							affiliates?</label>
 						<div class="radio">
 							<label> <input type="radio" name="shareAffiliateProgram"
 								id="shareAffiliateProgram" value="yes"> Yes
@@ -200,42 +204,40 @@
 						</div>
 					</div>
 					<script>
-						$("input[name='shareAffiliateProgram']").change(function() {
+						$("input[name='shareAffiliateProgram']").change(
+								function() {
 
-							if ($(this).val() == "yes") {
-								$("#affiliateProgram").show();
-							} else {
-								$("#affiliateProgram").hide();
-							}
+									if ($(this).val() == "yes") {
+										$("#affiliateProgram").show();
+									} else {
+										$("#affiliateProgram").hide();
+									}
 
-						});
+								});
 					</script>
-					<div class="form-group" id="affiliateProgram"
-						style="display: none">
-						<label for="">Who are your
-							affiliates?</label>
-						<textarea class="form-control" rows="3"
-							name="affiliateProgram"></textarea>
+					<div class="form-group" id="affiliateProgram" style="display: none">
+						<label for="">Who are your affiliates?</label>
+						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
 					</div>
 					<div class="form-group">
-						<label for="">Do you share
-							information with non-affiliates?</label>
+						<label for="">Do you share information with
+							non-affiliates?</label>
 						<div class="radio">
 							<label> <input type="radio"
-								name="shareNoneAffiliateProgram"
-								id="shareNoneAffiliateProgram" value="yes"> Yes
+								name="shareNoneAffiliateProgram" id="shareNoneAffiliateProgram"
+								value="yes"> Yes
 							</label>
 						</div>
 						<div class="radio">
 							<label> <input type="radio"
-								name="shareNoneAffiliateProgram"
-								id="shareNoneAffiliateProgram" value="no"> No
+								name="shareNoneAffiliateProgram" id="shareNoneAffiliateProgram"
+								value="no"> No
 							</label>
 						</div>
 					</div>
 					<script>
-						$("input[name='shareNoneAffiliateProgram']")
-								.change(function() {
+						$("input[name='shareNoneAffiliateProgram']").change(
+								function() {
 
 									if ($(this).val() == "yes") {
 										$("#noneAffiliateProgram").show();
@@ -277,12 +279,9 @@
 
 						});
 					</script>
-					<div class="form-group" id="jointMarketing"
-						style="display: none;">
-						<label for="">Who are your joint
-							marketing partners?</label>
-						<textarea class="form-control" rows="3"
-							name="jointMarketing"></textarea>
+					<div class="form-group" id="jointMarketing" style="display: none;">
+						<label for="">Who are your joint marketing partners?</label>
+						<textarea class="form-control" rows="3" name="jointMarketing"></textarea>
 					</div>
 
 
@@ -316,9 +315,8 @@
 
 									<div id="EverydayBusiness_limit_div">
 										<div class="radio">
-											<label> <input type="radio"
-												name="doYouShare" id="doYouShare"
-												value="yes"> Yes
+											<label> <input type="radio" name="doYouShare"
+												id="doYouShare" value="yes"> Yes
 											</label>
 										</div>
 										<div class="radio">
@@ -843,9 +841,10 @@
 
 
 							<hr>
-							<button type="submit" name="preview" class="btn btn-default">Preview</button>
-							<button type="submit" name="saveforlater" class="btn btn-default">Save
-								for later</button>
+							<button type="submit" name="preview" class="btn btn-default"
+								onclick="form.action='preview.do';">Preview</button>
+							<button type="submit" name="saveforlater" class="btn btn-default"
+								onclick="form.action='save.do';">Save for later</button>
 					</form>
 				</div>
 		</div>

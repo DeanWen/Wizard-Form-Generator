@@ -1,14 +1,8 @@
 package controller;
 
-import java.util.Random;
-
 import javax.servlet.http.HttpServletRequest;
 
-public class IndexAction extends Action {
-	public IndexAction() {
-		
-	}
-	
+public class IndexAction extends Action {	
 	@Override
 	public String getName() {
 		return "index.do";
