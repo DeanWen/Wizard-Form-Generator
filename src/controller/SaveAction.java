@@ -26,11 +26,49 @@ public class SaveAction extends Action {
 			bean.setCompanyName(form.getCompanyName());
 			bean.setReviseDate(form.getReviseDate());
 			ArrayList<String> list = new ArrayList<String>();
-			String[] vals=request.getParameterValues("personalInfoType");
+			String[] vals = request.getParameterValues("personalInfoType");
 		    for(String v : vals){
 		    	list.add(v);
 		    }
 			bean.setPersonalInfoType(list);
+			bean.setAffiliateProgram(form.isAffiliateProgram());
+			bean.setShareAffiliateProgram(form.isShareAffiliateProgram());
+			if (bean.isShareAffiliateProgram()) {
+				bean.setAffiliateProgram(form.getAffiliateProgram());
+			}
+			bean.setShareNoneAffiliateProgram(form.isShareNoneAffiliateProgram());
+			if (bean.isShareNoneAffiliateProgram()) {
+				bean.setNoneAffiliateProgram(form.getNoneAffiliateProgram());
+			}
+			bean.setJointMarketing(form.isJointMarketing());
+			if (bean.isJointMarketing()) {
+				bean.setJointMarketing(form.getJointMarketing());
+			}
+			//boolean[] dysVals = request.getParameterValues("doYouShare");
+			//bean.setDoYouShare(dysVals);
+			//boolean[] cmlVals = request.getParameterValues("customerLimit");
+			//bean.setDoYouShare(cmlVals);
+			
+			bean.setPhone(form.getPhone());
+			bean.setWebsite(form.getWebsite());
+			bean.setTwoOrMoreInstitute(form.isTwoOrMoreInstitute());
+			if (bean.isTwoOrMoreInstitute()) {
+				bean.setWhoseNotice(form.getWhoseNotice());
+			}
+			bean.setHowProtect(form.getHowProtect());
+			
+			ArrayList<String> clist = new ArrayList<String>();
+			String[] cVals = request.getParameterValues("collect");
+		    for(String v : cVals){
+		    	clist.add(v);
+		    }
+		    bean.setCollect(clist);
+		    
+		    bean.setFromAff(form.isFromAff());
+		    if (!bean.isFromAff()) {
+		    	
+		    }
+		    
 			
 		} catch (FormBeanException e1) {
 			e1.printStackTrace();

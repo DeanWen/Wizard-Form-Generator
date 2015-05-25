@@ -24,10 +24,18 @@ public class QuestionairBean extends FormBean{
 	String howProtect;
 	ArrayList<String> collect = new ArrayList<String>();
 	boolean isFromAff;
+	boolean isFromCompany;
 	boolean isPresentLaw;
 	String whatHappenWhenLimit;
 	String stateLaw;
 
+	
+	public boolean isFromCompany() {
+		return isFromCompany;
+	}
+	public void setFromCompany(boolean isFromCompany) {
+		this.isFromCompany = isFromCompany;
+	}
 	public String getReviseDate() {
 		return reviseDate;
 	}
