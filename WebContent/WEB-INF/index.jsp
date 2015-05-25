@@ -149,7 +149,14 @@
 							name="transferInstructions"> wire transfer instructions
 						</label>
 					</div>
-
+					
+					<script>
+						var values = $("input:checkbox:checked").map(function () {
+						  return this.value;
+						}).get();
+						alert(values);
+					</script>
+					
 					<div class="form-group">
 						<label for="exampleInputPassword1">Do you have affiliate
 							program</label>

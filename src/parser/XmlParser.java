@@ -31,7 +31,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import bean.Questionair;
+import bean.QuestionairBean;
 public class XmlParser {
 
 	private Document document;
