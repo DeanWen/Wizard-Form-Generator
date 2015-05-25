@@ -14,139 +14,139 @@
 		<div class="content">
 			<form role="form" method="post" action="save.do">
 				<div class="form-group">
-					<label for="nameofinstitution">Enter the name of financial
+					<label for="companyName">Enter the name of financial
 						institution</label> <input type="text" class="form-control"
-						name="nameofinstitution">
+						name="companyName">
 				</div>
 				<div class="form-group">
-					<label for="lastreviseddate">Enter last revised date</label> <input
-						type="text" class="form-control" name="lastreviseddate">
+					<label for="reviseDate">Enter last revised date</label> <input
+						type="text" class="form-control" name="reviseDate">
 				</div>
 				<div class="form-group">
-					<label for="typeofpersonalinfo">What types of personal
+					<label for="companyName">What types of personal
 						information you collect and share? (Choose minimum of 5)</label>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="ssn" value="" checked
+						<label> <input type="checkbox" name="ssn" value="social security number" checked
 							disabled> social security number
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="income" value="">
+						<label> <input type="checkbox" name="personalInfoType" value="income">
 							income
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="accountBalance"
-							value=""> account balances
+						<label> <input type="checkbox" name="personalInfoType"
+							value="account balances"> account balances
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="paymentHistory"
-							value=""> payment history
+						<label> <input type="checkbox" name="personalInfoType"
+							value="payment history"> payment history
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="transactionHistory"
-							value=""> transaction history
+						<label> <input type="checkbox" name="personalInfoType"
+							value="transaction history"> transaction history
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="lossHistory" value="">
+						<label> <input type="checkbox" name="personalInfoType" value="transaction or loss history">
 							transaction or loss history
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="credityHistory"> credit history
+						<label> <input type="checkbox" value="credit history"
+							name="personalInfoType"> credit history
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="creditScores"> credit scores
+						<label> <input type="checkbox" value="credit scores"
+							name="personalInfoType"> credit scores
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value="" name="assets">
+						<label> <input type="checkbox" value="assets" name="personalInfoType">
 							assets
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="investmentExperience"> investment experience
+						<label> <input type="checkbox" value="investment experience"
+							name="personalInfoType"> investment experience
 						</label>
 					</div>
 
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="credit-basedInsuranceScores"> credit-based
+						<label> <input type="checkbox" value="credit-based insurance scores"
+							name="personalInfoType"> credit-based
 							insurance scores
 						</label>
 					</div>
 
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="insuranceCalimHistory"> insurance claim history
+						<label> <input type="checkbox" value="insurance claim history"
+							name="personalInfoType"> insurance claim history
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="medicalInformation"> medical information
+						<label> <input type="checkbox" value="medical information"
+							name="personalInfoType"> medical information
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="overdraftHistory"> overdraft history
+						<label> <input type="checkbox" value="overdraft history"
+							name="personalInfoType"> overdraft history
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="purchaseHistory"> purchase history
+						<label> <input type="checkbox" value="purchase history"
+							name="personalInfoType"> purchase history
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="purchaseHistory"> account transactions
+						<label> <input type="checkbox" value="account transactions"
+							name="personalInfoType"> account transactions
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="risk tolerance"> risk tolerance
+						<label> <input type="checkbox" value="risk tolerance"
+							name="personalInfoType"> risk tolerance
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="medical-relatedDebts"> medical-related debts
+						<label> <input type="checkbox" value="medical-related debts"
+							name="personalInfoType"> medical-related debts
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="cardOrOtherDebt"> credit card or other debt
+						<label> <input type="checkbox" value="credit card or other debt"
+							name="personalInfoType"> credit card or other debt
 						</label>
 					</div>
 
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="ratesAndPayments"> mortgage rates and payments
+						<label> <input type="checkbox" value="mortgage rates and payments"
+							name="personalInfoType"> mortgage rates and payments
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="retirementAssets"> retirement assets
+						<label> <input type="checkbox" value="retirement assets"
+							name="personalInfoType"> retirement assets
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="accountInformation"> checking account information
+						<label> <input type="checkbox" value="checking account information"
+							name="personalInfoType"> checking account information
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="employmentInformation"> employment information
+						<label> <input type="checkbox" value="employment information"
+							name="personalInfoType"> employment information
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" value=""
-							name="transferInstructions"> wire transfer instructions
+						<label> <input type="checkbox" value="wire transfer instructions"
+							name="personalInfoType"> wire transfer instructions
 						</label>
 					</div>
 					
@@ -158,16 +158,16 @@
 					</script>
 					
 					<div class="form-group">
-						<label for="exampleInputPassword1">Do you have affiliate
+						<label for="">Do you have affiliate
 							program</label>
 						<div class="radio">
 							<label> <input type="radio" name="haveaffiliate"
-								id="optionsRadios1" value="yes"> Yes
+								id="haveaffiliate" value="yes"> Yes
 							</label>
 						</div>
 						<div class="radio">
 							<label> <input type="radio" name="haveaffiliate"
-								id="optionsRadios2" value="no"> No
+								id="haveaffiliate" value="no"> No
 							</label>
 						</div>
 					</div>
@@ -186,7 +186,7 @@
 
 					<div class="form-group" id="sharepersonalinfo"
 						style="display: none">
-						<label for="exampleInputEmail1">Do you share personal
+						<label for="">Do you share personal
 							information with affiliates?</label>
 						<div class="radio">
 							<label> <input type="radio" name="sharepersonalinfo"
@@ -212,7 +212,7 @@
 					</script>
 					<div class="form-group" id="whoareyouraffiliates"
 						style="display: none">
-						<label for="exampleInputPassword1">Who are your
+						<label for="">Who are your
 							affiliates?</label>
 						<textarea class="form-control" rows="3"
 							name="whoareyouraffiliates"></textarea>
