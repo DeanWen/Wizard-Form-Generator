@@ -4,10 +4,10 @@ import java.util.*;
 
 import org.mybeans.form.FormBean;
 
-public class Questionair extends FormBean{
+public class QuestionairForm extends FormBean{
 	String reviseDate;
 	String companyName;
-	ArrayList<String> personalInfoType;
+	ArrayList<String> personalInfoType = new ArrayList<String>();
 	boolean isAffiliateProgram;
 	boolean shareAffiliateProgram;
 	String affiliateProgram;
@@ -15,50 +15,18 @@ public class Questionair extends FormBean{
 	String noneAffiliateProgram;
 	boolean isJointMarketing;
 	String jointMarketing;
-	boolean[] doYouShare;
-	boolean[] customerLimit;
+	boolean[] doYouShare = new boolean[6];
+	boolean[] customerLimit = new boolean[6];
 	String phone;
 	String website;
 	boolean twoOrMoreInstitute;
 	String whoseNotice;
 	String howProtect;
-	ArrayList<String> collect;
+	ArrayList<String> collect = new ArrayList<String>();
 	boolean isFromAff;
 	boolean isPresentLaw;
 	String whatHappenWhenLimit;
 	String stateLaw;
-	
-	public Questionair(String reviseDate, String companyName,
-			boolean isAffiliateProgram,
-			boolean shareAffiliateProgram, String affiliateProgram,
-			boolean shareNoneAffiliateProgram, String noneAffiliateProgram,
-			boolean isJointMarketing, String jointMarketing, String phone,
-			String website, boolean twoOrMoreInstitute, String whoseNotice,
-			String howProtect, boolean isFromAff,
-			boolean isPresentLaw, String whatHappenWhenLimit, String stateLaw) {
-		this.reviseDate = reviseDate;
-		this.companyName = companyName;
-		this.personalInfoType = new ArrayList<String>();
-		this.isAffiliateProgram = isAffiliateProgram;
-		this.shareAffiliateProgram = shareAffiliateProgram;
-		this.affiliateProgram = affiliateProgram;
-		this.shareNoneAffiliateProgram = shareNoneAffiliateProgram;
-		this.noneAffiliateProgram = noneAffiliateProgram;
-		this.isJointMarketing = isJointMarketing;
-		this.jointMarketing = jointMarketing;
-		this.doYouShare = new boolean[6];
-		this.customerLimit = new boolean[6];
-		this.phone = phone;
-		this.website = website;
-		this.twoOrMoreInstitute = twoOrMoreInstitute;
-		this.whoseNotice = whoseNotice;
-		this.howProtect = howProtect;
-		this.collect = new ArrayList<String>();
-		this.isFromAff = isFromAff;
-		this.isPresentLaw = isPresentLaw;
-		this.whatHappenWhenLimit = whatHappenWhenLimit;
-		this.stateLaw = stateLaw;
-	}
 
 	public String getReviseDate() {
 		return reviseDate;

@@ -3,11 +3,11 @@ package controller;
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 import javax.servlet.http.HttpServletRequest;
-import form.Questionair;
+import form.QuestionairForm;
 
 public class SaveAction extends Action {
-	private FormBeanFactory<Questionair> formBeanFactory = FormBeanFactory
-			.getInstance(Questionair.class);
+	private FormBeanFactory<QuestionairForm> formBeanFactory = FormBeanFactory
+			.getInstance(QuestionairForm.class);
 	
 	@Override
 	public String getName() {
@@ -16,16 +16,18 @@ public class SaveAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		Questionair form = null;
+		QuestionairForm form = null;
 		try{
 			form = formBeanFactory.create(request);
+			request.setAttribute("form", form);
+			
 		} catch (FormBeanException e1) {
 			e1.printStackTrace();
 		}
 		if(!form.isPresent()) {
-			return "changeEmpPWD.jsp";
+			return "index.jsp";
 		}
-		request.setAttribute("form", form);
+		
 		return "index.jsp";
 	}
 
