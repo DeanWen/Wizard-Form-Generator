@@ -21,6 +21,9 @@ public class SaveAction extends Action {
 		try{
 			form = formBeanFactory.create(request);
 			request.setAttribute("form", form);
+			if(!form.isPresent()) {
+				return "index.jsp";
+			}
 			
 			QuestionairBean bean = new QuestionairBean();
 			bean.setCompanyName(form.getCompanyName());
@@ -66,18 +69,19 @@ public class SaveAction extends Action {
 		    
 		    bean.setFromAff(form.isFromAff());
 		    if (!bean.isFromAff()) {
-		    	
+		    	bean.setFromCompany(form.isFromCompany());
 		    }
 		    
-			
+		    bean.setPresentLaw(form.isPresentLaw());
+		    bean.setWhatHappenWhenLimit(form.getWhatHappenWhenLimit());
+		    bean.setStateLaw(form.getStateLaw());
+		    
+		    request.setAttribute("bean", bean);
+		    return "preview.do";
 		} catch (FormBeanException e1) {
 			e1.printStackTrace();
 		}
-		if(!form.isPresent()) {
-			return "index.jsp";
-		}
 		
-		return "index.jsp";
+		return "preview.do";
 	}
-
 }
