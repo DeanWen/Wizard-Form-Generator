@@ -303,12 +303,12 @@
 								<td>
 									<div class="radio">
 										<label> <input type="radio" name="doYouShare"
-											id="doYouShare" value="yes"> Yes
+											id="EverydayBusiness" value="yes"> Yes
 										</label>
 									</div>
 									<div class="radio">
 										<label> <input type="radio" name="doYouShare"
-											id="doYouShare" value="no"> No
+											id="EverydayBusiness" value="no"> No
 										</label>
 									</div>
 								</td>
@@ -331,7 +331,7 @@
 									<div id="wedonotshare" style="display: none">
 										<span>We do not share</span>
 									</div> <script>
-										$("input[name='EverydayBusiness']")
+										$("input[id='EverydayBusiness']")
 												.change(
 														function() {
 
@@ -527,50 +527,50 @@
 					</table>
 
 					<div class="form-group">
-						<label for="exampleInputEmail1">Enter your phone number</label> <input
-							type="tel" class="form-control" id="exampleInputEmail1"
-							name="phoneNumber">
+						<label for="phone">Enter your phone number</label> <input
+							type="tel" class="form-control" id="phone"
+							name="phone">
 					</div>
 
 					<div class="form-group">
-						<label for="exampleInputEmail1">Enter your website domain
+						<label for="website">Enter your website domain
 							name</label> <input type="url" class="form-control"
-							id="exampleInputEmail1" name="websiteDomainName">
+							id="website" name="website">
 					</div>
 
 					<form role="form">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Is this privacy policy
+							<label for="twoOrMoreInstitute">Is this privacy policy
 								jointly provided by two or more financial institutions?</label>
 							<div class="radio">
-								<label> <input type="radio" name="JointPolicy"
-									id="JointPolicy" value="yes"> Yes
+								<label> <input type="radio" name="twoOrMoreInstitute"
+									id="twoOrMoreInstitute" value="yes"> Yes
 								</label>
 							</div>
 							<div class="radio">
-								<label> <input type="radio" name="JointPolicy"
-									id="JointPolicy" value="no"> No
+								<label> <input type="radio" name="twoOrMoreInstitute"
+									id="twoOrMoreInstitute" value="no"> No
 								</label>
 							</div>
 						</div>
 						<script>
-							$("input[name='JointPolicy']").change(function() {
+							$("input[name='twoOrMoreInstitute']").change(function() {
 
 								if ($(this).val() == "yes") {
-									$("#Whoisprovidingthisnotice").show();
+									$("#whoseNotice").show();
 								} else {
-									$("#Whoisprovidingthisnotice").hide();
+									$("#whoseNotice").hide();
 								}
 
 							});
 						</script>
-						<div class="form-group" id="Whoisprovidingthisnotice"
+						<div class="form-group" id="whoseNotice"
 							style="display: none;">
-							<label for="who">Who is providing this notice?</label> <input
-								type="text" class="form-control" id="who">
+							<label for="whoseNotice">Who is providing this notice?</label> 
+							<input type="text" class="form-control" id="whoseNotice">
 						</div>
 						<div class="form-group">
-							<label for="who">How do you protect user's personal
+							<label for="howProtect">How do you protect user's personal
 								information?</label>
 							<textarea class="form-control" rows="3"></textarea>
 						</div>
@@ -578,223 +578,188 @@
 							<label for="exampleInputPassword1">How do you collect
 								user's personal information?</label>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Open an
-									account
+								<label> <input type="checkbox" name="collect" value="Open an account"> Open an account
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Deposit
-									money
+								<label> <input type="checkbox" name="collect" value="Deposit money"> Deposit money
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Pay
-									your bills
+								<label> <input type="checkbox" name="collect" value="Pay your bills"> Pay your bills
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Apply
-									for a loan
+								<label> <input type="checkbox" name="collect" value="Apply for a loan"> Apply for a loan
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Use
-									your credit or debit card
+								<label> <input type="checkbox" name="collect" value="Use your credit or debit card"> Use your credit or debit card
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Seek
-									Financial or Tax Advice
+								<label> <input type="checkbox" name="collect" value="Seek Financial or Tax Advice"> Seek Financial or Tax Advice
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Apply
-									for insurance
+								<label> <input type="checkbox" name="collect" value="Apply for insurance"> Apply for insurance
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Pay
-									Insurance premiums
+								<label> <input type="checkbox" name="collect" value="Pay Insurance premiums"> Pay Insurance premiums
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> File an
-									insurance claim
+								<label> <input type="checkbox" name="collect" value="File an insurance claim"> File an insurance claim
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Seek
-									advice about your investments
+								<label> <input type="checkbox" vname="collect" alue="Seek advice about your investments"> Seek advice about your investments
 								</label>
 							</div>
 
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Buy
-									securities from us
+								<label> <input type="checkbox" name="collect" value="Buy securities from us"> Buy securities from us
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Sell
-									securities to us or direct us to buy/sell securities
+								<label> <input type="checkbox" name="collect" value="Sell securities to us or direct us to buy/sell securities"> Sell securities to us or direct us to buy/sell securities
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Direct
-									us to buy securities
+								<label> <input type="checkbox" name="collect" value="Direct us to buy securities"> Direct us to buy securities
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Direct
-									us to sell your securities
+								<label> <input type="checkbox" name="collect" value="Direct us to sell your securities"> Direct us to sell your securities
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Make
-									deposits or withdrawals from your account
+								<label> <input type="checkbox" name="collect" value="Make deposits or withdrawals from your account"> Make deposits or withdrawals from your account
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Enter
-									into an investment advisory contract
+								<label> <input type="checkbox" name="collect" value="Enter into an investment advisory contract"> Enter into an investment advisory contract
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Give us
-									your income information
+								<label> <input type="checkbox" name="collect" value="Give us your income information"> Give us your income information
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Provide
-									employment information
+								<label> <input type="checkbox" name="collect" value="Provide employment information"> Provide employment information
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Give us
-									your employment history
+								<label> <input type="checkbox" name="collect" value="Give us your employment history"> Give us your employment history
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Tell us
-									about your investment or retirement portfolio
+								<label> <input type="checkbox" name="collect" value="Tell us about your investment or retirement portfolio"> Tell us about your investment or retirement portfolio
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Tell us
-									about your investment or retirement earnings
+								<label> <input type="checkbox" name="collect" value="Tell us about your investment or retirement earnings"> Tell us about your investment or retirement earnings
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Apply
-									for financing
+								<label> <input type="checkbox" name="collect" value="Apply for financing"> Apply for financing
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Apply
-									for lease
+								<label> <input type="checkbox" name="collect" value="Apply for lease"> Apply for lease
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Provide
-									account information
+								<label> <input type="checkbox" name="collect" value="Provide account information"> Provide account information
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Give us
-									your contact information
+								<label> <input type="checkbox" name="collect" value="Give us your contact information"> Give us your contact information
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Pay us
-									by check
+								<label> <input type="checkbox" name="collect" value="Pay us by check"> Pay us by check
 								</label>
 							</div>
 
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Give us
-									your wage statements
+								<label> <input type="checkbox" name="collect" value="Give us your wage statements"> Give us your wage statements
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Provide
-									your mortgage information
+								<label> <input type="checkbox" name="collect" value="Provide your mortgage information"> Provide your mortgage information
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Make a
-									wire transfer
+								<label> <input type="checkbox" name="collect" value="Make a wire transfer"> Make a wire transfer
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Tell us
-									who receives the money
+								<label> <input type="checkbox" name="collect" value="Make a wire transfer"> Tell us who receives the money
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Tell us
-									where to send the money
+								<label> <input type="checkbox" name="collect" value="Tell us where to send the money"> Tell us where to send the money
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Show us
-									your government issued ID
+								<label> <input type="checkbox" name="collect" value="Show us your government issued ID"> Show us your government issued ID
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> Show
-									your driver's license
+								<label> <input type="checkbox" name="collect" value="Show your driver's license"> Show your driver's license
 								</label>
 							</div>
 							<div class="checkbox">
-								<label> <input type="checkbox" value=""> order
-									commodity futures or option trade
+								<label> <input type="checkbox" name="collect" value="Order commodity futures or option trade"> Order commodity futures or option trade
 								</label>
 							</div>
 
 							<div class="form-group">
-								<label for="exampleInputPassword1">Do you collect
-									information from affiliates and/or credit bureaus?</label>
+								<label for="isFromAff">Do you collect information from affiliates and/or credit bureaus?</label>
 								<div class="radio">
 									<label> <input type="radio"
-										name="AffiliatesandCreditBureaus"
-										id="AffiliatesandCreditBureaus" value="yes"> Yes
+										name="isFromAff"
+										id="isFromAff" value="yes"> Yes
 									</label>
 								</div>
 								<div class="radio">
 									<label> <input type="radio"
-										name="AffiliatesandCreditBureaus"
-										id="AffiliatesandCreditBureaus" value="no"> No
+										name="isFromAff"
+										id="isFromAff" value="no"> No
 									</label>
 								</div>
 							</div>
 							<script>
-								$("input[name='AffiliatesandCreditBureaus']")
+								$("input[name='isFromAff']")
 										.change(
 												function() {
 
 													if ($(this).val() == "yes") {
 														$(
-																"#Shareinfowithcompany")
+																"#isFromCompany")
 																.hide();
 													} else {
 														$(
-																"#Shareinfowithcompany")
+																"#isFromCompany")
 																.show();
 													}
 
 												});
 							</script>
-							<div class="form-group" id="Shareinfowithcompany"
+							<div class="form-group" id="isFromCompany"
 								style="display: none;">
 								<label for="exampleInputPassword1">Do you collect
 									information from companies?</label>
 								<div class="radio">
-									<label> <input type="radio" name="optionsRadios"
-										id="optionsRadios1" value="option1" checked> Yes
+									<label> <input type="radio" name="isFromCompany"
+										id="isFromCompany" value="yes" checked> Yes
 									</label>
 								</div>
 								<div class="radio">
-									<label> <input type="radio" name="optionsRadios"
-										id="optionsRadios2" value="option2"> No
+									<label> <input type="radio" name="isFromCompany"
+										id="isFromCompany" value="no2"> No
 									</label>
 								</div>
 							</div>
@@ -802,16 +767,16 @@
 
 
 							<div class="form-group">
-								<label for="why">Are you going to describe state privacy
+								<label for="isPresentLaw">Are you going to describe state privacy
 									law previous in "Other important information" section?</label>
 								<div class="radio">
-									<label> <input type="radio" name="optionsRadios"
-										id="optionsRadios1" value="option1" checked> Yes
+									<label> <input type="radio" name="isPresentLaw"
+										id="isPresentLaw" value="yes" checked> Yes
 									</label>
 								</div>
 								<div class="radio">
-									<label> <input type="radio" name="optionsRadios"
-										id="optionsRadios2" value="option2"> No
+									<label> <input type="radio" name="isPresentLaw"
+										id="isPresentLaw" value="no"> No
 									</label>
 								</div>
 							</div>
