@@ -150,13 +150,6 @@
 						</label>
 					</div>
 					
-					<script>
-						var values = $("input:checkbox:checked").map(function () {
-						  return this.value;
-						}).get();
-						alert(values);
-					</script>
-					
 					<div class="form-group">
 						<label for="">Do you have affiliate
 							program</label>
