@@ -1,14 +1,9 @@
 package controller;
 
-import java.util.Random;
-
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class ImportAction extends Action {
-	public ImportAction() {
-		
-	}
-	
 	@Override
 	public String getName() {
 		return "import.do";
@@ -17,5 +12,12 @@ public class ImportAction extends Action {
 	@Override
 	public String perform(HttpServletRequest request) {
 		return "import.jsp";
+	}
+
+	@Override
+	public String perform(HttpServletRequest request,
+			HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

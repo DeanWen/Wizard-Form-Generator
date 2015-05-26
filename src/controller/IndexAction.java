@@ -1,14 +1,9 @@
 package controller;
 
-import java.util.Random;
-
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class IndexAction extends Action {
-	public IndexAction() {
-		
-	}
-	
+public class IndexAction extends Action {	
 	@Override
 	public String getName() {
 		return "index.do";
@@ -17,5 +12,12 @@ public class IndexAction extends Action {
 	@Override
 	public String perform(HttpServletRequest request) {
 		return "index.jsp";
+	}
+
+	@Override
+	public String perform(HttpServletRequest request,
+			HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
