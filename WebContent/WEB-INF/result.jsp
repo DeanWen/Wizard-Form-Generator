@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!DOCTYPE html>
+<html>
  <head> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
   <meta http-equiv="content-type" content="text/html;charset=utf-8" /> 

@@ -20,12 +20,12 @@ public class Controller extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	String nextPage = performTheAction(request);
-        sendToNextPage(nextPage,request,response);
+    	String nextPage = performTheAction(request, response);
+        sendToNextPage(nextPage, request, response);
     }
     
     /*
@@ -34,7 +34,7 @@ public class Controller extends HttpServlet {
      * @param request
      * @return the next page (the view)
      */
-    private String performTheAction(HttpServletRequest request) {
+    private String performTheAction(HttpServletRequest request, HttpServletResponse response) {
     	String servletPath = request.getServletPath();
 		String action = getActionName(servletPath);
 
@@ -42,7 +42,11 @@ public class Controller extends HttpServlet {
 			// User is logged in, but at the root of our web app
 			return Action.perform("index.do", request);
 		}
-
+		if (action.equals("save.do")) {
+			// User is logged in, but at the root of our web app
+			return Action.perform("save.do", request, response);
+		}
+		
 		// Let the logged in user run his chosen action
 		return Action.perform(action, request);
     }
@@ -66,12 +70,7 @@ public class Controller extends HttpServlet {
     	
     	if (nextPage.endsWith(".jsp")) {
 	   		RequestDispatcher d = request.getRequestDispatcher("WEB-INF/" + nextPage);
-	   		d.forward(request,response);
-	   		return;
-    	}
-    	if (nextPage.endsWith(".html") || nextPage.endsWith(".zip") || nextPage.endsWith(".xml")) {
-    		RequestDispatcher d = request.getRequestDispatcher("form/" + nextPage);
-	   		d.forward(request,response);
+	   		d.forward(request, response);
 	   		return;
     	}
     	

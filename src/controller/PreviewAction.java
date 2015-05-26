@@ -3,6 +3,7 @@ package controller;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
@@ -33,10 +34,12 @@ public class PreviewAction extends Action {
 			bean.setCompanyName(form.getCompanyName());
 			bean.setReviseDate(form.getReviseDate());
 			ArrayList<String> list = new ArrayList<String>();
-			String[] vals = request.getParameterValues("personalInfoType");
-		    for(String v : vals){
-		    	list.add(v);
-		    }
+			if (request.getParameterValues("personalInfoType") != null) {
+				String[] vals = request.getParameterValues("personalInfoType");
+			    for(String v : vals){
+			    	list.add(v);
+			    }
+			}
 			bean.setPersonalInfoType(list);
 			bean.setAffiliateProgram(form.isAffiliateProgram());
 			bean.setShareAffiliateProgram(form.isShareAffiliateProgram());
@@ -51,34 +54,34 @@ public class PreviewAction extends Action {
 			if (bean.isJointMarketing()) {
 				bean.setJointMarketing(form.getJointMarketing());
 			}
-			//boolean[] dysVals = request.getParameterValues("doYouShare");
-			//bean.setDoYouShare(dysVals);
-			//boolean[] cmlVals = request.getParameterValues("customerLimit");
-			//bean.setDoYouShare(cmlVals);
-			
-			bean.setPhone(form.getPhone());
-			bean.setWebsite(form.getWebsite());
-			bean.setTwoOrMoreInstitute(form.isTwoOrMoreInstitute());
-			if (bean.isTwoOrMoreInstitute()) {
-				bean.setWhoseNotice(form.getWhoseNotice());
-			}
-			bean.setHowProtect(form.getHowProtect());
-			
-			ArrayList<String> clist = new ArrayList<String>();
-			String[] cVals = request.getParameterValues("collect");
-		    for(String v : cVals){
-		    	clist.add(v);
-		    }
-		    bean.setCollect(clist);
-		    
-		    bean.setFromAff(form.isFromAff());
-		    if (!bean.isFromAff()) {
-		    	bean.setFromCompany(form.isFromCompany());
-		    }
-		    
-		    bean.setPresentLaw(form.isPresentLaw());
-		    bean.setWhatHappenWhenLimit(form.getWhatHappenWhenLimit());
-		    bean.setStateLaw(form.getStateLaw());
+//			boolean[] dysVals = request.getParameterValues("doYouShare");
+//			bean.setDoYouShare(dysVals);
+//			boolean[] cmlVals = request.getParameterValues("customerLimit");
+//			bean.setDoYouShare(cmlVals);
+//			
+//			bean.setPhone(form.getPhone());
+//			bean.setWebsite(form.getWebsite());
+//			bean.setTwoOrMoreInstitute(form.isTwoOrMoreInstitute());
+//			if (bean.isTwoOrMoreInstitute()) {
+//				bean.setWhoseNotice(form.getWhoseNotice());
+//			}
+//			bean.setHowProtect(form.getHowProtect());
+//			
+//			ArrayList<String> clist = new ArrayList<String>();
+//			String[] cVals = request.getParameterValues("collect");
+//		    for(String v : cVals){
+//		    	clist.add(v);
+//		    }
+//		    bean.setCollect(clist);
+//		    
+//		    bean.setFromAff(form.isFromAff());
+//		    if (!bean.isFromAff()) {
+//		    	bean.setFromCompany(form.isFromCompany());
+//		    }
+//		    
+//		    bean.setPresentLaw(form.isPresentLaw());
+//		    bean.setWhatHappenWhenLimit(form.getWhatHappenWhenLimit());
+//		    bean.setStateLaw(form.getStateLaw());
 		    
 		    request.setAttribute("bean", bean);
 		    return "result.jsp";
@@ -87,5 +90,12 @@ public class PreviewAction extends Action {
 		}
 		
 		return "result.jsp";
+	}
+
+	@Override
+	public String perform(HttpServletRequest request,
+			HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

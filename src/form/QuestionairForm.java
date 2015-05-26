@@ -29,7 +29,6 @@ public class QuestionairForm extends FormBean{
 	String whatHappenWhenLimit;
 	String stateLaw;
 
-	
 	public boolean isFromCompany() {
 		return isFromCompany;
 	}
