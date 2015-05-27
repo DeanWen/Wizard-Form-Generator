@@ -5,7 +5,29 @@
 <script>
 	function validateForm() {
 		var sum = 0;
-		alert('haha');
+		if(document.getElementById('companyName').value==''){
+			document.getElementById('error-company').style.display = "block";
+			return false;
+		}
+		
+		if(document.getElementById('reviseDate').value==''){
+			document.getElementById('error-Date').style.display = "block";
+			return false;
+		}
+		
+		var sum1 = 0;
+		var checkboxes = document.getElementsByName('checkbox');
+		for (var i = 0; i < checkboxes.length; i++) {
+			if (checkboxes[i].checked) {
+				sum1++;
+			}
+		}
+		if(sum1!=5)
+		{
+			document.getElementById("error-info-checkboxes").style.display = "block";
+			return false;
+		}
+		
 		
 		
 	}
@@ -25,15 +47,25 @@
 				<div class="form-group">
 					<label for="companyName">Enter the name of financial
 						institution</label> <input type="text" class="form-control"
-						name="companyName">
+						name="companyName" id="companyName">
+						<div id="error-company" style="display: none" >
+							<h5 style="color: red;">The field could not be empty</h5>
+						</div>
 				</div>
 				<div class="form-group">
 					<label for="reviseDate">Enter last revised date</label> <input
-						type="text" class="form-control" name="reviseDate">
+						type="text" class="form-control" name="reviseDate" id="reviseDate">
+						<div id="error-Date" style="display: none" >
+							<h5 style="color: red;">The field could not be empty</h5>
+						</div>
 				</div>
+				
 				<div class="form-group">
 					<label for="companyName">What types of personal
-						information you collect and share? (Choose minimum of 5)</label>
+						information you collect and share besides Social Security Number? (Choose exactly 5)</label>
+						<div id="error-info-checkboxes" style="display: none">
+							<h5 style="color: red;">You need to select 6 options including SSN so only need to select 5 in total besides SSN</h5>
+						</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="ssn" value="social security number" checked
 							disabled> social security number
