@@ -1,9 +1,14 @@
+/*
+ * Dian Wen
+ * Team 11 Frappuccino
+ * 5/27/2015
+ * */
 package bean;
 
 import java.io.Serializable;
 import java.util.*;
 
-public class QuestionairBean implements Serializable{
+public class QuestionairBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	String reviseDate;
 	String companyName;
