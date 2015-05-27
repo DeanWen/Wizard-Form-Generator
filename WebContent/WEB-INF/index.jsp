@@ -2,6 +2,15 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <jsp:include page="top.jsp" />
 
+<script>
+	function validateForm() {
+		var sum = 0;
+		alert('haha');
+		
+		
+	}
+</script>
+
 <body>
 	<div class="container">
 		<div class="header">
@@ -12,7 +21,7 @@
 			<h3 class="text-muted">Interactive Form Builder</h3>
 		</div>
 		<div class="content">
-			<form role="form" method="post" action="save.do">
+			<form role="form" method="post"  onsubmit="return validateForm()">
 				<div class="form-group">
 					<label for="companyName">Enter the name of financial
 						institution</label> <input type="text" class="form-control"
