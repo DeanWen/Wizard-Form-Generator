@@ -8,11 +8,17 @@
 		if(document.getElementById('companyName').value==''){
 			document.getElementById('error-company').style.display = "block";
 			return false;
+		}else
+		{
+			document.getElementById('error-company').style.display = "none";
 		}
 		
 		if(document.getElementById('reviseDate').value==''){
 			document.getElementById('error-Date').style.display = "block";
 			return false;
+		}
+		else{
+			document.getElementById('error-Date').style.display = "none";
 		}
 		
 		var sum1 = 0;
@@ -27,6 +33,9 @@
 		{
 			document.getElementById("error-info-checkboxes").style.display = "block";
 			return false;
+		}else
+		{
+			document.getElementById("error-info-checkboxes").style.display = "none";
 		}
 			
 		
