@@ -32,7 +32,7 @@ public class UploadAction extends Action {
 
 	@Override
 	public String perform(HttpServletRequest request) {
-		return "index.jsp";
+		return null;
 	}
 
 	@Override
