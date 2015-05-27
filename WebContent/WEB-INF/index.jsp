@@ -12,7 +12,7 @@
 			<h3 class="text-muted">Interactive Form Builder</h3>
 		</div>
 		<div class="content">
-			<form role="form" method="post" action="save.do">
+			<form role="form" method="post">
 				<div class="form-group">
 					<label for="companyName">Enter the name of financial
 						institution</label> <input type="text" class="form-control"

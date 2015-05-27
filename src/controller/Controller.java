@@ -17,6 +17,7 @@ public class Controller extends HttpServlet {
     	Action.add(new ImportAction());
     	Action.add(new SaveAction());
     	Action.add(new PreviewAction());
+    	Action.add(new UploadAction());
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,7 +43,7 @@ public class Controller extends HttpServlet {
 			// User is logged in, but at the root of our web app
 			return Action.perform("index.do", request);
 		}
-		if (action.equals("save.do")) {
+		if (action.equals("save.do") || action.equals("upload.do")) {
 			// User is logged in, but at the root of our web app
 			return Action.perform(action, request, response);
 		}

@@ -9,14 +9,14 @@
         <h3 class="text-muted">Interactive Form Builder</h3>
       </div>
       <div class="content">
-        <form role="form">
-          <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" name="file">
-            <p class="help-block">Select the JSON file</p>
+        <form method="post" enctype="multipart/form-data">
+			<div class="form-group">
+            	<label for="exampleInputFile">File input</label>
+            	<input type="file" name="file">
+            	<p class="help-block">Select the JSON file</p>
           </div>
           <button type="submit" class="btn btn-default" onclick="form.action='upload.do';">Submit</button>
-        </form>
+		</form>
       </div>
     </div>
 </body>
