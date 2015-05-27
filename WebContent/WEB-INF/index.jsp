@@ -21,6 +21,10 @@
 			document.getElementById('error-Date').style.display = "none";
 		}
 		
+		
+		
+		
+		
 		var sum1 = 0;
 		var checkboxes = document.getElementsByName('personalInfoType');
 		for (var i = 0; i < checkboxes.length; i++) {
@@ -37,9 +41,6 @@
 		{
 			document.getElementById("error-info-checkboxes").style.display = "none";
 		}
-			
-		
-		
 		
 	}
 </script>
@@ -54,7 +55,7 @@
 			<h3 class="text-muted">Interactive Form Builder</h3>
 		</div>
 		<div class="content">
-			<form role="form" method="post"  onsubmit="return validateForm()">
+			<form role="form" method="post" onsubmit="return validateForm()">
 				<div class="form-group">
 					<label for="companyName">Enter the name of financial
 						institution</label> <input type="text" class="form-control"
@@ -70,6 +71,43 @@
 							<h5 style="color: red;">The field could not be empty</h5>
 						</div>
 				</div>
+				<label for="opt-out">What opt out communication methods will you offer? (At least one) *</label>
+				
+				<div id="error-opt-out" style="display: none">
+				<h5 style="color: red;">You must select at least one opt-out method.</h5>
+			</div>
+			<table style="width: 100%">
+				<tr>
+					<td width="15%"><input type="checkbox" name="opt-out" value="1" onclick="showPhone(this)"> Phone</td>
+					<td width="15%"><input type="checkbox" name="opt-out" value="2" onclick="showWebsite(this)"> Website</td>
+					<td width="15%"><input type="checkbox" name="opt-out" value="3" onclick="showMail(this)"> Mail-in</td>
+				</tr>
+			</table>
+			<br>
+<script>
+	function showPhone(ch) {
+		if (ch.checked) {
+			document.getElementById("phoneArea").style.display = "block";
+		} else {
+			document.getElementById("phoneArea").style.display = "none";
+		}
+	}
+	function showWebsite(ch) {
+		if (ch.checked) {
+			document.getElementById("websiteArea").style.display = "block";
+		} else {
+			document.getElementById("websiteArea").style.display = "none";
+		}
+	}
+	function showMail(ch) {
+		if (ch.checked) {
+			document.getElementById("mailArea").style.display = "block";
+		} else {
+			document.getElementById("mailArea").style.display = "none";
+		}
+	}
+</script>
+			
 				
 				<div class="form-group">
 					<label for="companyName">What types of personal
@@ -599,6 +637,134 @@
 		}
 	}
 </script>
+<br>
+		<div class="content-row" id="phoneArea" style="display: none">
+			<div class="content-row">
+				<table class="table table-striped" style="text-align: left">
+					<tr>
+						<td ><h4>Phone Opt-out</h4></td>
+					</tr>
+				</table>
+				<h4>What's your phone number for opt-out?</h4>
+				<div id="errorPhone" style="display: none">
+					<h5 style="color: red;">The field could not be empty</h5>
+				</div>
+				<input type="text" class="form-control" placeholder="Phone number for opt-out" id="phonephone" name="optPhone">
+			</div>
+		</div>
+		<br />
+		
+
+		<div class="content-row" id="websiteArea" style="display: none">
+			<div class="content-row">
+				<table class="table table-striped" style="text-align: left">
+					<tr>
+						<td ><h4>Website Opt-out</h4></td>
+					</tr>
+				</table>
+				<h4>What's your website for opt-out?</h4>
+				<div id="errorWebsite" style="display: none">
+					<h5 style="color: red;">The field could not be empty</h5>
+				</div>
+				<input type="text" class="form-control" placeholder="Website for opt-out" id="websitewebsite" name="optWebsite">
+			</div>
+			<br />
+		</div>
+		<br />
+		
+		<div class="content-row" id="mailArea" style="display: none">
+			<div class="content-row" id="mailinForm">
+				<table class="table table-striped" style="text-align: left">
+					<tr>
+						<td ><h4>Mail-in Opt-out</h4></td>
+					</tr>
+				</table>
+				
+				<div id="optionalInfo" class="leftpad" style="display: none">
+					<h5>Please select the additional information you need:</h5>
+					<input type="radio" name="optionsRadios" id="radio1" value="Account Number" checked> Account Number<br /> 
+					<input type="radio" name="optionsRadios" id="radio1" value="Opt-out Number"> Opt-out Number<br /> 
+					<input type="radio" name="optionsRadios" id="radio1" value="Truncated Account Number"> Truncated Account Number<br />
+				</div>
+				<br />
+				<h4>The mail-in opt-out form should be mailed to:</h4>
+				<div id="errorMail" style="display: none">
+					<h5 style="color: red;">The field could not be empty</h5>
+				</div>
+				<table style="width: 100%">
+					<tr>
+						<td>City:</td>
+						<td>&nbsp;&nbsp;<input name="city" type="text" id="city"></td>
+						<td>Street:</td>
+						<td>&nbsp;&nbsp;<input name="Address" type="text" id="Address"></td>
+						
+					</tr>
+					<tr>
+						<td>State:</td>
+						<td>&nbsp;&nbsp; <select name="state">
+								<option value="AL">Alabama</option>
+								<option value="AK">Alaska</option>
+								<option value="AZ">Arizona</option>
+								<option value="AR">Arkansas</option>
+								<option value="CA">California</option>
+								<option value="CO">Colorado</option>
+								<option value="CT">Connecticut</option>
+								<option value="DE">Delaware</option>
+								<option value="DC">District Of Columbia</option>
+								<option value="FL">Florida</option>
+								<option value="GA">Georgia</option>
+								<option value="HI">Hawaii</option>
+								<option value="ID">Idaho</option>
+								<option value="IL">Illinois</option>
+								<option value="IN">Indiana</option>
+								<option value="IA">Iowa</option>
+								<option value="KS">Kansas</option>
+								<option value="KY">Kentucky</option>
+								<option value="LA">Louisiana</option>
+								<option value="ME">Maine</option>
+								<option value="MD">Maryland</option>
+								<option value="MA">Massachusetts</option>
+								<option value="MI">Michigan</option>
+								<option value="MN">Minnesota</option>
+								<option value="MS">Mississippi</option>
+								<option value="MO">Missouri</option>
+								<option value="MT">Montana</option>
+								<option value="NE">Nebraska</option>
+								<option value="NV">Nevada</option>
+								<option value="NH">New Hampshire</option>
+								<option value="NJ">New Jersey</option>
+								<option value="NM">New Mexico</option>
+								<option value="NY">New York</option>
+								<option value="NC">North Carolina</option>
+								<option value="ND">North Dakota</option>
+								<option value="OH">Ohio</option>
+								<option value="OK">Oklahoma</option>
+								<option value="OR">Oregon</option>
+								<option value="PA">Pennsylvania</option>
+								<option value="RI">Rhode Island</option>
+								<option value="SC">South Carolina</option>
+								<option value="SD">South Dakota</option>
+								<option value="TN">Tennessee</option>
+								<option value="TX">Texas</option>
+								<option value="UT">Utah</option>
+								<option value="VT">Vermont</option>
+								<option value="VA">Virginia</option>
+								<option value="WA">Washington</option>
+								<option value="WV">West Virginia</option>
+								<option value="WI">Wisconsin</option>
+								<option value="WY">Wyoming</option>
+						</select>
+						</td>
+						<td>Zip:</td>
+						<td><input type="text" name="zipcode" id="zipcode"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+<br>
+<br>
+
 
 					<div class="form-group">
 						<label for="phone">Enter your phone number</label> <input
