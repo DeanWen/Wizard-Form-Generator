@@ -16,17 +16,19 @@
 		}
 		
 		var sum1 = 0;
-		var checkboxes = document.getElementsByName('checkbox');
+		var checkboxes = document.getElementsByName('personalInfoType');
 		for (var i = 0; i < checkboxes.length; i++) {
 			if (checkboxes[i].checked) {
 				sum1++;
 			}
 		}
+		
 		if(sum1!=5)
 		{
 			document.getElementById("error-info-checkboxes").style.display = "block";
 			return false;
 		}
+			
 		
 		
 		
