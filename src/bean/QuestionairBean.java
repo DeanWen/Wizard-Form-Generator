@@ -1,39 +1,39 @@
 package bean;
 
-import org.mybeans.form.FormBean;
-
+import java.io.Serializable;
 import java.util.*;
 
-public class QuestionairBean extends FormBean{
+public class QuestionairBean implements Serializable{
+	private static final long serialVersionUID = 1L;
 	String reviseDate;
 	String companyName;
 	ArrayList<String> personalInfoType = new ArrayList<String>();
-	boolean isAffiliateProgram;
-	boolean shareAffiliateProgram;
+	String isAffiliateProgram;
+	String shareAffiliateProgram;
 	String affiliateProgram;
-	boolean shareNoneAffiliateProgram;
+	String shareNoneAffiliateProgram;
 	String noneAffiliateProgram;
-	boolean isJointMarketing;
+	String isJointMarketing;
 	String jointMarketing;
-	boolean[] doYouShare = new boolean[6];
-	boolean[] customerLimit = new boolean[6];
+	String[] doYouShare = new String[6];
+	String[] customerLimit = new String[6];
 	String phone;
 	String website;
-	boolean twoOrMoreInstitute;
+	String twoOrMoreInstitute;
 	String whoseNotice;
 	String howProtect;
 	ArrayList<String> collect = new ArrayList<String>();
-	boolean isFromAff;
-	boolean isFromCompany;
-	boolean isPresentLaw;
+	String isFromAff;
+	String isFromCompany;
+	String isPresentLaw;
 	String whatHappenWhenLimit;
 	String stateLaw;
 
 	
-	public boolean isFromCompany() {
+	public String isFromCompany() {
 		return isFromCompany;
 	}
-	public void setFromCompany(boolean isFromCompany) {
+	public void setFromCompany(String isFromCompany) {
 		this.isFromCompany = isFromCompany;
 	}
 	public String getReviseDate() {
@@ -54,28 +54,28 @@ public class QuestionairBean extends FormBean{
 	public void setPersonalInfoType(ArrayList<String> personalInfoType) {
 		this.personalInfoType = personalInfoType;
 	}
-	public boolean isAffiliateProgram() {
+	public String isAffiliateProgram() {
 		return isAffiliateProgram;
 	}
-	public void setAffiliateProgram(boolean isAffiliateProgram) {
+	public void setAffiliateProgram1(String isAffiliateProgram) {
 		this.isAffiliateProgram = isAffiliateProgram;
 	}
-	public boolean isShareAffiliateProgram() {
+	public String isShareAffiliateProgram() {
 		return shareAffiliateProgram;
 	}
-	public void setShareAffiliateProgram(boolean shareAffiliateProgram) {
+	public void setShareAffiliateProgram(String shareAffiliateProgram) {
 		this.shareAffiliateProgram = shareAffiliateProgram;
 	}
 	public String getAffiliateProgram() {
 		return affiliateProgram;
 	}
-	public void setAffiliateProgram(String affiliateProgram) {
-		this.affiliateProgram = affiliateProgram;
+	public void setAffiliateProgram(String b) {
+		this.affiliateProgram = b;
 	}
-	public boolean isShareNoneAffiliateProgram() {
+	public String isShareNoneAffiliateProgram() {
 		return shareNoneAffiliateProgram;
 	}
-	public void setShareNoneAffiliateProgram(boolean shareNoneAffiliateProgram) {
+	public void setShareNoneAffiliateProgram(String shareNoneAffiliateProgram) {
 		this.shareNoneAffiliateProgram = shareNoneAffiliateProgram;
 	}
 	public String getNoneAffiliateProgram() {
@@ -84,10 +84,10 @@ public class QuestionairBean extends FormBean{
 	public void setNoneAffiliateProgram(String noneAffiliateProgram) {
 		this.noneAffiliateProgram = noneAffiliateProgram;
 	}
-	public boolean isJointMarketing() {
+	public String isJointMarketing() {
 		return isJointMarketing;
 	}
-	public void setJointMarketing(boolean isJointMarketing) {
+	public void setJointMarketing1(String isJointMarketing) {
 		this.isJointMarketing = isJointMarketing;
 	}
 	public String getJointMarketing() {
@@ -96,16 +96,16 @@ public class QuestionairBean extends FormBean{
 	public void setJointMarketing(String jointMarketing) {
 		this.jointMarketing = jointMarketing;
 	}
-	public boolean[] getDoYouShare() {
+	public String[] getDoYouShare() {
 		return doYouShare;
 	}
-	public void setDoYouShare(boolean[] doYouShare) {
+	public void setDoYouShare(String[] doYouShare) {
 		this.doYouShare = doYouShare;
 	}
-	public boolean[] getCustomerLimit() {
+	public String[] getCustomerLimit() {
 		return customerLimit;
 	}
-	public void setCustomerLimit(boolean[] customerLimit) {
+	public void setCustomerLimit(String[] customerLimit) {
 		this.customerLimit = customerLimit;
 	}
 	public String getPhone() {
@@ -120,10 +120,10 @@ public class QuestionairBean extends FormBean{
 	public void setWebsite(String website) {
 		this.website = website;
 	}
-	public boolean isTwoOrMoreInstitute() {
+	public String isTwoOrMoreInstitute() {
 		return twoOrMoreInstitute;
 	}
-	public void setTwoOrMoreInstitute(boolean twoOrMoreInstitute) {
+	public void setTwoOrMoreInstitute(String twoOrMoreInstitute) {
 		this.twoOrMoreInstitute = twoOrMoreInstitute;
 	}
 	public String getWhoseNotice() {
@@ -144,16 +144,16 @@ public class QuestionairBean extends FormBean{
 	public void setCollect(ArrayList<String> collect) {
 		this.collect = collect;
 	}
-	public boolean isFromAff() {
+	public String isFromAff() {
 		return isFromAff;
 	}
-	public void setFromAff(boolean isFromAff) {
+	public void setFromAff(String isFromAff) {
 		this.isFromAff = isFromAff;
 	}
-	public boolean isPresentLaw() {
+	public String isPresentLaw() {
 		return isPresentLaw;
 	}
-	public void setPresentLaw(boolean isPresentLaw) {
+	public void setPresentLaw(String isPresentLaw) {
 		this.isPresentLaw = isPresentLaw;
 	}
 	public String getWhatHappenWhenLimit() {

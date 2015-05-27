@@ -44,7 +44,7 @@ public class Controller extends HttpServlet {
 		}
 		if (action.equals("save.do")) {
 			// User is logged in, but at the root of our web app
-			return Action.perform("save.do", request, response);
+			return Action.perform(action, request, response);
 		}
 		
 		// Let the logged in user run his chosen action

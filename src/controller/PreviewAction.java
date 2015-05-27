@@ -43,15 +43,15 @@ public class PreviewAction extends Action {
 			bean.setPersonalInfoType(list);
 			bean.setAffiliateProgram(form.isAffiliateProgram());
 			bean.setShareAffiliateProgram(form.isShareAffiliateProgram());
-			if (bean.isShareAffiliateProgram()) {
+			if (bean.isShareAffiliateProgram().equalsIgnoreCase("yes")) {
 				bean.setAffiliateProgram(form.getAffiliateProgram());
 			}
 			bean.setShareNoneAffiliateProgram(form.isShareNoneAffiliateProgram());
-			if (bean.isShareNoneAffiliateProgram()) {
+			if (bean.isShareNoneAffiliateProgram().equalsIgnoreCase("yes")) {
 				bean.setNoneAffiliateProgram(form.getNoneAffiliateProgram());
 			}
 			bean.setJointMarketing(form.isJointMarketing());
-			if (bean.isJointMarketing()) {
+			if (bean.isJointMarketing().equalsIgnoreCase("yes")) {
 				bean.setJointMarketing(form.getJointMarketing());
 			}
 //			boolean[] dysVals = request.getParameterValues("doYouShare");

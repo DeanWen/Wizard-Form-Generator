@@ -830,9 +830,10 @@
 
 
 							<hr>
-							<button type="submit" name="preview" class="btn btn-default">Preview</button>
-							<button type="submit" name="saveforlater" class="btn btn-default">Save
-								for later</button>
+							<button type="submit" name="preview" class="btn btn-default"
+								onclick="form.action='preview.do';">Preview</button>
+							<button type="submit" name="saveforlater" class="btn btn-default"
+								onclick="form.action='save.do';">Save for later</button>
 					</form>
 				</div>
 		</div>

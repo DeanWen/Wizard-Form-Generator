@@ -1,5 +1,4 @@
 <jsp:include page="top.jsp" />
-
 <body>
 	<div class="container">
       <div class="header">
@@ -13,14 +12,12 @@
         <form role="form">
           <div class="form-group">
             <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
-            <p class="help-block">Select the XML file</p>
+            <input type="file" name="file">
+            <p class="help-block">Select the JSON file</p>
           </div>
-   
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default" onclick="form.action='upload.do';">Submit</button>
         </form>
       </div>
     </div>
-
 </body>
 </html>
