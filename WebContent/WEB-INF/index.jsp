@@ -28,7 +28,7 @@
 			}
 		}
 		
-		if(sum1!=5)
+		if(sum1!=6)
 		{
 			document.getElementById("error-info-checkboxes").style.display = "block";
 			return false;
@@ -70,7 +70,7 @@
 							
 				
 				<div class="form-group">
-					<label for="companyName">3. What types of personal information you collect and share? (Choose exactly 5)</label>
+					<label for="companyName">3. What types of personal information you collect and share? * (Choose exactly 5)</label>
 						<div id="error-info-checkboxes" style="display: none">
 							<h5 style="color: red;">You need to select 6 options including SSN so only need to select 5 in total besides SSN</h5>
 						</div>
@@ -212,57 +212,85 @@
 							</label>
 						</div>
 						<div class="radio">
-							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="no"> No
+							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="no" onclick="disapearQ5intable(this)"> No
 							</label>
 						</div>
 					</div>
 <script>
-    function showQ5intable(ch) {
+function showQ5intable(ch) {
 	if (ch.checked) {
 		document.getElementById("Q5").style.display = "block";
 	} else {
 		document.getElementById("Q5").style.display = "none";
 	}
-    }
+}
+function disapearQ5intable(ch) {
+	if (ch.checked) {
+		document.getElementById("Q5").style.display = "none";
+	} else {
+		document.getElementById("Q5").style.display = "block";
+	}
+}
     function showMethod(ch) {
 	if (ch.checked) {
 		document.getElementById("optmethod").style.display = "block";
 		document.getElementById("applyscope").style.display = "block";
+		document.getElementById("begindate").style.display = "block";
 	} else {
 		document.getElementById("optmethod").style.display = "none";
 		document.getElementById("applyscope").style.display = "none";
+		document.getElementById("begindate").style.display = "none";
 	}
 }
+    function disappearMethod(ch) {
+    	if (ch.checked) {
+    		document.getElementById("optmethod").style.display = "none";
+    		document.getElementById("applyscope").style.display = "none";
+    		document.getElementById("begindate").style.display = "none";
+    	} else {
+    		document.getElementById("optmethod").style.display = "block";
+    		document.getElementById("applyscope").style.display = "block";
+    		document.getElementById("begindate").style.display = "block";
+    	}
+    }
 	function showPhone(ch) {
 		if (ch.checked) {
 			document.getElementById("phoneArea").style.display = "block";
+			document.getElementById("begindate").style.display = "block";
+
 		} else {
 			document.getElementById("phoneArea").style.display = "none";
+			document.getElementById("begindate").style.display = "none";
+
 		}
 	}
 	function showWebsite(ch) {
 		if (ch.checked) {
 			document.getElementById("websiteArea").style.display = "block";
+			
 		} else {
 			document.getElementById("websiteArea").style.display = "none";
+			
 		}
 	}
 	function showMail(ch) {
 		if (ch.checked) {
 			document.getElementById("mailArea").style.display = "block";
+			
 		} else {
 			document.getElementById("mailArea").style.display = "none";
+			
 		}
 	}
 </script>
 					<div class="form-group">
-					<label for="reviseDate">5. Does your organization provide opt-out service?</label> 
+					<label for="reviseDate">5. Does your organization provide opt-out service? *</label> 
 						<div class="radio">
 							<label> <input type="radio" name="isoptout" id="isoptout" value="yes" onclick="showMethod(this)"> Yes
 							</label>
 						</div>
 						<div class="radio">
-							<label> <input type="radio" name="isoptout" id="isoptout" value="no"> No
+							<label> <input type="radio" name="isoptout" id="isoptout" value="no" onclick="disappearMethod(this)"> No
 							</label>
 						</div>
 						<div id="error-Date" style="display: none" >
@@ -548,7 +576,7 @@
 						<td ><h4>Phone Opt-out</h4></td>
 					</tr>
 				</table>
-				<h4>What's your phone number for opt-out?</h4>
+				<h4>What's your phone number for opt-out? *</h4>
 				<div id="errorPhone" style="display: none">
 					<h5 style="color: red;">The field could not be empty</h5>
 				</div>
@@ -565,7 +593,7 @@
 						<td ><h4>Website Opt-out</h4></td>
 					</tr>
 				</table>
-				<h4>What's your website for opt-out?</h4>
+				<h4>What's your website for opt-out? *</h4>
 				<div id="errorWebsite" style="display: none">
 					<h5 style="color: red;">The field could not be empty</h5>
 				</div>
@@ -574,6 +602,14 @@
 			<br />
 		</div>
 		<br />
+		
+		<div class="content-row" id="begindate" style="display: none">
+			<label>8. How many days can you begin sharing new customer's
+				information from the date you sent the notice to the customer? *</label>
+			<br />
+			<input type="text" class="form-control" id="numberOfDays"
+				placeholder="No less than 30 days" name="numOfDays">
+		</div>
 		
 		<div class="content-row" id="mailArea" style="display: none">
 			<div class="content-row" id="mailinForm">
@@ -590,7 +626,7 @@
 					<input type="radio" name="optionsRadios" id="radio1" value="Truncated Account Number"> Truncated Account Number<br />
 				</div>
 				<br />
-				<h4>The mail-in opt-out form should be mailed to:</h4>
+				<h4>The mail-in opt-out form should be mailed to: *</h4>
 				<div id="errorMail" style="display: none">
 					<h5 style="color: red;">The field could not be empty</h5>
 				</div>
@@ -670,7 +706,7 @@
 
 
 		<div class="form-group" >
-			<label for="servicecontact">8. What customer service contact information will you provide (select at least one method)?</label>
+			<label for="servicecontact">9. What customer service contact information will you provide (select at least one method)? *</label>
 				<table style="width: 100%" >
 				<tr>
 					<td width="15%">
@@ -690,7 +726,7 @@
 		</div>
 					
 						<div class="form-group">
-							<label for="twoOrMoreInstitute">9. Is this privacy policy jointly provided by two or more financial institutions?</label>
+							<label for="twoOrMoreInstitute">10. Is this privacy policy jointly provided by two or more financial institutions? *</label>
 							<div class="radio">
 								<label> <input type="radio" name="twoOrMoreInstitute"
 									id="twoOrMoreInstitute" value="yes"> Yes
@@ -715,11 +751,11 @@
 						</script>
 						<div class="form-group" id="whoseNotice"
 							style="display: none;">
-							<label for="whoseNotice">9. Who is providing this notice?</label> 
+							<label for="whoseNotice">Who is providing this notice?</label> 
 							<input type="text" class="form-control" id="whoseNotice" />
 						</div>
 						<div class="form-group">
-							<label for="howProtect">10. How do you protect user's personal information?</label>
+							<label for="howProtect">11. How do you protect user's personal information? *</label>
 							<textarea class="form-control" rows="3" 
 							           placeholder="You may only provide additional information pertaining to its safeguards practices following the designated response to this question. 
 							                        Such information may include information about the institution’s use of cookies or other measures it uses to
@@ -728,7 +764,7 @@
 							</textarea>
 						</div>
 						<div class="form-group">
-							<label for="collect">11. How do you collect suser's personal information?</label>
+							<label for="collect">12. How do you collect user's personal information? *</label>
 							<div class="checkbox">
 								<label> <input type="checkbox" name="collect" value="Open an account"> Open an account
 								</label>
@@ -870,7 +906,7 @@
 							
 						
                                <div class="form-group">
-								<label for="collectaffiliate">12. Do you collect information from affiliates and/or credit bureaus?</label>
+								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
 								<div class="radio">
 									<label> <input type="radio" name="collectaffiliate" id="collectaffiliate" value="yes"> Yes
 									</label>
@@ -899,7 +935,7 @@
 												});
 							</script>
 							<div class="form-group">
-								<label for="isFromAff">13. Do you collect information from other companies?</label>
+								<label for="isFromAff">14. Do you collect information from other companies? </label>
 								<div class="radio">
 									<label> <input type="radio" name="isFromCompany" id="isFromCompany" value="yes"> Yes
 									</label>
@@ -911,23 +947,23 @@
 							</div>
 							
 							<div class="form-group">
-								<label for="isPresentLaw">14. Would you like to refer to state privacy law previous? 
-								    (If choose yes, you should provide law details)</label>
+								<label for="isPresentLaw">15. Would you like to refer to state privacy law previous? 
+								    (If choose yes, you should provide law details) *</label>
 								<div class="radio">
 									<label>
-									     <input type="radio" name="isPresentLaw" id="isPresentLaw" value="yes" onclick="showLawArea(ch)"> Yes
+									     <input type="radio" name="isPresentLaw" id="isPresentLaw" value="yes" onclick="showLawArea(this)"> Yes
 									</label>
 								</div>
 								<div class="radio">
 									<label> 
-									    <input type="radio" name="isPresentLaw" id="isPresentLaw" value="no" > No
+									    <input type="radio" name="isPresentLaw" id="isPresentLaw" value="no" onclick="disappearLawArea(this)"> No
 									</label>
 								</div>
 								<div class="content-row" id="lawarea" style="display: none">
 								<label for="isPresentLaw">Please provide law details here:</label>
 								<div class="radio">
 									<label>
-					                    <textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+					                    <textarea ="form-control"" rows="3" name="affiliateProgram"></textarea>
 									</label>
 								</div>
 								
@@ -941,9 +977,16 @@ function showLawArea(ch) {
 		document.getElementById("lawarea").style.display = "none";
 	}
 }
+function disappearLawArea(ch) {
+	if (ch.checked) {
+		document.getElementById("lawarea").style.display = "none";
+	} else {
+		document.getElementById("lawarea").style.display = "block";
+	}
+}
 </script>
 							<div class="form-group" id="applyscope" style="display: none">
-								<label for="why">15. What happens when users limit sharing for an account that is jointly held with someone else?</label>
+								<label for="why">16. What happens when users limit sharing for an account that is jointly held with someone else?</label>
 								<div class="radio">
 									<label> <input type="radio" name="whatHappenWhenLimit"
 										value="Yourchoices apply to everyone on the account" checked> Your choices apply to everyone on the account
@@ -957,7 +1000,7 @@ function showLawArea(ch) {
 							</div>
 
 	             <div class="form-group">
-						<label for="">16. Do you have affiliate</label>
+						<label for="">17. Do you have affiliate</label>
 						<div class="radio">
 							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="yes"> Yes
 							</label>
@@ -982,7 +1025,7 @@ function showLawArea(ch) {
 
 					<div class="form-group" id="shareAffiliateProgram"
 						style="display: none">
-						<label for="">17. Do you share personal information with affiliates?</label>
+						<label for="">18. Do you share personal information with affiliates?</label>
 						<div class="radio">
 							<label> <input type="radio" name="shareAffiliateProgram"
 								id="shareAffiliateProgram" value="yes"> Yes
@@ -1011,7 +1054,7 @@ function showLawArea(ch) {
 						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
 					</div>
 					<div class="form-group">
-						<label for="">18. Do you share information with non-affiliates?</label>
+						<label for="">19. Do you share information with non-affiliates?</label>
 						<div class="radio">
 							<label> <input type="radio" name="shareNoneAffiliateProgram"
 								id="shareNoneAffiliateProgram" value="yes"> Yes
@@ -1042,7 +1085,7 @@ function showLawArea(ch) {
 							name="noneAffiliateProgram" id="noneAffiliateProgram"></textarea>
 					</div>
 					<div class="form-group">
-						<label for="isJointMarketing">19. Do you engage in joint marketing?</label>
+						<label for="isJointMarketing">20. Do you engage in joint marketing?</label>
 						<div class="radio">
 							<label> <input type="radio" name="isJointMarketing"
 								id="isJointMarketing" value="yes"> Yes
@@ -1070,8 +1113,12 @@ function showLawArea(ch) {
 					</div>
 
 							<div class="form-group">
-								<label for="stateLaw">20. Provide other information information</label>
-								<textarea name="stateLaw" class="form-control" rows="10"></textarea>
+								<label for="stateLaw">21. Provide other information information</label>
+								<textarea name="stateLaw" class="form-control" rows="12" 
+								          placeholder="Only the following types of information can appear in this box.
+                                                      (1) State and/or international privacy law information; and/or
+                                                      (2) Acknowledgment of receipt form." >
+								</textarea>
 							</div>
 
 
