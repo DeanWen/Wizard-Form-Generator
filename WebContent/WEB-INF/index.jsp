@@ -8,8 +8,7 @@
 		if(document.getElementById('companyName').value==''){
 			document.getElementById('error-company').style.display = "block";
 			return false;
-		}else
-		{
+		}else{
 			document.getElementById('error-company').style.display = "none";
 		}
 		
@@ -221,11 +220,11 @@
 <script>
     function showQ5intable(ch) {
 	if (ch.checked) {
-		alert('haha');
+		document.getElementById("Q5").style.display = "block";
 	} else {
 		document.getElementById("Q5").style.display = "none";
 	}
-	
+    }
     function showMethod(ch) {
 	if (ch.checked) {
 		document.getElementById("optmethod").style.display = "block";
@@ -275,7 +274,7 @@
 				<div class="form-group" id="optmethod" style="display: none">
 					    <label for="opt-out">6. What opt-out methods will you offer? (At least one) *</label>
 				
-				<div id="error-opt-out" style="display: none">
+				<div id="error-opt-out" >
 				    <h5 style="color: red;">You must select at least one opt-out method.</h5>
 			    </div>
 						<table style="width: 100%">
@@ -378,12 +377,12 @@
 							<td><strong>Does your organization share
 									information to affiliates for them marketing to your customers</strong>&mdash;
 							</td>
-							<td class="centered-td"><select id="question5"
-								name="question5" onchange="changeQ4()"><option
-										value="Yes">Yes</option>
+							<td class="centered-td">
+							    <select id="question5" name="question5" onchange="changeQ5()">
+							        <option value="Yes">Yes</option>
 									<option value="No">No</option></select></td>
 							<td class="centered-td"><select id="question5b" name="question5b" readonly="false"><option value="Yes"
-										id="share4">Yes</option>
+										id="share5">Yes</option>
 
 									<option value="No" id="noShare4">We do not share</option></select></td>
 						</tr>						
@@ -917,12 +916,12 @@
 								    (If choose yes, you should provide law details)</label>
 								<div class="radio">
 									<label>
-									     <input type="radio" name="isPresentLaw" id="isPresentLaw" value="yes" > Yes
+									     <input type="radio" name="isPresentLaw" id="isPresentLaw" value="yes" onclick="showLawArea(ch)"> Yes
 									</label>
 								</div>
 								<div class="radio">
 									<label> 
-									    <input type="radio" name="isPresentLaw" id="isPresentLaw" value="no" onclick="showLawArea(ch)"> No
+									    <input type="radio" name="isPresentLaw" id="isPresentLaw" value="no" > No
 									</label>
 								</div>
 								<div class="content-row" id="lawarea" style="display: none">
@@ -942,6 +941,7 @@ function showLawArea(ch) {
 	} else {
 		document.getElementById("lawarea").style.display = "none";
 	}
+}
 </script>
 							<div class="form-group" id="applyscope" style="display: none">
 								<label for="why">15. What happens when users limit sharing for an account that is jointly held with someone else?</label>
