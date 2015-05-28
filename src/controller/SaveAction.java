@@ -69,7 +69,7 @@ public class SaveAction extends Action {
 		    bean.setNumOfDays(form.getNumOfDays());
 		    bean.setOptPhone(form.getOptPhone());
 		    bean.setOptWebsite(form.getOptWebsite());
-		    bean.setTwoOrMoreInstitute(form.getTwoOrMoreInstitute());
+		   
 		    bean.setHowProtect(form.getHowProtect());
 		    
 			if (request.getParameterValues("collect") != null) {
@@ -84,23 +84,7 @@ public class SaveAction extends Action {
 				bean.setLawDetails(form.getLawDetails());
 			}
 			bean.setWhatHappenWhenLimit(form.getWhatHappenWhenLimit());
-			bean.setIsAffiliateProgram(form.getIsAffiliateProgram());
-			if (bean.getIsAffiliateProgram().equalsIgnoreCase("yes")) {
-				bean.setShareAffiliateProgram(form.getShareAffiliateProgram());
-				if (bean.getShareAffiliateProgram().equalsIgnoreCase("yes")) {
-					bean.setAffiliateProgram(form.getAffiliateProgram());
-				}
-			}
-			
-			bean.setShareNoneAffiliateProgram(form.getShareNoneAffiliateProgram());
-		    if (bean.getShareNoneAffiliateProgram().equalsIgnoreCase("yes")) {
-		    	bean.setNoneAffiliateProgram(form.getNoneAffiliateProgram());
-		    }
-		    
-		    bean.setIsJointMarketing(form.getIsJointMarketing());
-		    if (bean.getIsJointMarketing().equalsIgnoreCase("yes")) {
-		    	bean.setJointMarketing(form.getJointMarketing());
-		    }
+
 		   
 		    bean.setStateLaw(form.getStateLaw());
 		    if (bean.getLawDetails() != null && !bean.getLawDetails().equalsIgnoreCase("-1")) {
