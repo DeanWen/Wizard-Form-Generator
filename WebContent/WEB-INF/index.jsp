@@ -95,8 +95,7 @@
 			}
 		}
 		
-		
-		////////////////////////////////////////////////////////////
+	
 		
 		
 		if(document.getElementById("phoneArea").style.display == "block")	
@@ -413,9 +412,21 @@
 					</div>
 			</div>
 					
-					<div class="form-group">
-						
-						<label for="">4. Please select "Yes" if any of the following statement is true: *</label>
+					 <div class="form-group">
+						<label for="">4. Do you have affiliate? *</label>
+						<div class="radio">
+							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="yes"> Yes
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="no"> No
+							</label>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">	
+						<label for="">5. Please select "Yes" if any of the following statement is true: *</label>
 						<div id="error-affiliatemarkettocus" style="display: none" >
 				    		<h5 style="color: red;">You must select at least one box.</h5>
 			    		</div>
@@ -519,7 +530,7 @@ function disapearQ5intable(ch) {
 	}
 </script>
 					<div class="form-group">
-					<label for="reviseDate">5. Does your organization provide opt-out service? *</label> 
+					<label for="reviseDate">6. Does your organization provide opt-out service? *</label> 
 					<div id="error-opt-outSuper" style="display: none" >
 				    	<h5 style="color: red;">You must select Yes or No.</h5>
 			    	</div>
@@ -537,7 +548,7 @@ function disapearQ5intable(ch) {
 				</div>
 				
 				<div class="form-group" id="optmethod" style="display: none">
-					    <label for="opt-out">6. What opt-out methods will you offer? (At least one) *</label>
+					    <label for="opt-out">7. What opt-out methods will you offer? (At least one) *</label>
 				
 				<div id="error-opt-out" style="display: none" >
 				    <h5 style="color: red;">You must select at least one opt-out method.</h5>
@@ -556,7 +567,7 @@ function disapearQ5intable(ch) {
 			<br>
 	
 			<div class="content-row">
-				<h4>7. Please select Yes/No or we do not share depending if the reason on the left column to share personal information is valid to
+				<h4>8. Please select Yes/No or we do not share depending if the reason on the left column to share personal information is valid to
 					your organization.*</h4>
 				<table border="0" class="table table-striped"
 					style="text-align: left"
@@ -975,7 +986,7 @@ function disapearQ5intable(ch) {
 		<br />
 		
 		<div class="content-row" id="begindate" style="display: none">
-			<label>8. How many days can you begin sharing new customer's
+			<label>9. How many days can you begin sharing new customer's
 				information from the date you sent the notice to the customer? *</label>
 			<br />
 			<div id="error-begindate" style="display: none" >
@@ -989,7 +1000,7 @@ function disapearQ5intable(ch) {
 <br>
 
 		<div class="form-group" >
-			<label for="servicecontact">9. What customer service contact information will you provide (select at least one method)? *</label>
+			<label for="servicecontact">10. What customer service contact information will you provide (select at least one method)? *</label>
 					<div id="error-opt-contactMethod" style="display: none" >
 				    	<h5 style="color: red;">You must select at least one contact method</h5>
 			    	</div>
@@ -1012,7 +1023,7 @@ function disapearQ5intable(ch) {
 		</div>
 					
 						<div class="form-group">
-							<label for="twoOrMoreInstitute">10. Please list the financial institutions that <strong>jointly</strong> provide this privacy policy. 
+							<label for="twoOrMoreInstitute">11. Please list the financial institutions that <strong>jointly</strong> provide this privacy policy. 
 							</label>
 							<textarea class="form-control"" rows="3" name="whoseNotice" 
 							placeholder="You can ommit this area if you are the only institution providing this notice; otherwise, jointly parties should be identified clearly." ></textarea>
@@ -1020,7 +1031,7 @@ function disapearQ5intable(ch) {
 						</div>
 					
 						<div class="form-group">
-							<label for="howProtect">11. How do you protect user's personal information? *</label>
+							<label for="howProtect">12. How do you protect user's personal information? *</label>
 							<div id="error-opt-11" style="display: none" >
 				    			<h5 style="color: red;">Please type in your ways of protecting user's personal information</h5>
 			    			</div>
@@ -1028,7 +1039,7 @@ function disapearQ5intable(ch) {
 							 placeholder="The safeguards practices may include information about the institution’s use of cookies or other measures it uses to 206 safeguard personal information. No more than 30 additional words" ></textarea>
 						</div>
 						<div class="form-group">
-							<label for="collect">12. How do you collect user's personal information? *(Choose exactly 5 options)</label>
+							<label for="collect">13. How do you collect user's personal information? *(Choose exactly 5 options)</label>
 							<div id="error-opt-12" style="display: none" >
 				    			<h5 style="color: red;">You must choose only 5 options</h5>
 			    			</div>
@@ -1173,7 +1184,7 @@ function disapearQ5intable(ch) {
 							
 						
                                <div class="form-group">
-								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
+								<label for="collectaffiliate">14. Do you collect information from affiliates and/or credit bureaus? *</label>
 								
 								<div id="error-opt-12" style="display: none" >
 				    				<h5 style="color: red;">You mush choose one option.</h5>
@@ -1206,7 +1217,7 @@ function disapearQ5intable(ch) {
 												});
 							</script>
 							<div class="form-group" style="display: none" id="isFromCompany">
-								<label for="isFromAff">14. Do you collect information from other companies? </label>
+								<label for="isFromAff">15. Do you collect information from other companies? </label>
 								<div class="radio">
 									<label> <input type="radio" name="isFromCompany" id="isFromCompany" value="yes"> Yes
 									</label>
@@ -1218,7 +1229,7 @@ function disapearQ5intable(ch) {
 							</div>
 							
 							<div class="form-group">
-								<label for="isPresentLaw">15. Would you like to refer to state privacy law provisions? 
+								<label for="isPresentLaw">16. Would you like to refer to state privacy law provisions? 
 								    (If choose yes, you should provide law details) *</label>
 								<div class="radio">
 									<label>
@@ -1257,7 +1268,7 @@ function disappearLawArea(ch) {
 }
 </script>
 							<div class="form-group" id="applyscope" style="display: none">
-								<label for="why">16. What happens when users limit sharing for an account that is jointly held with someone else?</label>
+								<label for="why">17. What happens when users limit sharing for an account that is jointly held with someone else?</label>
 								<div class="radio">
 									<label> <input type="radio" name="whatHappenWhenLimit"
 										value="Yourchoices apply to everyone on the account" checked> Your choices apply to everyone on the account
@@ -1270,17 +1281,6 @@ function disappearLawArea(ch) {
 								</div>
 							</div>
 
-	             <div class="form-group">
-						<label for="">17. Do you have affiliate? *</label>
-						<div class="radio">
-							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="yes"> Yes
-							</label>
-						</div>
-						<div class="radio">
-							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="no"> No
-							</label>
-						</div>
-					</div>
 
 					<script>
 						$("input[name='isAffiliateProgram']").change(function() {
