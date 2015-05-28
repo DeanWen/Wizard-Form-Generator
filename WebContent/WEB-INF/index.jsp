@@ -660,7 +660,7 @@ function disapearQ5intable(ch) {
 							<td class="centered-td"><select id="question5b" name="question5b" readonly="false"><option value="Yes"
 										id="share5">Yes</option>
 
-									<option value="No" id="noShare4">We do not share</option></select></td>
+									<option value="No" id="noShare5">We do not share</option></select></td>
 						</tr>
 					</tbody>
 				</table>
@@ -1270,7 +1270,7 @@ function disappearLawArea(ch) {
 							</div>
 
                     <c:choose>
-                        <c:when test="${}">
+                        <c:when test="$">
                         </c:when>
                     </c:choose>
 	                
