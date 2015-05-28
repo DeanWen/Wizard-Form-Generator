@@ -651,7 +651,7 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare6">We do not share</option></select></td>
 						</tr>
 						
-						<tr id="Q5" style="display: none;border-right: #ccc 1px solid">
+						<tr id="Q5" style="display: none;">
 							<td><strong>Does your organization share
 									information to affiliates for them marketing to your customers</strong>&mdash;
 							</td>
