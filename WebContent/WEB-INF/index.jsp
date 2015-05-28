@@ -4,7 +4,7 @@
 
 <script>
 	function validateForm() {
-		var sum = 0;
+		
 		if(document.getElementById('companyName').value==''){
 			document.getElementById('error-company').style.display = "block";
 			return false;
@@ -20,11 +20,7 @@
 		else{
 			document.getElementById('error-Date').style.display = "none";
 		}
-		
-		
-		
-		
-		
+
 		var sum1 = 0;
 		var checkboxes = document.getElementsByName('personalInfoType');
 		for (var i = 0; i < checkboxes.length; i++) {
@@ -54,69 +50,33 @@
 			</ul>
 			<h3 class="text-muted">Interactive Form Builder</h3>
 		</div>
+		
 		<div class="content">
 			<form role="form" method="post" onsubmit="return validateForm()">
 				<div class="form-group">
-					<label for="companyName">Enter the name of financial
-						institution</label> <input type="text" class="form-control"
-						name="companyName" id="companyName">
+					<label for="companyName">1. Enter the name of your financial institution: *</label> 
+					    <input type="text" class="form-control" name="companyName" id="companyName" />
 						<div id="error-company" style="display: none" >
 							<h5 style="color: red;">The field could not be empty</h5>
 						</div>
 				</div>
+				
 				<div class="form-group">
-					<label for="reviseDate">Enter last revised date</label> <input
-						type="text" class="form-control" name="reviseDate" id="reviseDate">
+					<label for="reviseDate">2. Enter last revised date (mm/yyyy)： *</label> 
+					    <input type="text" class="form-control" name="reviseDate" id="reviseDate" placeholder="Example： 05/2015" />
 						<div id="error-Date" style="display: none" >
 							<h5 style="color: red;">The field could not be empty</h5>
 						</div>
 				</div>
-				<label for="opt-out">What opt out communication methods will you offer? (At least one) *</label>
-				
-				<div id="error-opt-out" style="display: none">
-				<h5 style="color: red;">You must select at least one opt-out method.</h5>
-			</div>
-			<table style="width: 100%">
-				<tr>
-					<td width="15%"><input type="checkbox" name="opt-out" value="1" onclick="showPhone(this)"> Phone</td>
-					<td width="15%"><input type="checkbox" name="opt-out" value="2" onclick="showWebsite(this)"> Website</td>
-					<td width="15%"><input type="checkbox" name="opt-out" value="3" onclick="showMail(this)"> Mail-in</td>
-				</tr>
-			</table>
-			<br>
-<script>
-	function showPhone(ch) {
-		if (ch.checked) {
-			document.getElementById("phoneArea").style.display = "block";
-		} else {
-			document.getElementById("phoneArea").style.display = "none";
-		}
-	}
-	function showWebsite(ch) {
-		if (ch.checked) {
-			document.getElementById("websiteArea").style.display = "block";
-		} else {
-			document.getElementById("websiteArea").style.display = "none";
-		}
-	}
-	function showMail(ch) {
-		if (ch.checked) {
-			document.getElementById("mailArea").style.display = "block";
-		} else {
-			document.getElementById("mailArea").style.display = "none";
-		}
-	}
-</script>
-			
+							
 				
 				<div class="form-group">
-					<label for="companyName">What types of personal
-						information you collect and share besides Social Security Number? (Choose exactly 5)</label>
+					<label for="companyName">3. What types of personal information you collect and share? (Choose exactly 5)</label>
 						<div id="error-info-checkboxes" style="display: none">
 							<h5 style="color: red;">You need to select 6 options including SSN so only need to select 5 in total besides SSN</h5>
 						</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="ssn" value="social security number" checked
+						<label> <input type="checkbox" name="personalInfoType" value="social security number" checked
 							disabled> social security number
 						</label>
 					</div>
@@ -239,140 +199,100 @@
 							name="personalInfoType"> wire transfer instructions
 						</label>
 					</div>
+			</div>
 					
 					<div class="form-group">
-						<label for="">Do you have affiliate
-							program</label>
+						<label for="">4. Please select "Yes" if any of the following statement is true: *</label>
+						<ul>
+				            <li>Your organization does not have affiliates (or doesn't disclose personal information to its affiliates)</li>
+				            <li>Your affiliates(if you have any) do not use personal information in a manner that requires an opt-out</li>
+				            <li>Your organization provides the affiliate marketing notice separately.</li>
+			            </ul>
 						<div class="radio">
-							<label> <input type="radio" name="isAffiliateProgram"
-								id="isAffiliateProgram" value="yes"> Yes
+							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="yes" onclick="showQ5intable(this)"> Yes
 							</label>
 						</div>
 						<div class="radio">
-							<label> <input type="radio" name="isAffiliateProgram"
-								id="isAffiliateProgram" value="no"> No
-							</label>
-						</div>
-					</div>
-
-					<script>
-						$("input[name='isAffiliateProgram']").change(function() {
-
-							if ($(this).val() == "yes") {
-								$("#shareAffiliateProgram").show();
-							} else {
-								$("#shareAffiliateProgram").hide();
-							}
-
-						});
-					</script>
-
-					<div class="form-group" id="shareAffiliateProgram"
-						style="display: none">
-						<label for="">Do you share personal
-							information with affiliates?</label>
-						<div class="radio">
-							<label> <input type="radio" name="shareAffiliateProgram"
-								id="shareAffiliateProgram" value="yes"> Yes
-							</label>
-						</div>
-						<div class="radio">
-							<label> <input type="radio" name="shareAffiliateProgram"
-								id="shareAffiliateProgram" value="no"> No
+							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="no"> No
 							</label>
 						</div>
 					</div>
-					<script>
-						$("input[name='shareAffiliateProgram']").change(function() {
-
-							if ($(this).val() == "yes") {
-								$("#affiliateProgram").show();
-							} else {
-								$("#affiliateProgram").hide();
-							}
-
-						});
-					</script>
-					<div class="form-group" id="affiliateProgram"
-						style="display: none">
-						<label for="">Who are your
-							affiliates?</label>
-						<textarea class="form-control" rows="3"
-							name="affiliateProgram"></textarea>
-					</div>
+<script>
+    function showQ5intable(ch) {
+	if (ch.checked) {
+		alert('haha');
+	} else {
+		document.getElementById("Q5").style.display = "none";
+	}
+	
+    function showMethod(ch) {
+	if (ch.checked) {
+		document.getElementById("optmethod").style.display = "block";
+		document.getElementById("applyscope").style.display = "block";
+	} else {
+		document.getElementById("optmethod").style.display = "none";
+		document.getElementById("applyscope").style.display = "none";
+	}
+}
+	function showPhone(ch) {
+		if (ch.checked) {
+			document.getElementById("phoneArea").style.display = "block";
+		} else {
+			document.getElementById("phoneArea").style.display = "none";
+		}
+	}
+	function showWebsite(ch) {
+		if (ch.checked) {
+			document.getElementById("websiteArea").style.display = "block";
+		} else {
+			document.getElementById("websiteArea").style.display = "none";
+		}
+	}
+	function showMail(ch) {
+		if (ch.checked) {
+			document.getElementById("mailArea").style.display = "block";
+		} else {
+			document.getElementById("mailArea").style.display = "none";
+		}
+	}
+</script>
 					<div class="form-group">
-						<label for="">Do you share
-							information with non-affiliates?</label>
+					<label for="reviseDate">5. Does your organization provide opt-out service?</label> 
 						<div class="radio">
-							<label> <input type="radio"
-								name="shareNoneAffiliateProgram"
-								id="shareNoneAffiliateProgram" value="yes"> Yes
+							<label> <input type="radio" name="isoptout" id="isoptout" value="yes" onclick="showMethod(this)"> Yes
 							</label>
 						</div>
 						<div class="radio">
-							<label> <input type="radio"
-								name="shareNoneAffiliateProgram"
-								id="shareNoneAffiliateProgram" value="no"> No
+							<label> <input type="radio" name="isoptout" id="isoptout" value="no"> No
 							</label>
 						</div>
-					</div>
-					<script>
-						$("input[name='shareNoneAffiliateProgram']")
-								.change(function() {
-
-									if ($(this).val() == "yes") {
-										$("#noneAffiliateProgram").show();
-									} else {
-										$("#noneAffiliateProgram").hide();
-									}
-
-								});
-					</script>
-					<div class="form-group" id="noneAffiliateProgram"
-						style="display: none;">
-						<label for="noneAffiliateProgram">Who are your
-							non-affiliates?</label>
-						<textarea class="form-control" rows="3"
-							name="noneAffiliateProgram" id="noneAffiliateProgram"></textarea>
-					</div>
-					<div class="form-group">
-						<label for="isJointMarketing">Do you engage in joint
-							marketing?</label>
-						<div class="radio">
-							<label> <input type="radio" name="isJointMarketing"
-								id="isJointMarketing" value="yes"> Yes
-							</label>
+						<div id="error-Date" style="display: none" >
+							<h5 style="color: red;">You must choose one</h5>
 						</div>
-						<div class="radio">
-							<label> <input type="radio" name="isJointMarketing"
-								id="isJointMarketing" value="no"> No
-							</label>
-						</div>
-					</div>
-					<script>
-						$("input[name='isJointMarketing']").change(function() {
-
-							if ($(this).val() == "yes") {
-								$("#jointMarketing").show();
-							} else {
-								$("#jointMarketing").hide();
-							}
-
-						});
-					</script>
-					<div class="form-group" id="jointMarketing"
-						style="display: none;">
-						<label for="">Who are your joint
-							marketing partners?</label>
-						<textarea class="form-control" rows="3"
-							name="jointMarketing"></textarea>
-					</div>
-
-
-					<div class="content-row">
-				<h4>Please select Yes/No or we do not share depending if the
-					reason on the left column to share personal information is valid to
-					your organization.</h4>
+				</div>
+				
+				<div class="form-group" id="optmethod" style="display: none">
+					    <label for="opt-out">6. What opt-out methods will you offer? (At least one) *</label>
+				
+				<div id="error-opt-out" style="display: none">
+				    <h5 style="color: red;">You must select at least one opt-out method.</h5>
+			    </div>
+						<table style="width: 100%">
+				            <tr>
+					        <td width="15%"><input type="checkbox" name="opt-out" value="1" onclick="showPhone(this)"> Phone</td>
+					        <td width="15%"><input type="checkbox" name="opt-out" value="2" onclick="showWebsite(this)"> Website</td>
+					        <td width="15%"><input type="checkbox" name="opt-out" value="3" onclick="showMail(this)"> Mail-in</td>
+				            <td width="15%"><input type="checkbox" name="opt-out" value="2" onclick=""> Third Party Cookie Optout</td>
+				            <td width="15%"><input type="checkbox" name="opt-out" value="2" onclick=""> Do-Not-Track Plugin</td>
+				            
+				            </tr>
+			           </table>
+				</div>				
+			<br>
+	
+			<div class="content-row">
+				<h4>7. Please select Yes/No or we do not share depending if the reason on the left column to share personal information is valid to
+					your organization.*</h4>
 				<table border="0" class="table table-striped"
 					style="text-align: left"
 					summary="This 3-column table provides information about the reasons why Bank of America can share your personal information.">
@@ -385,8 +305,8 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><strong>Does your organization share
-									information for everyday business purposes? </strong>&mdash; Such as to
+							<td><strong>Does your organization share information for everyday business purposes? </strong>
+							&mdash; Such as to
 								process transactions, maintain customers account(s), respond to
 								court orders and legal investigations, or report to credit
 								bureaus</td>
@@ -404,8 +324,8 @@
 										value="Yes">Yes</option>
 									<option value="No">No</option></select></td>
 							<td class="centered-td"><select name="question1b"
-								id="question1b" readonly="false"><option value="Yes"
-										id="share1">Yes</option>
+								id="question1b" readonly="false">
+								     <option value="Yes" id="share1" >Yes</option>
 									<option value="No" id="no1">No</option>
 									<option value="No" id="noShare1">We do not share</option></select></td>
 						</tr>
@@ -452,36 +372,20 @@
 
 									<option value="No" id="noShare4">We do not share</option></select></td>
 						</tr>
-						<c:choose>
-							<c:when test="${hasAffiliates}">
-								<tr>
-									<td><strong><span id="optionalQuestion">Will
-												the affiliates market to your customers? </span></strong></td>
-									<td class="centered-td"><select id="question5"
-										name="question5" onchange="changeQ5()"><option
-												value="Yes">Yes</option>
-											<option value="No">No</option></select></td>
-									<td class="centered-td"><select id="question5b"
-										name="question5b" readonly="false"><option
-												value="Yes" id="share5">Yes</option>
-											<option value="No" id="noShare5">We do not share</option></select></td>
-								</tr>
-							</c:when>
-							<c:otherwise>
-								<tr style="display: none">
-									<td><strong><span id="optionalQuestion">Will
-												the affiliates market to your customers? </span></strong></td>
-									<td class="centered-td"><select id="question5"
-										name="question5" onchange="changeQ5()"><option
-												value="Yes">Yes</option>
-											<option value="No">No</option></select></td>
-									<td class="centered-td"><select id="question5b"
-										name="question5b" readonly="false"><option
-												value="Yes" id="share5">Yes</option>
-											<option value="No" id="noShare5">We do not share</option></select></td>
-								</tr>
-							</c:otherwise>
-						</c:choose>
+						
+						<tr id="Q5" style="display: none">
+							<td><strong>Does your organization share
+									information to affiliates for them marketing to your customers</strong>&mdash;
+							</td>
+							<td class="centered-td"><select id="question5"
+								name="question5" onchange="changeQ4()"><option
+										value="Yes">Yes</option>
+									<option value="No">No</option></select></td>
+							<td class="centered-td"><select id="question5b" name="question5b" readonly="false"><option value="Yes"
+										id="share4">Yes</option>
+
+									<option value="No" id="noShare4">We do not share</option></select></td>
+						</tr>						
 
 						<tr>
 							<td><strong>For nonaffiliates to market to you</strong></td>
@@ -766,22 +670,28 @@
 <br>
 
 
-					<div class="form-group">
-						<label for="phone">Enter your phone number</label> <input
-							type="tel" class="form-control" id="phone"
-							name="phone">
-					</div>
-
-					<div class="form-group">
-						<label for="website">Enter your website domain
-							name</label> <input type="url" class="form-control"
-							id="website" name="website">
-					</div>
-
-					<form role="form">
+		<div class="form-group" >
+			<label for="servicecontact">8. What customer service contact information will you provide (select at least one method)?</label>
+				<table style="width: 100%" >
+				<tr>
+					<td width="15%">
+					    <input name="contactMethod" id="phone1" type="checkbox" value="phone" /> Phone</td>
+					    
+					<td>
+					<input type="text" class="form-control" placeholder="Phone Number" id = "phoneText" name="phoneText"></td>
+				</tr>
+				<tr>
+					<td width="15%">
+					    <input name="contactMethod" type="checkbox" id="website1" value="website" /> Website</td>
+					    
+					<td>
+					    <input type="text" class="form-control" placeholder="Website Address" id = "websiteText" name="websiteText"></td>
+				</tr>
+			    </table>
+		</div>
+					
 						<div class="form-group">
-							<label for="twoOrMoreInstitute">Is this privacy policy
-								jointly provided by two or more financial institutions?</label>
+							<label for="twoOrMoreInstitute">9. Is this privacy policy jointly provided by two or more financial institutions?</label>
 							<div class="radio">
 								<label> <input type="radio" name="twoOrMoreInstitute"
 									id="twoOrMoreInstitute" value="yes"> Yes
@@ -806,17 +716,20 @@
 						</script>
 						<div class="form-group" id="whoseNotice"
 							style="display: none;">
-							<label for="whoseNotice">Who is providing this notice?</label> 
-							<input type="text" class="form-control" id="whoseNotice">
+							<label for="whoseNotice">9. Who is providing this notice?</label> 
+							<input type="text" class="form-control" id="whoseNotice" />
 						</div>
 						<div class="form-group">
-							<label for="howProtect">How do you protect user's personal
-								information?</label>
-							<textarea class="form-control" rows="3"></textarea>
+							<label for="howProtect">10. How do you protect user's personal information?</label>
+							<textarea class="form-control" rows="3" 
+							           placeholder="You may only provide additional information pertaining to its safeguards practices following the designated response to this question. 
+							                        Such information may include information about the institution’s use of cookies or other measures it uses to
+                                                    206 safeguard personal information. Institutions are limited to a maximum of 30 additional words
+							           ">
+							</textarea>
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">How do you collect
-								user's personal information?</label>
+							<label for="collect">11. How do you collect suser's personal information?</label>
 							<div class="checkbox">
 								<label> <input type="checkbox" name="collect" value="Open an account"> Open an account
 								</label>
@@ -955,24 +868,22 @@
 								<label> <input type="checkbox" name="collect" value="Order commodity futures or option trade"> Order commodity futures or option trade
 								</label>
 							</div>
-
-							<div class="form-group">
-								<label for="isFromAff">Do you collect information from affiliates and/or credit bureaus?</label>
+							
+						
+                               <div class="form-group">
+								<label for="collectaffiliate">12. Do you collect information from affiliates and/or credit bureaus?</label>
 								<div class="radio">
-									<label> <input type="radio"
-										name="isFromAff"
-										id="isFromAff" value="yes"> Yes
+									<label> <input type="radio" name="collectaffiliate" id="collectaffiliate" value="yes"> Yes
 									</label>
 								</div>
 								<div class="radio">
-									<label> <input type="radio"
-										name="isFromAff"
-										id="isFromAff" value="no"> No
+									<label> <input type="radio" name="collectaffiliate" id="collectaffiliate" value="no"> No
 									</label>
 								</div>
 							</div>
-							<script>
-								$("input[name='isFromAff']")
+                           
+                           <script>
+								$("input[name='collectaffiliate']")
 										.change(
 												function() {
 
@@ -988,61 +899,179 @@
 
 												});
 							</script>
-							<div class="form-group" id="isFromCompany"
-								style="display: none;">
-								<label for="exampleInputPassword1">Do you collect
-									information from companies?</label>
+							<div class="form-group">
+								<label for="isFromAff">13. Do you collect information from other companies?</label>
 								<div class="radio">
-									<label> <input type="radio" name="isFromCompany"
-										id="isFromCompany" value="yes" checked> Yes
+									<label> <input type="radio" name="isFromCompany" id="isFromCompany" value="yes"> Yes
 									</label>
 								</div>
 								<div class="radio">
-									<label> <input type="radio" name="isFromCompany"
-										id="isFromCompany" value="no2"> No
+									<label> <input type="radio" name="isFromCompany" id="isFromCompany" value="no"> No
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="isPresentLaw">14. Would you like to refer to state privacy law previous? 
+								    (If choose yes, you should provide law details)</label>
+								<div class="radio">
+									<label>
+									     <input type="radio" name="isPresentLaw" id="isPresentLaw" value="yes" > Yes
+									</label>
+								</div>
+								<div class="radio">
+									<label> 
+									    <input type="radio" name="isPresentLaw" id="isPresentLaw" value="no" onclick="showLawArea(ch)"> No
+									</label>
+								</div>
+								<div class="content-row" id="lawarea" style="display: none">
+								<label for="isPresentLaw">Please provide law details here:</label>
+								<div class="radio">
+									<label>
+					                    <textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+									</label>
+								</div>
+								
+							</div>
+
+<script>
+function showLawArea(ch) {
+	if (ch.checked) {
+		document.getElementById("lawarea").style.display = "block";
+	} else {
+		document.getElementById("lawarea").style.display = "none";
+	}
+</script>
+							<div class="form-group" id="applyscope" style="display: none">
+								<label for="why">15. What happens when users limit sharing for an account that is jointly held with someone else?</label>
+								<div class="radio">
+									<label> <input type="radio" name="whatHappenWhenLimit"
+										value="Yourchoices apply to everyone on the account" checked> Your choices apply to everyone on the account
+									</label>
+								</div>
+								<div class="radio">
+									<label> <input type="radio" name="whatHappenWhenLimit"
+										 value="Your choices will apply to everyone on the account - unless you tell us otherwise"> Your choices will apply to everyone on the account - unless you tell us otherwise
 									</label>
 								</div>
 							</div>
 
+	             <div class="form-group">
+						<label for="">16. Do you have affiliate</label>
+						<div class="radio">
+							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="yes"> Yes
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="no"> No
+							</label>
+						</div>
+					</div>
 
+					<script>
+						$("input[name='isAffiliateProgram']").change(function() {
+
+							if ($(this).val() == "yes") {
+								$("#shareAffiliateProgram").show();
+							} else {
+								$("#shareAffiliateProgram").hide();
+							}
+
+						});
+					</script>
+
+					<div class="form-group" id="shareAffiliateProgram"
+						style="display: none">
+						<label for="">17. Do you share personal information with affiliates?</label>
+						<div class="radio">
+							<label> <input type="radio" name="shareAffiliateProgram"
+								id="shareAffiliateProgram" value="yes"> Yes
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="shareAffiliateProgram"
+								id="shareAffiliateProgram" value="no"> No
+							</label>
+						</div>
+					</div>
+					<script>
+						$("input[name='shareAffiliateProgram']").change(function() {
+
+							if ($(this).val() == "yes") {
+								$("#affiliateProgram").show();
+							} else {
+								$("#affiliateProgram").hide();
+							}
+
+						});
+					</script>
+					<div class="form-group" id="affiliateProgram"
+						style="display: none">
+						<label for="">List your affiliates below?</label>
+						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="">18. Do you share information with non-affiliates?</label>
+						<div class="radio">
+							<label> <input type="radio" name="shareNoneAffiliateProgram"
+								id="shareNoneAffiliateProgram" value="yes"> Yes
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="shareNoneAffiliateProgram"
+								id="shareNoneAffiliateProgram" value="no"> No
+							</label>
+						</div>
+					</div>
+					<script>
+						$("input[name='shareNoneAffiliateProgram']")
+								.change(function() {
+
+									if ($(this).val() == "yes") {
+										$("#noneAffiliateProgram").show();
+									} else {
+										$("#noneAffiliateProgram").hide();
+									}
+
+								});
+					</script>
+					<div class="form-group" id="noneAffiliateProgram"
+						style="display: none;">
+						<label for="noneAffiliateProgram">Please list your non-affiliates below?</label>
+						<textarea class="form-control" rows="3"
+							name="noneAffiliateProgram" id="noneAffiliateProgram"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="isJointMarketing">19. Do you engage in joint marketing?</label>
+						<div class="radio">
+							<label> <input type="radio" name="isJointMarketing"
+								id="isJointMarketing" value="yes"> Yes
+							</label>
+						</div>
+						<div class="radio">
+							<label> <input type="radio" name="isJointMarketing" id="isJointMarketing" value="no"> No
+							</label>
+						</div>
+					</div>
+					<script>
+						$("input[name='isJointMarketing']").change(function() {
+
+							if ($(this).val() == "yes") {
+								$("#jointMarketing").show();
+							} else {
+								$("#jointMarketing").hide();
+							}
+
+						});
+					</script>
+					<div class="form-group" id="jointMarketing" style="display: none;">
+						<label for="">Please list your joint marketing partners below?</label>
+						<textarea class="form-control" rows="3" name="jointMarketing"></textarea>
+					</div>
 
 							<div class="form-group">
-								<label for="isPresentLaw">Are you going to describe state privacy
-									law previous in "Other important information" section?</label>
-								<div class="radio">
-									<label> <input type="radio" name="isPresentLaw"
-										id="isPresentLaw" value="yes" checked> Yes
-									</label>
-								</div>
-								<div class="radio">
-									<label> <input type="radio" name="isPresentLaw"
-										id="isPresentLaw" value="no"> No
-									</label>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="why">What happens when users limit sharing
-									for an account that is jointly held with someone else?</label>
-								<div class="radio">
-									<label> <input type="radio" name="optionsRadios"
-										id="optionsRadios1" value="option1" checked> Your
-										choices apply to everyone on the account
-									</label>
-								</div>
-								<div class="radio">
-									<label> <input type="radio" name="optionsRadios"
-										id="optionsRadios2" value="option2"> Your choices will
-										apply to everyone on the account - unless you tell us
-										otherwise
-									</label>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="exampleInputEmail1"> Provide information
-									about state laws below</label>
-								<textarea class="form-control" rows="10"></textarea>
+								<label for="stateLaw">20. Provide other information information</label>
+								<textarea name="stateLaw" class="form-control" rows="10"></textarea>
 							</div>
 
 
