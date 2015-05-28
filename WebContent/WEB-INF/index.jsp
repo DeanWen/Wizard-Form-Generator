@@ -381,11 +381,11 @@ function disapearQ5intable(ch) {
 			    </div>
 						<table style="width: 100%">
 				            <tr>
-					        <td width="15%"><input type="checkbox" name="opt-out" value="1" onclick="showPhone(this)"> Phone</td>
-					        <td width="15%"><input type="checkbox" name="opt-out" value="2" onclick="showWebsite(this)"> Website</td>
-					        <td width="15%"><input type="checkbox" name="opt-out" value="3" onclick="showMail(this)"> Mail-in</td>
-				            <td width="15%"><input type="checkbox" name="opt-out" value="2" onclick=""> Third Party Cookie Optout</td>
-				            <td width="15%"><input type="checkbox" name="opt-out" value="2" onclick=""> Do-Not-Track Plugin</td>
+					        <td width="15%"><input type="checkbox" name="opt_out" value="1" onclick="showPhone(this)"> Phone</td>
+					        <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="showWebsite(this)"> Website</td>
+					        <td width="15%"><input type="checkbox" name="opt_out" value="3" onclick="showMail(this)"> Mail-in</td>
+				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick=""> Third Party Cookie Optout</td>
+				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick=""> Do-Not-Track Plugin</td>
 				            
 				            </tr>
 			           </table>
@@ -710,7 +710,7 @@ function disapearQ5intable(ch) {
 						<td>City:</td>
 						<td>&nbsp;&nbsp;<input name="city" type="text" id="city"></td>
 						<td>Street:</td>
-						<td>&nbsp;&nbsp;<input name="Address" type="text" id="Address"></td>
+						<td>&nbsp;&nbsp;<input name="address" type="text" id="Address"></td>
 						
 					</tr>
 					<tr>
@@ -827,15 +827,14 @@ function disapearQ5intable(ch) {
 						<div class="form-group" id="whoseNotice"
 							style="display: none;">
 							<label for="whoseNotice">Who is providing this notice?</label> 
-							<input type="text" class="form-control" id="whoseNotice" />
+							<input type="text" class="form-control" id="whoseNotice" name ="whoseNotice"/>
 						</div>
 						<div class="form-group">
 							<label for="howProtect">11. How do you protect user's personal information? *</label>
-							<textarea class="form-control" rows="3" 
+							<textarea class="form-control" rows="3" name="howProtect"
 							           placeholder="You may only provide additional information pertaining to its safeguards practices following the designated response to this question. 
 							                        Such information may include information about the institution’s use of cookies or other measures it uses to
-                                                    206 safeguard personal information. Institutions are limited to a maximum of 30 additional words
-							           ">
+                                                    206 safeguard personal information. Institutions are limited to a maximum of 30 additional words" >
 							</textarea>
 						</div>
 						<div class="form-group">
@@ -1038,7 +1037,7 @@ function disapearQ5intable(ch) {
 								<label for="isPresentLaw">Please provide law details here:</label>
 								<div class="radio">
 									<label>
-					                    <textarea ="form-control"" rows="3" name="affiliateProgram"></textarea>
+					                    <textarea ="form-control"" rows="3" name="lawDetails"></textarea>
 									</label>
 								</div>
 								
