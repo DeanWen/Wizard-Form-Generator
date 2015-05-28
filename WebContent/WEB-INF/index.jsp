@@ -47,27 +47,55 @@
 		if(sum3<1)
 		{
 			document.getElementById("error-affiliatemarkettocus").style.display = "block";
+			return false;
 		}else
 		{
 			document.getElementById("error-affiliatemarkettocus").style.display = "none";
 		}
 		
 		
-		var sum2 = 0;
-		var checkboxes2 = document.getElementsByName('opt-out');
+		
+		
+		var sum4 = 0;
+		var checkboxes21 = document.getElementsByName('isoptout');
+		for (var i = 0; i < checkboxes21.length; i++) {
+			if (checkboxes21[i].checked) {
+				sum4++;
+			}
+		}
+		if(sum4<1)
+		{
+			document.getElementById("error-opt-outSuper").style.display = "block";
+			return false;		
+		}else
+		{
+			document.getElementById("error-opt-outSuper").style.display = "none";	
+		}
+		
+		
+		
+		
 		if(document.getElementById("optmethod").style.display == "block")
 		{
+			var checkboxes2 = document.getElementsByName('opt-out');
+			var sum2 = 0;
 			for (var i = 0; i < checkboxes2.length; i++) {
 				if (checkboxes2[i].checked) {
 					sum2++;
 				}
 			}
+			if(sum2<1)
+			{
+				document.getElementById("error-opt-out").style.display = "block";
+				return false;		
+			}
+			else
+			{
+				document.getElementById("error-opt-out").style.display = "none";
+			}
 		}
-		if(sum2<1)
-		{
-			document.getElementById("error-opt-out").style.display = "block";
-			return false;		
-		}
+		
+		
 	
 		
 	}
@@ -329,6 +357,9 @@ function disapearQ5intable(ch) {
 </script>
 					<div class="form-group">
 					<label for="reviseDate">5. Does your organization provide opt-out service? *</label> 
+					<div id="error-opt-outSuper" style="display: none" >
+				    	<h5 style="color: red;">You must select Yes or No.</h5>
+			    	</div>
 						<div class="radio">
 							<label> <input type="radio" name="isoptout" id="isoptout" value="yes" onclick="showMethod(this)"> Yes
 							</label>
