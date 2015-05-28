@@ -499,6 +499,24 @@ function disapearQ5intable(ch) {
 			
 		}
 	}
+	function show3Party(ch) {
+		if (ch.checked) {
+			document.getElementById("thirdPartyArea").style.display = "block";
+			
+		} else {
+			document.getElementById("thirdPartyArea").style.display = "none";
+			
+		}
+	}
+	function showDNTPlugin(ch) {
+		if (ch.checked) {
+			document.getElementById("dntplugin").style.display = "block";
+			
+		} else {
+			document.getElementById("dntplugin").style.display = "none";
+			
+		}
+	}
 </script>
 					<div class="form-group">
 					<label for="reviseDate">5. Does your organization provide opt-out service? *</label> 
@@ -529,8 +547,8 @@ function disapearQ5intable(ch) {
 					        <td width="15%"><input type="checkbox" name="opt_out" value="1" onclick="showPhone(this)"> Phone</td>
 					        <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="showWebsite(this)"> Website</td>
 					        <td width="15%"><input type="checkbox" name="opt_out" value="3" onclick="showMail(this)"> Mail-in</td>
-				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick=""> Third Party Cookie Optout</td>
-				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick=""> Do-Not-Track Plugin</td>
+				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="show3Party(this)"> Third Party Cookie Optout</td>
+				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="showDNTPlugin(this)"> Do-Not-Track Plugin</td>
 				            
 				            </tr>
 			           </table>
@@ -619,6 +637,19 @@ function disapearQ5intable(ch) {
 
 									<option value="No" id="noShare4">We do not share</option></select></td>
 						</tr>
+												
+
+						<tr>
+							<td><strong>For nonaffiliates to market to you</strong></td>
+							<td class="centered-td"><select id="question6"
+								name="question6" onchange="changeQ6()"><option
+										value="Yes">Yes</option>
+									<option value="No">No</option></select></td>
+							<td class="centered-td"><select id="question6b"
+								name="question6b" readonly="false"><option value="Yes"
+										id="share6">Yes</option>
+									<option value="No" id="noShare6">We do not share</option></select></td>
+						</tr>
 						
 						<tr id="Q5" style="display: none">
 							<td><strong>Does your organization share
@@ -632,18 +663,6 @@ function disapearQ5intable(ch) {
 										id="share5">Yes</option>
 
 									<option value="No" id="noShare4">We do not share</option></select></td>
-						</tr>						
-
-						<tr>
-							<td><strong>For nonaffiliates to market to you</strong></td>
-							<td class="centered-td"><select id="question6"
-								name="question6" onchange="changeQ6()"><option
-										value="Yes">Yes</option>
-									<option value="No">No</option></select></td>
-							<td class="centered-td"><select id="question6b"
-								name="question6b" readonly="false"><option value="Yes"
-										id="share6">Yes</option>
-									<option value="No" id="noShare6">We do not share</option></select></td>
 						</tr>
 					</tbody>
 				</table>
@@ -819,12 +838,11 @@ function disapearQ5intable(ch) {
 				<div id="errorWebsite" style="display: none">
 					<h5 style="color: red;">You must fill in the website for opt-out</h5>
 				</div>
-				<input type="text" class="form-control" placeholder="Website for opt-out" id="websitewebsite" name="optWebsite">
+				<input type="text" class="form-control" placeholder="Website for opt-out" id="optWebsite" name="optWebsite">
 			</div>
 			<br />
 		</div>
 		<br />
-		
 		
 		
 		<div class="content-row" id="mailArea" style="display: none">
@@ -918,6 +936,43 @@ function disapearQ5intable(ch) {
 		</div>
 		<br>
 
+        <div class="content-row" id="thirdPartyArea" style="display: none">
+			<div class="content-row">
+				<table class="table table-striped" style="text-align: left">
+					<tr>
+						<td ><h4>Third Party Cookie Optout</h4></td>
+					</tr>
+				</table>
+				<h4>What's the link for "third party cookie opt-out"? *</h4>
+				
+				
+				<div id="error3party" style="display: none">
+					<h5 style="color: red;">You must fill in the the link for opt-out</h5>
+				</div>
+				<input type="text" class="form-control" placeholder="Link for opt-out" id="3partycookie" name="3partycookie">
+			</div>
+			<br />
+		</div>
+		<br />
+		
+		<div class="content-row" id="dntplugin" style="display: none">
+			<div class="content-row">
+				<table class="table table-striped" style="text-align: left">
+					<tr>
+						<td ><h4>Do-Not-Track Plugin</h4></td>
+					</tr>
+				</table>
+				<h4>What's the link for "DNT Plugin"? *</h4>
+				
+				
+				<div id="errordnt" style="display: none">
+					<h5 style="color: red;">You must fill in the the link for opt-out</h5>
+				</div>
+				<input type="text" class="form-control" placeholder="Link for opt-out" id="dntoptout" name="dntoptout">
+			</div>
+			<br />
+		</div>
+		<br />
 		
 		<div class="content-row" id="begindate" style="display: none">
 			<label>8. How many days can you begin sharing new customer's
@@ -957,47 +1012,20 @@ function disapearQ5intable(ch) {
 		</div>
 					
 						<div class="form-group">
-							<label for="twoOrMoreInstitute">10. Is this privacy policy jointly provided by two or more financial institutions? *</label>
-							<div id="error-opt-10" style="display: none" >
-				    			<h5 style="color: red;">You must select Yes or No</h5>
-			    			</div>
-							<div class="radio">
-								<label> <input type="radio" name="twoOrMoreInstitute"
-									id="twoOrMoreInstitute" value="yes"> Yes
-								</label>
-							</div>
-							<div class="radio">
-								<label> <input type="radio" name="twoOrMoreInstitute"
-									id="twoOrMoreInstitute" value="no"> No
-								</label>
-							</div>
+							<label for="twoOrMoreInstitute">10. Please list the financial institutions that <strong>jointly</strong> provide this privacy policy. 
+							</label>
+							<textarea class="form-control"" rows="3" name="whoseNotice" 
+							placeholder="You can ommit this area if you are the only institution providing this notice; otherwise, jointly parties should be identified clearly." ></textarea>
+							
 						</div>
-						<script>
-							$("input[name='twoOrMoreInstitute']").change(function() {
-
-								if ($(this).val() == "yes") {
-									$("#whoseNotice").show();
-								} else {
-									$("#whoseNotice").hide();
-								}
-
-							});
-						</script>
-						<div class="form-group" id="whoseNotice"
-							style="display: none;">
-							<label for="whoseNotice">Who is providing this notice?</label> 
-							<input type="text" class="form-control" id="whoseNotice" name ="whoseNotice"/>
-						</div>
+					
 						<div class="form-group">
 							<label for="howProtect">11. How do you protect user's personal information? *</label>
 							<div id="error-opt-11" style="display: none" >
 				    			<h5 style="color: red;">Please type in your ways of protecting user's personal information</h5>
 			    			</div>
-							<textarea class="form-control" rows="3" name="howProtect" id="howToProtect"
-							           placeholder="You may only provide additional information pertaining to its safeguards practices following the designated response to this question. 
-							                        Such information may include information about the institution’s use of cookies or other measures it uses to
-                                                    206 safeguard personal information. Institutions are limited to a maximum of 30 additional words" >
-							</textarea>
+							<textarea class="form-control" rows="3" name="howProtect" 
+							 placeholder="The safeguards practices may include information about the institution’s use of cookies or other measures it uses to 206 safeguard personal information. No more than 30 additional words" ></textarea>
 						</div>
 						<div class="form-group">
 							<label for="collect">12. How do you collect user's personal information? *(Choose exactly 5 options)</label>
@@ -1148,7 +1176,7 @@ function disapearQ5intable(ch) {
 								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
 								
 								<div id="error-opt-12" style="display: none" >
-				    				<h5 style="color: red;">You must choose only 5 options</h5>
+				    				<h5 style="color: red;">You mush choose one option.</h5>
 			    				</div>	
 								<div class="radio">
 									<label> <input type="radio" name="collectaffiliate" id="collectaffiliate" value="yes"> Yes
@@ -1177,7 +1205,7 @@ function disapearQ5intable(ch) {
 
 												});
 							</script>
-							<div class="form-group">
+							<div class="form-group" style="display: none" id="isFromCompany">
 								<label for="isFromAff">14. Do you collect information from other companies? </label>
 								<div class="radio">
 									<label> <input type="radio" name="isFromCompany" id="isFromCompany" value="yes"> Yes
@@ -1190,7 +1218,7 @@ function disapearQ5intable(ch) {
 							</div>
 							
 							<div class="form-group">
-								<label for="isPresentLaw">15. Would you like to refer to state privacy law previous? 
+								<label for="isPresentLaw">15. Would you like to refer to state privacy law provisions? 
 								    (If choose yes, you should provide law details) *</label>
 								<div class="radio">
 									<label>
@@ -1206,7 +1234,7 @@ function disapearQ5intable(ch) {
 								<label for="isPresentLaw">Please provide law details here:</label>
 								<div class="radio">
 									<label>
-					                    <textarea ="form-control"" rows="3" name="lawDetails"></textarea>
+					                    <textarea class="form-control"" rows="3" name="lawDetails"></textarea>
 									</label>
 								</div>
 								
@@ -1243,7 +1271,7 @@ function disappearLawArea(ch) {
 							</div>
 
 	             <div class="form-group">
-						<label for="">17. Do you have affiliate</label>
+						<label for="">17. Do you have affiliate? *</label>
 						<div class="radio">
 							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="yes"> Yes
 							</label>
@@ -1268,7 +1296,7 @@ function disappearLawArea(ch) {
 
 					<div class="form-group" id="shareAffiliateProgram"
 						style="display: none">
-						<label for="">18. Do you share personal information with affiliates?</label>
+						<label for="">18. Do you share personal information with affiliates? *</label>
 						<div class="radio">
 							<label> <input type="radio" name="shareAffiliateProgram"
 								id="shareAffiliateProgram" value="yes"> Yes
@@ -1291,13 +1319,21 @@ function disappearLawArea(ch) {
 
 						});
 					</script>
-					<div class="form-group" id="affiliateProgram"
-						style="display: none">
-						<label for="">List your affiliates below?</label>
+					
+					<div class="form-group" id="affiliateProgram" style="display: none">
+					<label for="">Please list your affiliates you share with below? *</label>
+					<br/>
+						<label for="">Financial Companies:</label>
+						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+						
+						<label for="">Nonfinancial Companies</label>
+						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+						
+						<label for="">Others:</label>
 						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
 					</div>
 					<div class="form-group">
-						<label for="">19. Do you share information with non-affiliates?</label>
+						<label for="">19. Do you share information with non-affiliates? *</label>
 						<div class="radio">
 							<label> <input type="radio" name="shareNoneAffiliateProgram"
 								id="shareNoneAffiliateProgram" value="yes"> Yes
@@ -1324,14 +1360,13 @@ function disappearLawArea(ch) {
 					<div class="form-group" id="noneAffiliateProgram"
 						style="display: none;">
 						<label for="noneAffiliateProgram">Please list your non-affiliates below?</label>
-						<textarea class="form-control" rows="3"
-							name="noneAffiliateProgram" id="noneAffiliateProgram"></textarea>
+						<textarea class="form-control" rows="3" name="noneAffiliateProgram" id="noneAffiliateProgram"
+						 placeholder="Categories of companies, such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations"></textarea>
 					</div>
 					<div class="form-group">
 						<label for="isJointMarketing">20. Do you engage in joint marketing?</label>
 						<div class="radio">
-							<label> <input type="radio" name="isJointMarketing"
-								id="isJointMarketing" value="yes"> Yes
+							<label> <input type="radio" name="isJointMarketing" id="isJointMarketing" value="yes"> Yes
 							</label>
 						</div>
 						<div class="radio">
@@ -1352,16 +1387,13 @@ function disappearLawArea(ch) {
 					</script>
 					<div class="form-group" id="jointMarketing" style="display: none;">
 						<label for="">Please list your joint marketing partners below?</label>
-						<textarea class="form-control" rows="3" name="jointMarketing"></textarea>
+						<textarea class="form-control" rows="3" name="jointMarketing" placeholder="list categories of companies, such as credit card companies"></textarea>
 					</div>
 
 							<div class="form-group">
 								<label for="stateLaw">21. Provide other information information</label>
-								<textarea name="stateLaw" class="form-control" rows="12" 
-								          placeholder="Only the following types of information can appear in this box.
-                                                      (1) State and/or international privacy law information; and/or
-                                                      (2) Acknowledgment of receipt form." >
-								</textarea>
+								<textarea name="stateLaw" class="form-control" rows="8" 
+								          placeholder="Example: acknowledgment of receipt form." ></textarea>
 							</div>
 
 
