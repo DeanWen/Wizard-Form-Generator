@@ -72,18 +72,18 @@
 			document.getElementById("error-opt-outSuper").style.display = "none";	
 		}
 		
-		
-		
-		
 		if(document.getElementById("optmethod").style.display == "block")
 		{
-			var checkboxes2 = document.getElementsByName('opt-out');
+			var checkboxes2 = document.getElementsByName('opt_out');
 			var sum2 = 0;
 			for (var i = 0; i < checkboxes2.length; i++) {
+				
 				if (checkboxes2[i].checked) {
 					sum2++;
 				}
 			}
+		
+			
 			if(sum2<1)
 			{
 				document.getElementById("error-opt-out").style.display = "block";
@@ -94,6 +94,151 @@
 				document.getElementById("error-opt-out").style.display = "none";
 			}
 		}
+		
+		
+		////////////////////////////////////////////////////////////
+		
+		
+		if(document.getElementById("phoneArea").style.display == "block")	
+		{
+			if(document.getElementById("phonephone").value=='')
+			{
+				document.getElementById("errorPhone").style.display = "block";
+				return false;	
+			}
+			else
+			{
+				document.getElementById("errorPhone").style.display = "none";
+			}
+		}
+		
+		
+		if(document.getElementById("websiteArea").style.display == "block")	
+		{
+			if(document.getElementById("websitewebsite").value=='')
+			{
+				document.getElementById("errorWebsite").style.display = "block";
+				return false;	
+			}
+			else
+			{
+				document.getElementById("errorWebsite").style.display = "none";
+			}
+		}
+		
+		if(document.getElementById("mailArea").style.display == "block")	
+		{
+			
+			if(document.getElementById("city").value=='' || document.getElementById("Address").value=='' || document.getElementById("zipcode").value=='' )
+			{
+				document.getElementById("errorMail").style.display = "block";
+				return false;	
+			}
+			else
+			{
+				document.getElementById("errorMail").style.display = "none";
+			}
+		}
+		
+		
+		/////////////////////////////////////////////////////////////
+		
+		
+		if(document.getElementById("begindate").style.display == "block")	
+		{
+			
+			if(document.getElementById("numberOfDays").value=='')
+			{
+				document.getElementById("error-begindate").style.display = "block";
+				return false;	
+			}
+			else
+			{
+				document.getElementById("error-begindate").style.display = "none";
+			}
+			
+			if(document.getElementById("numberOfDays").value<30)
+			{
+				document.getElementById("error-begindate").style.display = "block";
+				return false;
+			}
+			else
+			{
+				document.getElementById("error-begindate").style.display = "none";	
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		var sum9 = 0;
+		var checkboxes9 =  document.getElementsByName ('contactMethod');
+		for (var i = 0; i < checkboxes9.length; i++) {
+			if (checkboxes9[i].checked) {
+				sum9++;
+			}
+		}
+		if(sum9<1)
+		{
+			document.getElementById("error-opt-contactMethod").style.display = "block";
+			return false;		
+		}else
+		{
+			document.getElementById("error-opt-contactMethod").style.display = "none";	
+		}
+		
+		
+		
+		var checkboxes10 = document.getElementsByName('twoOrMoreInstitute');
+		var sum10 = 0;
+		for (var i = 0; i < checkboxes10.length; i++) {
+			if (checkboxes10[i].checked) {
+				sum10++;
+			}
+		}
+		
+		if(sum10<1)
+		{
+			document.getElementById("error-opt-10").style.display = "block";
+			return false;		
+		}else
+		{
+			document.getElementById("error-opt-10").style.display = "none";	
+		}
+		
+		var checkboxes12 = document.getElementsByName('collect');
+		var sum12 = 0;
+		for (var i = 0; i < checkboxes12.length; i++) {
+			if (checkboxes12[i].checked) {
+				sum12++;
+			}
+		}
+		if(sum12!=5)
+		{
+			document.getElementById("error-opt-12").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-12").style.display = "none";
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	
@@ -138,7 +283,7 @@
 							
 				
 				<div class="form-group">
-					<label for="companyName">3. What types of personal information you collect and share? * (Choose exactly 5)</label>
+					<label for="companyName">3. What types of personal information you collect and share? * (Choose exactly 5 options)</label>
 						<div id="error-info-checkboxes" style="display: none">
 							<h5 style="color: red;">You need to select 6 options including SSN so only need to select 5 in total besides SSN</h5>
 						</div>
@@ -462,7 +607,7 @@ function disapearQ5intable(ch) {
 						</tr>
 						<tr>
 							<td><strong>Does your organization share
-									information for affiliates&rsquo; everyday business purposes? </strong>&mdash;
+									information for affiliates&rsquo; &rsquo;everyday business purposes? </strong>&mdash;
 								Information such as creditworthiness</td>
 							<td class="centered-td"><select id="question4"
 								name="question4" onchange="changeQ4()"><option
@@ -653,7 +798,7 @@ function disapearQ5intable(ch) {
 				</table>
 				<h4>What's your phone number for opt-out? *</h4>
 				<div id="errorPhone" style="display: none">
-					<h5 style="color: red;">The field could not be empty</h5>
+					<h5 style="color: red;">You must fill in the phone number for opt-out</h5>
 				</div>
 				<input type="text" class="form-control" placeholder="Phone number for opt-out" id="phonephone" name="optPhone">
 			</div>
@@ -669,8 +814,10 @@ function disapearQ5intable(ch) {
 					</tr>
 				</table>
 				<h4>What's your website for opt-out? *</h4>
+				
+				
 				<div id="errorWebsite" style="display: none">
-					<h5 style="color: red;">The field could not be empty</h5>
+					<h5 style="color: red;">You must fill in the website for opt-out</h5>
 				</div>
 				<input type="text" class="form-control" placeholder="Website for opt-out" id="websitewebsite" name="optWebsite">
 			</div>
@@ -678,13 +825,7 @@ function disapearQ5intable(ch) {
 		</div>
 		<br />
 		
-		<div class="content-row" id="begindate" style="display: none">
-			<label>8. How many days can you begin sharing new customer's
-				information from the date you sent the notice to the customer? *</label>
-			<br />
-			<input type="text" class="form-control" id="numberOfDays"
-				placeholder="No less than 30 days" name="numOfDays">
-		</div>
+		
 		
 		<div class="content-row" id="mailArea" style="display: none">
 			<div class="content-row" id="mailinForm">
@@ -703,7 +844,7 @@ function disapearQ5intable(ch) {
 				<br />
 				<h4>The mail-in opt-out form should be mailed to: *</h4>
 				<div id="errorMail" style="display: none">
-					<h5 style="color: red;">The field could not be empty</h5>
+					<h5 style="color: red;">Please fill in all the information</h5>
 				</div>
 				<table style="width: 100%">
 					<tr>
@@ -770,18 +911,33 @@ function disapearQ5intable(ch) {
 						</select>
 						</td>
 						<td>Zip:</td>
-						<td><input type="text" name="zipcode" id="zipcode"></td>
+						<td>&nbsp;&nbsp;<input type="text" name="zipcode" id="zipcode"></td>
 					</tr>
 				</table>
 			</div>
 		</div>
+		<br>
+
+		
+		<div class="content-row" id="begindate" style="display: none">
+			<label>8. How many days can you begin sharing new customer's
+				information from the date you sent the notice to the customer? *</label>
+			<br />
+			<div id="error-begindate" style="display: none" >
+				    	<h5 style="color: red;">Please fill in the days that is no less than 30</h5>
+			</div>
+			<input type="text" class="form-control" id="numberOfDays"
+				placeholder="No less than 30 days" name="numOfDays">
+		</div>
+
 
 <br>
-<br>
-
 
 		<div class="form-group" >
 			<label for="servicecontact">9. What customer service contact information will you provide (select at least one method)? *</label>
+					<div id="error-opt-contactMethod" style="display: none" >
+				    	<h5 style="color: red;">You must select at least one contact method</h5>
+			    	</div>
 				<table style="width: 100%" >
 				<tr>
 					<td width="15%">
@@ -802,6 +958,9 @@ function disapearQ5intable(ch) {
 					
 						<div class="form-group">
 							<label for="twoOrMoreInstitute">10. Is this privacy policy jointly provided by two or more financial institutions? *</label>
+							<div id="error-opt-10" style="display: none" >
+				    			<h5 style="color: red;">You must select Yes or No</h5>
+			    			</div>
 							<div class="radio">
 								<label> <input type="radio" name="twoOrMoreInstitute"
 									id="twoOrMoreInstitute" value="yes"> Yes
@@ -831,14 +990,20 @@ function disapearQ5intable(ch) {
 						</div>
 						<div class="form-group">
 							<label for="howProtect">11. How do you protect user's personal information? *</label>
-							<textarea class="form-control" rows="3" name="howProtect"
+							<div id="error-opt-11" style="display: none" >
+				    			<h5 style="color: red;">Please type in your ways of protecting user's personal information</h5>
+			    			</div>
+							<textarea class="form-control" rows="3" name="howProtect" id="howToProtect"
 							           placeholder="You may only provide additional information pertaining to its safeguards practices following the designated response to this question. 
 							                        Such information may include information about the institution’s use of cookies or other measures it uses to
                                                     206 safeguard personal information. Institutions are limited to a maximum of 30 additional words" >
 							</textarea>
 						</div>
 						<div class="form-group">
-							<label for="collect">12. How do you collect user's personal information? *</label>
+							<label for="collect">12. How do you collect user's personal information? *(Choose exactly 5 options)</label>
+							<div id="error-opt-12" style="display: none" >
+				    			<h5 style="color: red;">You must choose only 5 options</h5>
+			    			</div>
 							<div class="checkbox">
 								<label> <input type="checkbox" name="collect" value="Open an account"> Open an account
 								</label>
@@ -981,6 +1146,10 @@ function disapearQ5intable(ch) {
 						
                                <div class="form-group">
 								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
+								
+								<div id="error-opt-12" style="display: none" >
+				    				<h5 style="color: red;">You must choose only 5 options</h5>
+			    				</div>	
 								<div class="radio">
 									<label> <input type="radio" name="collectaffiliate" id="collectaffiliate" value="yes"> Yes
 									</label>
