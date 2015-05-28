@@ -268,7 +268,7 @@
 					<label for="companyName">1. Enter the name of your financial institution: *</label> 
 					    <input type="text" class="form-control" name="companyName" id="companyName" />
 						<div id="error-company" style="display: none" >
-							<h5 style="color: red;">The field could not be empty</h5>
+							<h5 style="color: red;">Please fill in your company's name</h5>
 						</div>
 				</div>
 				
@@ -276,7 +276,7 @@
 					<label for="reviseDate">2. Enter last revised date (mm/yyyy): *</label> 
 					    <input type="text" class="form-control" name="reviseDate" id="reviseDate" placeholder="Example: 05/2015" />
 						<div id="error-Date" style="display: none" >
-							<h5 style="color: red;">The field could not be empty</h5>
+							<h5 style="color: red;">Please fill in the revised date</h5>
 						</div>
 				</div>
 							
@@ -415,7 +415,7 @@
 					<div class="form-group">	
 						<label for="">4. Please select "Yes" if any of the following statement is true: *</label>
 						<div id="error-affiliatemarkettocus" style="display: none" >
-				    		<h5 style="color: red;">You must select at least one box.</h5>
+				    		<h5 style="color: red;">You must select Yes or No.</h5>
 			    		</div>
 						<ul>
 				            <li>Your organization does not have affiliates (or doesn't disclose personal information to its affiliates)</li>
@@ -434,7 +434,9 @@
 <script>
 function showQ5intable(ch) {
 	if (ch.checked) {
-		document.getElementById("Q5").style.display = "block";
+		
+		document.getElementById("Q5").style.display = "table-row";
+		
 	} else {
 		document.getElementById("Q5").style.display = "none";
 	}
@@ -562,7 +564,7 @@ function disapearQ5intable(ch) {
 					<thead>
 						<tr>
 							<th scope="col">Information</th>
-							<th scope="col">Does ${companyName} share?</th>
+							<th scope="col">Does your company share?</th>
 							<th scope="col">Can you limit this sharing?</th>
 						</tr>
 					</thead>
@@ -649,7 +651,7 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare6">We do not share</option></select></td>
 						</tr>
 						
-						<tr id="Q5" style="display: none">
+						<tr id="Q5" style="display: none;border-right: #ccc 1px solid">
 							<td><strong>Does your organization share
 									information to affiliates for them marketing to your customers</strong>&mdash;
 							</td>
@@ -661,6 +663,7 @@ function disapearQ5intable(ch) {
 										id="share5">Yes</option>
 
 									<option value="No" id="noShare5">We do not share</option></select></td>
+									
 						</tr>
 					</tbody>
 				</table>
@@ -948,7 +951,7 @@ function disapearQ5intable(ch) {
 				<div id="error3party" style="display: none">
 					<h5 style="color: red;">You must fill in the the link for opt-out</h5>
 				</div>
-				<input type="text" class="form-control" placeholder="Link for opt-out" id="3partycookie" name="thirdPartyCookie">
+				<input type="text" class="form-control" placeholder="Link for opt-out" id="thirdPartyCookie" name="thirdPartyCookie">
 			</div>
 			<br />
 		</div>
