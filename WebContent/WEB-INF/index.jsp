@@ -948,7 +948,7 @@ function disapearQ5intable(ch) {
 				<div id="error3party" style="display: none">
 					<h5 style="color: red;">You must fill in the the link for opt-out</h5>
 				</div>
-				<input type="text" class="form-control" placeholder="Link for opt-out" id="3partycookie" name="3partycookie">
+				<input type="text" class="form-control" placeholder="Link for opt-out" id="3partycookie" name="thirdPartyCookie">
 			</div>
 			<br />
 		</div>
