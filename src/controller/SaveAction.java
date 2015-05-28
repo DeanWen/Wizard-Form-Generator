@@ -6,8 +6,6 @@ package controller;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
-
 import org.mybeans.form.FormBeanException;
 import org.mybeans.form.FormBeanFactory;
 
@@ -43,58 +41,73 @@ public class SaveAction extends Action {
 			QuestionairBean bean = new QuestionairBean();
 			bean.setCompanyName(form.getCompanyName());
 			bean.setReviseDate(form.getReviseDate());
-			ArrayList<String> list = new ArrayList<String>();
 			if (request.getParameterValues("personalInfoType") != null) {
 				String[] vals = request.getParameterValues("personalInfoType");
-			    for(String v : vals){
-			    	list.add(v);
-			    }
+				bean.setPersonalInfoType(vals);
+			}
+		    bean.setAffiliatemarkettocus(form.getAffiliatemarkettocus());
+		    bean.setIsoptout(form.getIsoptout());
+		    if(bean.getIsoptout().equalsIgnoreCase("yes")) {
+				if (request.getParameterValues("opt_out") != null) {
+					String[] vals = request.getParameterValues("opt_out");
+					bean.setOpt_out(vals);
+				}
+		    }
+		    bean.setQuestion1(form.getQuestion1());
+		    bean.setQuestion1b(form.getQuestion1b());
+		    bean.setQuestion2(form.getQuestion2());
+		    bean.setQuestion2b(form.getQuestion2b());
+		    bean.setQuestion3(form.getQuestion3());
+		    bean.setQuestion3b(form.getQuestion3b());
+		    bean.setQuestion4(form.getQuestion4());
+		    bean.setQuestion4b(form.getQuestion4b());
+		    bean.setQuestion5(form.getQuestion5());
+		    bean.setQuestion5b(form.getQuestion5b());
+		    bean.setQuestion6(form.getQuestion6());
+		    bean.setQuestion6b(form.getQuestion6b());
+		    
+		    bean.setNumOfDays(form.getNumOfDays());
+		    bean.setOptPhone(form.getOptPhone());
+		    bean.setOptWebsite(form.getOptWebsite());
+		    bean.setTwoOrMoreInstitute(form.getTwoOrMoreInstitute());
+		    bean.setHowProtect(form.getHowProtect());
+		    
+			if (request.getParameterValues("collect") != null) {
+				String[] vals = request.getParameterValues("collect");
+				bean.setCollect(vals);
 			}
 			
-//			bean.setPersonalInfoType(list);
-//			bean.setAffiliateProgram(form.isAffiliateProgram());
-//			bean.setShareAffiliateProgram(form.isShareAffiliateProgram());
-//			if (bean.isShareAffiliateProgram().equalsIgnoreCase("yes")) {
-//				bean.setAffiliateProgram(form.getAffiliateProgram());
-//			}
-//			bean.setShareNoneAffiliateProgram(form.isShareNoneAffiliateProgram());
-//			if (bean.isShareNoneAffiliateProgram().equalsIgnoreCase("yes")) {
-//				bean.setNoneAffiliateProgram(form.getNoneAffiliateProgram());
-//			}
-//			bean.setJointMarketing(form.isJointMarketing());
-//			if (bean.isJointMarketing().equalsIgnoreCase("yes")) {
-//				bean.setJointMarketing(form.getJointMarketing());
-//			}
-//			boolean[] dysVals = request.getParameterValues("doYouShare");
-//			bean.setDoYouShare(dysVals);
-//			boolean[] cmlVals = request.getParameterValues("customerLimit");
-//			bean.setDoYouShare(cmlVals);
-//			
-//			bean.setPhone(form.getPhone());
-//			bean.setWebsite(form.getWebsite());
-//			bean.setTwoOrMoreInstitute(form.isTwoOrMoreInstitute());
-//			if (bean.isTwoOrMoreInstitute()) {
-//				bean.setWhoseNotice(form.getWhoseNotice());
-//			}
-//			bean.setHowProtect(form.getHowProtect());
-//			
-//			ArrayList<String> clist = new ArrayList<String>();
-//			String[] cVals = request.getParameterValues("collect");
-//		    for(String v : cVals){
-//		    	clist.add(v);
-//		    }
-//		    bean.setCollect(clist);
-//		    
-//		    bean.setFromAff(form.isFromAff());
-//		    if (!bean.isFromAff()) {
-//		    	bean.setFromCompany(form.isFromCompany());
-//		    }
-//		    
-//		    bean.setPresentLaw(form.isPresentLaw());
-//		    bean.setWhatHappenWhenLimit(form.getWhatHappenWhenLimit());
-//		    bean.setStateLaw(form.getStateLaw());
-//		    
-//		    request.setAttribute("bean", bean);
+			bean.setCollectaffiliate(form.getCollectaffiliate());
+			bean.setIsFromCompany(form.getIsFromCompany());
+			bean.setIsPresentLaw(form.getIsPresentLaw());
+			if (bean.getIsPresentLaw().equalsIgnoreCase("yes")) {
+				bean.setLawDetails(form.getLawDetails());
+			}
+			bean.setWhatHappenWhenLimit(form.getWhatHappenWhenLimit());
+			bean.setIsAffiliateProgram(form.getIsAffiliateProgram());
+			if (bean.getIsAffiliateProgram().equalsIgnoreCase("yes")) {
+				bean.setShareAffiliateProgram(form.getShareAffiliateProgram());
+				if (bean.getShareAffiliateProgram().equalsIgnoreCase("yes")) {
+					bean.setAffiliateProgram(form.getAffiliateProgram());
+				}
+			}
+			
+			bean.setShareNoneAffiliateProgram(form.getShareNoneAffiliateProgram());
+		    if (bean.getShareNoneAffiliateProgram().equalsIgnoreCase("yes")) {
+		    	bean.setNoneAffiliateProgram(form.getNoneAffiliateProgram());
+		    }
+		    
+		    bean.setIsJointMarketing(form.getIsJointMarketing());
+		    if (bean.getIsJointMarketing().equalsIgnoreCase("yes")) {
+		    	bean.setJointMarketing(form.getJointMarketing());
+		    }
+		   
+		    bean.setStateLaw(form.getStateLaw());
+		    if (bean.getLawDetails() != null && !bean.getLawDetails().equalsIgnoreCase("-1")) {
+		    	bean.setStateLaw(bean.getLawDetails() + bean.getStateLaw());
+		    }
+		    
+		    request.setAttribute("bean", bean);
 		    
 		    Gson gson = new Gson();
 		    
