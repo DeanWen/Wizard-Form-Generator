@@ -37,7 +37,46 @@
 			document.getElementById("error-info-checkboxes").style.display = "none";
 		}
 		
+		var sum3 = 0;
+		var checkboxes3 = document.getElementsByName('affiliatemarkettocus');
+		for (var i = 0; i < checkboxes3.length; i++) {
+			if (checkboxes3[i].checked) {
+				sum3++;
+			}
+		}
+		if(sum3<1)
+		{
+			document.getElementById("error-affiliatemarkettocus").style.display = "block";
+		}else
+		{
+			document.getElementById("error-affiliatemarkettocus").style.display = "none";
+		}
+		
+		
+		var sum2 = 0;
+		var checkboxes2 = document.getElementsByName('opt-out');
+		if(document.getElementById("optmethod").style.display == "block")
+		{
+			for (var i = 0; i < checkboxes2.length; i++) {
+				if (checkboxes2[i].checked) {
+					sum2++;
+				}
+			}
+		}
+		if(sum2<1)
+		{
+			document.getElementById("error-opt-out").style.display = "block";
+			return false;		
+		}
+	
+		
 	}
+	
+	
+	
+	
+	
+	
 </script>
 
 <body>
@@ -202,7 +241,11 @@
 			</div>
 					
 					<div class="form-group">
+						
 						<label for="">4. Please select "Yes" if any of the following statement is true: *</label>
+						<div id="error-affiliatemarkettocus" style="display: none" >
+				    		<h5 style="color: red;">You must select at least one box.</h5>
+			    		</div>
 						<ul>
 				            <li>Your organization does not have affiliates (or doesn't disclose personal information to its affiliates)</li>
 				            <li>Your affiliates(if you have any) do not use personal information in a manner that requires an opt-out</li>
@@ -302,7 +345,7 @@ function disapearQ5intable(ch) {
 				<div class="form-group" id="optmethod" style="display: none">
 					    <label for="opt-out">6. What opt-out methods will you offer? (At least one) *</label>
 				
-				<div id="error-opt-out" >
+				<div id="error-opt-out" style="display: none" >
 				    <h5 style="color: red;">You must select at least one opt-out method.</h5>
 			    </div>
 						<table style="width: 100%">
