@@ -63,7 +63,7 @@
 				</div>
 				
 				<div class="form-group">
-					<label for="reviseDate">2. Enter last revised date (mm/yyyy)： *</label> 
+					<label for="reviseDate">2. Enter last revised date (MM/YYYY)： *</label> 
 					    <input type="text" class="form-control" name="reviseDate" id="reviseDate" placeholder="Example： 05/2015" />
 						<div id="error-Date" style="display: none" >
 							<h5 style="color: red;">The field could not be empty</h5>
