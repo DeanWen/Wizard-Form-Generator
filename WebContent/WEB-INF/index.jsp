@@ -1404,7 +1404,7 @@ function disappearLawArea(ch) {
 					</div>   
 
 							<div class="form-group">
-								<label for="stateLaw">20. Please provide other information information.*</label>
+								<label for="stateLaw">20. Please provide other important information.*</label>
 								<textarea name="stateLaw" class="form-control" rows="7" 
 								          placeholder="Example: acknowledgment of receipt form." ></textarea>
 							</div>
