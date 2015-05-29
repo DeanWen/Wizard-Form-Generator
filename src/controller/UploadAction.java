@@ -83,6 +83,6 @@ public class UploadAction extends Action {
 			e.printStackTrace();
 		}
 		
-		return "index.do";
+		return "upload.jsp";
 	}
 }

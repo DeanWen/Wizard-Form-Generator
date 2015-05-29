@@ -104,7 +104,7 @@ public class PreviewAction extends Action {
 		    }
 		    
 		    request.setAttribute("bean", bean);
-		    return "result.jsp";
+		
 		} catch (FormBeanException e1) {
 			e1.printStackTrace();
 		}

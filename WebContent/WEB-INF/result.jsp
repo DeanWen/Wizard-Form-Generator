@@ -18,6 +18,7 @@
    .mail-addr-details {width: 50%; border-left: 1px solid #80B2CC; border-right: 1px solid #80B2CC; } .mail-addr-mailto {width: 25%; } </style> 
  </head> 
  <body> 
+ <a onclick="this.href='data:text/html;charset=UTF-8,'+encodeURIComponent(document.documentElement.outerHTML)" href="#" download="page.html">Download</a>
  <c:set var = "bean" value = "${bean}" />
   <div> 
    <h2 class="cpn-header">U.S. Consumer Privacy Notice</h2> 
@@ -155,7 +156,7 @@
          <li>Call ${bean.optPhone} - our menu will prompt you through your choice(s) or</li>
          </c:when>
           <c:when test = "${bean.optWebsite != '-1'}">
-         <li>Visit us online: ${bean.optWebsite}</li>
+         <li>Visit us online: <a href = "${bean.optWebsite}"> ${bean.optWebsite} </a></li>
          </c:when>
          <c:when test = "${bean.city != '-1'}">
 			<li>Mail the form below</li>
@@ -186,8 +187,8 @@
         <c:when test = "${bean.phoneText != '-1'}">
         	Call ${bean.phoneText}
         	<c:choose>
-        	<c:when test = "${bean.websiteText != '-1'}">
-        	or go to ${bean.websiteText}
+        	<c:when test = "${bean.websiteText != '-1' && bean.websiteText != ''}">
+        	or go to <a href = "${bean.websiteText}">${bean.websiteText} </a>
         	</c:when>
         	</c:choose>
         </c:when>
@@ -423,7 +424,7 @@
 											<strong>Mail To:</strong>
 										</p>
 										<p>
-											cmu<br />fan<br />is <br />SC smart
+										 ${bean.companyName }<br /> ${ bean.address}<br />${bean.city } ${bean.state } ${bean.zipcode }
 										</p>
 									</td>
 								</tr>
