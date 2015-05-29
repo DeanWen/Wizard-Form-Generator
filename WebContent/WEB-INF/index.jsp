@@ -693,19 +693,6 @@ function disapearQ5intable(ch) {
 
 									<option value="No" id="noShare4">We do not share</option></select></td>
 						</tr>
-												
-
-						<tr>
-							<td><strong>For nonaffiliates to market to you</strong></td>
-							<td class="centered-td"><select id="question6"
-								name="question6" onchange="changeQ6()"><option
-										value="Yes">Yes</option>
-									<option value="No">No</option></select></td>
-							<td class="centered-td"><select id="question6b"
-								name="question6b" readonly="false"><option value="Yes"
-										id="share6">Yes</option>
-									<option value="No" id="noShare6">We do not share</option></select></td>
-						</tr>
 						
 						<tr id="Q5" style="display: none;">
 							<td><strong>Does your organization share
@@ -720,7 +707,21 @@ function disapearQ5intable(ch) {
 
 									<option value="No" id="noShare5">We do not share</option></select></td>
 									
+						</tr>					
+
+						<tr>
+							<td><strong>For nonaffiliates to market to you</strong></td>
+							<td class="centered-td"><select id="question6"
+								name="question6" onchange="changeQ6()"><option
+										value="Yes">Yes</option>
+									<option value="No">No</option></select></td>
+							<td class="centered-td"><select id="question6b"
+								name="question6b" readonly="false"><option value="Yes"
+										id="share6">Yes</option>
+									<option value="No" id="noShare6">We do not share</option></select></td>
 						</tr>
+						
+						
 					</tbody>
 				</table>
 			</div>
