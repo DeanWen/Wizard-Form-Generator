@@ -395,6 +395,8 @@
     </div>
    </div>
    
+   <c:choose>
+   <c:when test = "${bean.city != '-1'}">
    		<div class="content-section">
 			<div class="content-row">
 				<h3>Mail-in Form</h3>
@@ -447,6 +449,8 @@
 				</table>
 			</div>
 		</div>
+		</c:when>
+		</c:choose>
   </div>  
  </body>
 </html>

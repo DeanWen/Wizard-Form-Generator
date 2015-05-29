@@ -17,7 +17,6 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
-
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
@@ -78,6 +77,7 @@ public class UploadAction extends Action {
 				QuestionairBean bean = new QuestionairBean();
 				bean = gson.fromJson(reader, QuestionairBean.class);
 				request.setAttribute("uploadBean", bean);
+				request.setAttribute("json", json);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
