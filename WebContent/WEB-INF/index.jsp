@@ -254,9 +254,9 @@
 				sum13++;
 			}
 		}
-		if(sum13!=5)
+		if(sum13<1)
 		{
-			alert('haha');
+			
 			document.getElementById("error-opt-13").style.display = "block";
 			return false;
 		}
@@ -264,6 +264,29 @@
 		{
 			document.getElementById("error-opt-13").style.display = "none";
 		}
+		
+		var checkboxes14 = document.getElementsByName('isFromCompany');
+		var sum14 = 0;
+		for (var i = 0; i < checkboxes14.length; i++) {
+			if (checkboxes14[i].checked) {
+				sum14++;
+			}
+		}
+		if(sum14<1)
+		{
+			
+			document.getElementById("error-opt-14").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-14").style.display = "none";
+		}
+		
+		
+		
+		
+		
 		
 		
 		
@@ -1211,7 +1234,7 @@ function disapearQ5intable(ch) {
 								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
 								
 								<div id="error-opt-13" style="display: none" >
-				    				<h5 style="color: red;">You mush choose one option.</h5>
+				    				<h5 style="color: red;">Please choose one option.</h5>
 			    				</div>	
 								<div class="radio">
 									<label> <input type="radio" name="collectaffiliate" id="collectaffiliate" value="yes"> Yes
@@ -1242,6 +1265,9 @@ function disapearQ5intable(ch) {
 							</script>
 							<div class="form-group" style="display: none" id="isFromCompany">
 								<label for="isFromAff">14. Do you collect information from other companies? </label>
+								<div id="error-opt-14" style="display: none" >
+				    				<h5 style="color: red;">Please choose one option.</h5>
+			    				</div>	
 								<div class="radio">
 									<label> <input type="radio" name="isFromCompany" id="isFromCompany" value="yes"> Yes
 									</label>
@@ -1311,13 +1337,13 @@ function disappearLawArea(ch) {
 					<label for="">17. Please list your affiliates you share with below? *</label>
 					<br/>
 						<label for="">Financial Companies:</label>
-						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+						<textarea class="form-control" rows="3" name="affiliate"></textarea>
 						
 						<label for="">Nonfinancial Companies</label>
-						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+						<textarea class="form-control" rows="3" name="noneaffiliate"></textarea>
 						
 						<label for="">Others:</label>
-						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+						<textarea class="form-control" rows="3" name="others"></textarea>
 					</div>
 					
 					<div class="form-group" id="noneAffiliateProgram" >
