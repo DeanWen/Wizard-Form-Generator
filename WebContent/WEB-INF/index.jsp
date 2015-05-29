@@ -734,7 +734,7 @@ function disapearQ5intable(ch) {
 						
 						<tr id="Q5" style="display: none;">
 							<td><strong>(6)Does your organization share
-									information to affiliates for them marketing to your customers</strong>&mdash;
+									information to affiliates for them marketing to your customers</strong>
 							</td>
 							<td class="centered-td">
 							    <select id="question5" name="question5" onchange="changeQ5()">
@@ -1122,7 +1122,7 @@ function disapearQ5intable(ch) {
 				    			<h5 style="color: red;">Please type in your ways of protecting user's personal information</h5>
 			    			</div>
 							<textarea id="protectWay" class="form-control" rows="3" name="howProtect" 
-							 placeholder="The safeguards practices may include information about the institution’s use of cookies or other measures it uses to 206 safeguard personal information. No more than 30 additional words" ></textarea>
+							 placeholder="The safeguards practices may include information about the institutions&rsquo; use of cookies or other measures it uses to safeguard personal information. No more than 30 additional words" ></textarea>
 						</div>
 						<div class="form-group">
 							<label for="collect">12. How do you collect user's personal information? *(Choose exactly 5 options)</label>
