@@ -273,8 +273,8 @@
 				</div>
 				
 				<div class="form-group">
-					<label for="reviseDate">2. Enter last revised date (MM/YYYY)： *</label> 
-					    <input type="text" class="form-control" name="reviseDate" id="reviseDate" placeholder="Example： 05/2015" />
+					<label for="reviseDate">2. Enter last revised date (mm/yyyy): *</label> 
+					    <input type="text" class="form-control" name="reviseDate" id="reviseDate" placeholder="Example: 05/2015" />
 						<div id="error-Date" style="display: none" >
 							<h5 style="color: red;">The field could not be empty</h5>
 						</div>
@@ -517,7 +517,7 @@ function disapearQ5intable(ch) {
 	}
 </script>
 					<div class="form-group">
-					<label for="reviseDate">6. Does your organization provide opt-out service? *</label> 
+					<label for="reviseDate">5. Does your organization provide opt-out service? *</label> 
 					<div id="error-opt-outSuper" style="display: none" >
 				    	<h5 style="color: red;">You must select Yes or No.</h5>
 			    	</div>
@@ -535,7 +535,7 @@ function disapearQ5intable(ch) {
 				</div>
 				
 				<div class="form-group" id="optmethod" style="display: none">
-					    <label for="opt-out">7. What opt-out methods will you offer? (At least one) *</label>
+					    <label for="opt-out">6. What opt-out methods will you offer? (At least one) *</label>
 				
 				<div id="error-opt-out" style="display: none" >
 				    <h5 style="color: red;">You must select at least one opt-out method.</h5>
@@ -554,8 +554,8 @@ function disapearQ5intable(ch) {
 			<br>
 	
 			<div class="content-row">
-				<h4>8. Please select Yes/No or we do not share depending if the reason on the left column to share personal information is valid to
-					your organization.*</h4>
+				<label>7. Please select Yes/No or we do not share depending if the reason on the left column to share personal information is valid to
+					your organization.*</label>
 				<table border="0" class="table table-striped"
 					style="text-align: left"
 					summary="This 3-column table provides information about the reasons why Bank of America can share your personal information.">
@@ -689,10 +689,6 @@ function disapearQ5intable(ch) {
 			document.getElementById("share1").disabled = "true";
 			//document.getElementById("question1b").disabled = "true";
 		} else {
-			document.getElementById("question1b").disabled = false;
-		}
-
-		if (myselect == "Yes") {
 			document.getElementById("share1").disabled = false;
 			document.getElementById("share1").selected = "true";
 			document.getElementById("noShare1").disabled = "true";
@@ -700,7 +696,7 @@ function disapearQ5intable(ch) {
 
 		}
 	}
-	function changeQ2() {
+	function changeQ2() {                                                
 		var myselect = document.getElementById("question2").value;
 
 		if (myselect == "No") {
@@ -712,11 +708,6 @@ function disapearQ5intable(ch) {
 			//document.getElementById("question1b").disabled = "true";
 			document.getElementById("jointMarketing").style.display = "none";
 		} else {
-			document.getElementById("question2b").disabled = false;
-			document.getElementById("jointMarketing").style.display = "block";
-		}
-
-		if (myselect == "Yes") {
 			document.getElementById("share2").disabled = false;
 			document.getElementById("share2").selected = "true";
 			document.getElementById("noShare2").disabled = "true";
@@ -724,8 +715,11 @@ function disapearQ5intable(ch) {
 			document.getElementById("jointMarketing").style.display = "block";
 		}
 	}
-	function changeQ3() {
+	function changeQ3() {     
 		var myselect = document.getElementById("question3").value;
+		var ans4 = document.getElementById("question4").value;
+		var ans5 = document.getElementById("question5").value;
+		
 
 		if (myselect == "No") {
 			document.getElementById("noShare3").selected = "true";
@@ -734,20 +728,24 @@ function disapearQ5intable(ch) {
 
 			document.getElementById("share3").disabled = "true";
 			//document.getElementById("question1b").disabled = "true";
-		} else {
-			document.getElementById("question3b").disabled = false;
-		}
-
-		if (myselect == "Yes") {
+			
+		} else{
 			document.getElementById("share3").disabled = false;
 			document.getElementById("share3").selected = "true";
 			document.getElementById("noShare3").disabled = "true";
 			document.getElementById("no3").disabled = false;
 
+		} 
+		if (myselect == "No" && ans4 == "No" && ans5 == "No" ) { 
+			alert(ans4+ ans5 + myselect +"haha" );
+			
+			document.getElementById("affiliateProgram").style.display = "none";
 		}
 	}
 	function changeQ4() {
 		var myselect = document.getElementById("question4").value;
+		var ans3 = document.getElementById("question3").value;
+		var ans5 = document.getElementById("question5").value;
 
 		if (myselect == "No") {
 			document.getElementById("noShare4").selected = "true";
@@ -756,35 +754,40 @@ function disapearQ5intable(ch) {
 
 			document.getElementById("share4").disabled = "true";
 			//document.getElementById("question1b").disabled = "true";
+			document.getElementById("affiliateProgram").style.display = "block";
 		} else {
-			document.getElementById("question4b").disabled = false;
-		}
-
-		if (myselect == "Yes") {
 			document.getElementById("share4").disabled = false;
 			document.getElementById("share4").selected = "true";
 			document.getElementById("noShare4").disabled = "true";
 			//document.getElementById("no4").disabled = false;
 
 		}
+		if (myselect == "No" && ans3 == "No" && ans5 == "No") { 
+			alert(ans3+ ans5 + myselect +"haha" );
+			document.getElementById("affiliateProgram").style.display = "none";
+		}
 	}
 	function changeQ5() {
 		var myselect = document.getElementById("question5").value;
+		var ans3 = document.getElementById("question3").value;
+		var ans4 = document.getElementById("question4").value;
+		
 		if (myselect == "No") {
 			document.getElementById("noShare5").selected = "true";
 			document.getElementById("noShare5").disabled = false;
 			document.getElementById("share5").disabled = "true";
 			//document.getElementById("question5b").disabled = "true";
+			document.getElementById("affiliateProgram").style.display = "block";
 		} else {
-			document.getElementById("question5b").disabled = false;
-		}
-
-		if (myselect == "Yes") {
 			document.getElementById("share5").disabled = false;
 			document.getElementById("share5").selected = "true";
 			document.getElementById("noShare5").disabled = "true";
 			//	document.getElementById("no5").disabled = false;
 
+		} 
+		if (myselect == "No" && ans4 == "No" && ans3 == "No") { 
+			alert(ans4+ ans3 + myselect +"haha" );
+			document.getElementById("affiliateProgram").style.display = "none";
 		}
 	}
 	function changeQ6() {
@@ -796,11 +799,6 @@ function disapearQ5intable(ch) {
 			//document.getElementById("question6b").disabled = "true";
 			document.getElementById("noneAffiliateProgram").style.display = "none";
 		} else {
-			document.getElementById("question6b").disabled = false;
-			document.getElementById("noneAffiliateProgram").style.display = "block";
-		}
-
-		if (myselect == "Yes") {
 			document.getElementById("share6").disabled = false;
 			document.getElementById("share6").selected = "true";
 			document.getElementById("noShare6").disabled = "true";
@@ -809,7 +807,6 @@ function disapearQ5intable(ch) {
 		}
 	}
 </script>
-<br>
 		<div class="content-row" id="phoneArea" style="display: none">
 			<div class="content-row">
 				<table class="table table-striped" style="text-align: left">
@@ -977,7 +974,7 @@ function disapearQ5intable(ch) {
 		<br />
 		
 		<div class="content-row" id="begindate" style="display: none">
-			<label>9. How many days can you begin sharing new customer's
+			<label>8. How many days can you begin sharing new customer's
 				information from the date you sent the notice to the customer? *</label>
 			<br />
 			<div id="error-begindate" style="display: none" >
@@ -988,10 +985,8 @@ function disapearQ5intable(ch) {
 		</div>
 
 
-<br>
-
 		<div class="form-group" >
-			<label for="servicecontact">10. What customer service contact information will you provide (select at least one method)? *</label>
+			<label for="servicecontact">9. What customer service contact information will you provide (select at least one method)? *</label>
 					<div id="error-opt-contactMethod" style="display: none" >
 				    	<h5 style="color: red;">You must select at least one contact method</h5>
 			    	</div>
@@ -1014,7 +1009,7 @@ function disapearQ5intable(ch) {
 		</div>
 					
 						<div class="form-group">
-							<label for="twoOrMoreInstitute">11. Please list the financial institutions that <strong>jointly</strong> provide this privacy policy. 
+							<label for="twoOrMoreInstitute">10. Please list the financial institutions that <strong>jointly</strong> provide this privacy policy. 
 							</label>
 							<textarea class="form-control"" rows="3" name="whoseNotice" 
 							placeholder="You can ommit this area if you are the only institution providing this notice; otherwise, jointly parties should be identified clearly." ></textarea>
@@ -1022,7 +1017,7 @@ function disapearQ5intable(ch) {
 						</div>
 					
 						<div class="form-group">
-							<label for="howProtect">12. How do you protect user's personal information? *</label>
+							<label for="howProtect">11. How do you protect user's personal information? *</label>
 							<div id="error-opt-11" style="display: none" >
 				    			<h5 style="color: red;">Please type in your ways of protecting user's personal information</h5>
 			    			</div>
@@ -1030,7 +1025,7 @@ function disapearQ5intable(ch) {
 							 placeholder="The safeguards practices may include information about the institution’s use of cookies or other measures it uses to 206 safeguard personal information. No more than 30 additional words" ></textarea>
 						</div>
 						<div class="form-group">
-							<label for="collect">13. How do you collect user's personal information? *(Choose exactly 5 options)</label>
+							<label for="collect">12. How do you collect user's personal information? *(Choose exactly 5 options)</label>
 							<div id="error-opt-12" style="display: none" >
 				    			<h5 style="color: red;">You must choose only 5 options</h5>
 			    			</div>
@@ -1175,7 +1170,7 @@ function disapearQ5intable(ch) {
 							
 						
                                <div class="form-group">
-								<label for="collectaffiliate">14. Do you collect information from affiliates and/or credit bureaus? *</label>
+								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
 								
 								<div id="error-opt-12" style="display: none" >
 				    				<h5 style="color: red;">You mush choose one option.</h5>
@@ -1208,7 +1203,7 @@ function disapearQ5intable(ch) {
 												});
 							</script>
 							<div class="form-group" style="display: none" id="isFromCompany">
-								<label for="isFromAff">15. Do you collect information from other companies? </label>
+								<label for="isFromAff">14. Do you collect information from other companies? </label>
 								<div class="radio">
 									<label> <input type="radio" name="isFromCompany" id="isFromCompany" value="yes"> Yes
 									</label>
@@ -1220,7 +1215,7 @@ function disapearQ5intable(ch) {
 							</div>
 							
 							<div class="form-group">
-								<label for="isPresentLaw">16. Would you like to refer to state privacy law provisions? 
+								<label for="isPresentLaw">15. Would you like to refer to state privacy law provisions? 
 								    (If choose yes, you should provide law details) *</label>
 								<div class="radio">
 									<label>
@@ -1232,16 +1227,7 @@ function disapearQ5intable(ch) {
 									    <input type="radio" name="isPresentLaw" id="isPresentLaw" value="no" onclick="disappearLawArea(this)"> No
 									</label>
 								</div>
-								<div class="content-row" id="lawarea" style="display: none">
-								<label for="isPresentLaw">Please provide law details here:</label>
-								<div class="radio">
-									<label>
-					                    <textarea class="form-control"" rows="3" name="lawDetails"></textarea>
-									</label>
-								</div>
 								
-							</div>
-
 <script>
 function showLawArea(ch) {
 	if (ch.checked) {
@@ -1258,8 +1244,19 @@ function disappearLawArea(ch) {
 	}
 }
 </script>
+								<div class="content-row" id="lawarea" style="display: none">
+								<label for="isPresentLaw">Please provide law details here:</label>
+								<div class="radio">
+									<label>
+					                    <textarea class="form-control"" rows="3" name="lawDetails"></textarea>
+									</label>
+								</div>
+								
+							</div>
+
+
 							<div class="form-group" id="applyscope" style="display: none">
-								<label for="why">17. What happens when users limit sharing for an account that is jointly held with someone else?</label>
+								<label for="why">16. What happens when users limit sharing for an account that is jointly held with someone else?</label>
 								<div class="radio">
 									<label> <input type="radio" name="whatHappenWhenLimit"
 										value="Yourchoices apply to everyone on the account" checked> Your choices apply to everyone on the account
@@ -1272,37 +1269,13 @@ function disappearLawArea(ch) {
 								</div>
 							</div>
 
-
-					<script>
-						$("input[name='isAffiliateProgram']").change(function() {
-
-							if ($(this).val() == "yes") {
-								$("#shareAffiliateProgram").show();
-							} else {
-								$("#shareAffiliateProgram").hide();
-							}
-
-						});
-					</script>
-
-					<div class="form-group" id="shareAffiliateProgram"
-						style="display: none">
-						<label for="">18. Do you share personal information with affiliates? *</label>
-						<div class="radio">
-							<label> <input type="radio" name="shareAffiliateProgram"
-								id="shareAffiliateProgram" value="yes"> Yes
-							</label>
-						</div>
-						<div class="radio">
-							<label> <input type="radio" name="shareAffiliateProgram"
-								id="shareAffiliateProgram" value="no"> No
-							</label>
-						</div>
-					</div>
-					
-					
-					<div class="form-group" id="affiliateProgram" style="display: none">
-					<label for="">Please list your affiliates you share with below? *</label>
+                    <c:choose>
+                        <c:when test="${}">
+                        </c:when>
+                    </c:choose>
+	                
+					<div class="form-group" id="affiliateProgram" style="display: block">
+					<label for="">17. Please list your affiliates you share with below? *</label>
 					<br/>
 						<label for="">Financial Companies:</label>
 						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
@@ -1314,37 +1287,23 @@ function disappearLawArea(ch) {
 						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
 					</div>
 					
-					<script>
-						$("input[name='shareNoneAffiliateProgram']")
-								.change(function() {
-
-									if ($(this).val() == "yes") {
-										$("#noneAffiliateProgram").show();
-									} else {
-										$("#noneAffiliateProgram").hide();
-									}
-
-								});
-					</script>
-					<div class="form-group" id="noneAffiliateProgram" style="display: none;">
-						<label for="noneAffiliateProgram">19. Please list your non-affiliates below?</label>
+					<div class="form-group" id="noneAffiliateProgram" >
+						<label for="noneAffiliateProgram">18. Please list your non-affiliates below?</label>
 						<textarea class="form-control" rows="3" name="noneAffiliateProgram" id="noneAffiliateProgram"
 						 placeholder="Categories of companies, such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations"></textarea>
 					</div>
 					
-					<div class="form-group" id="jointMarketing" style="display: none;">
-						<label for="">20. Please list your joint marketing partners below?</label>
+					<div class="form-group" id="jointMarketing" >
+						<label for="">19. Please list your joint marketing partners below?</label>
 						<textarea class="form-control" rows="3" name="jointMarketing" placeholder="list categories of companies, such as credit card companies"></textarea>
-					</div>
+					</div>   
 
 							<div class="form-group">
-								<label for="stateLaw">21. Provide other information information</label>
-								<textarea name="stateLaw" class="form-control" rows="8" 
+								<label for="stateLaw">20. Please provide other information information.</label>
+								<textarea name="stateLaw" class="form-control" rows="7" 
 								          placeholder="Example: acknowledgment of receipt form." ></textarea>
 							</div>
-
-
-
+							
 							<hr>
 							<button type="submit" name="preview" class="btn btn-default"
 								onclick="form.action='preview.do';">Preview</button>
