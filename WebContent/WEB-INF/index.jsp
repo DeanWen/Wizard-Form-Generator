@@ -763,7 +763,7 @@ function disapearQ5intable(ch) {
 
 		}
 		if (myselect == "No" && ans3 == "No" && ans5 == "No") { 
-			alert(ans3+ ans5 + myselect +"haha" );
+			//alert(ans3+ ans5 + myselect +"haha" );
 			document.getElementById("affiliateProgram").style.display = "none";
 		}
 	}
@@ -786,7 +786,7 @@ function disapearQ5intable(ch) {
 
 		} 
 		if (myselect == "No" && ans4 == "No" && ans3 == "No") { 
-			alert(ans4+ ans3 + myselect +"haha" );
+			//alert(ans4+ ans3 + myselect +"haha" );
 			document.getElementById("affiliateProgram").style.display = "none";
 		}
 	}
@@ -1269,11 +1269,6 @@ function disappearLawArea(ch) {
 								</div>
 							</div>
 
-                    <c:choose>
-                        <c:when test="$">
-                        </c:when>
-                    </c:choose>
-	                
 					<div class="form-group" id="affiliateProgram" style="display: block">
 					<label for="">17. Please list your affiliates you share with below? *</label>
 					<br/>
