@@ -156,7 +156,7 @@
          <li>Call ${bean.optPhone} - our menu will prompt you through your choice(s) or</li>
          </c:when>
           <c:when test = "${bean.optWebsite != '-1'}">
-         <li>Visit us online: ${bean.optWebsite}</li>
+         <li>Visit us online: <a href = "${bean.optWebsite}"> ${bean.optWebsite} </a></li>
          </c:when>
          <c:when test = "${bean.city != '-1'}">
 			<li>Mail the form below</li>
@@ -187,8 +187,8 @@
         <c:when test = "${bean.phoneText != '-1'}">
         	Call ${bean.phoneText}
         	<c:choose>
-        	<c:when test = "${bean.websiteText != '-1'}">
-        	or go to ${bean.websiteText}
+        	<c:when test = "${bean.websiteText != '-1' && bean.websiteText != ''}">
+        	or go to <a href = "${bean.websiteText}">${bean.websiteText} </a>
         	</c:when>
         	</c:choose>
         </c:when>
