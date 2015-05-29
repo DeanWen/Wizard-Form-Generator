@@ -114,7 +114,7 @@
 		
 		if(document.getElementById("websiteArea").style.display == "block")	
 		{
-			if(document.getElementById("websitewebsite").value=='')
+			if(document.getElementById("optWebsite").value=='')
 			{
 				document.getElementById("errorWebsite").style.display = "block";
 				return false;	
@@ -184,6 +184,7 @@
 		}
 		if(sum9<1)
 		{
+			
 			document.getElementById("error-opt-contactMethod").style.display = "block";
 			return false;		
 		}else
