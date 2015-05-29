@@ -18,6 +18,7 @@
    .mail-addr-details {width: 50%; border-left: 1px solid #80B2CC; border-right: 1px solid #80B2CC; } .mail-addr-mailto {width: 25%; } </style> 
  </head> 
  <body> 
+ <a onclick="this.href='data:text/html;charset=UTF-8,'+encodeURIComponent(document.documentElement.outerHTML)" href="#" download="page.html">Download</a>
  <c:set var = "bean" value = "${bean}" />
   <div> 
    <h2 class="cpn-header">U.S. Consumer Privacy Notice</h2> 
@@ -423,7 +424,7 @@
 											<strong>Mail To:</strong>
 										</p>
 										<p>
-											cmu<br />fan<br />is <br />SC smart
+										 ${bean.companyName }<br /> ${ bean.address}<br />${bean.city } ${bean.state } ${bean.zipcode }
 										</p>
 									</td>
 								</tr>
