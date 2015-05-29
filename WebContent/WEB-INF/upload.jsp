@@ -218,6 +218,18 @@
 </script>
 <c:set var="bean" value="${uploadBean}" />
 
+
+
+<script type="text/javascript">
+var s = '${json}';
+var a = JSON.parse(s.toString());
+alert(a);
+$(document).ready(function() {
+	document.getElementById("affiliatemarkettocus").checked = true;
+});
+	
+</script>
+
 <body>
 	<div class="container">
 		<div class="header">
@@ -264,28 +276,28 @@
 						</label>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="personalInfoType"
-							value="income"> income
+						<label> <input type="checkbox" id="income" name="personalInfoType"
+							value="income" checked> income
 						</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="personalInfoType"
-							value="account balances"> account balances
+							value="account balances" checked> account balances
 						</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="personalInfoType"
-							value="payment history"> payment history
+							value="payment history" checked> payment history
 						</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="personalInfoType"
-							value="transaction history"> transaction history
+							value="transaction history" checked> transaction history
 						</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="personalInfoType"
-							value="transaction or loss history"> transaction or loss
+							value="transaction or loss history" checked> transaction or loss
 							history
 						</label>
 					</div>
@@ -410,7 +422,7 @@
 					</ul>
 					<div class="radio">
 						<label> <input type="radio" name="affiliatemarkettocus"
-							id="affiliatemarkettocus" value="yes"
+							id="affiliatemarkettocus" value="yes" checked
 							onclick="disapearQ5intable(this)"> Yes
 						</label>
 					</div>
@@ -520,7 +532,7 @@
 						</label>
 					</div>
 					<div class="radio">
-						<label> <input type="radio" name="isoptout" id="isoptout"
+						<label> <input type="radio" name="isoptout" id="isoptout" checked
 							value="no" onclick="disappearMethod(this)"> No
 						</label>
 					</div>
@@ -1039,7 +1051,7 @@
 						</tr>
 						<tr>
 							<td width="15%"><input name="contactMethod" type="checkbox"
-								id="website1" value="website" /> Website</td>
+								id="website1" value="website" checked/> Website</td>
 
 							<td><input type="text" class="form-control"
 								placeholder="Website Address" id="websiteText"
@@ -1094,28 +1106,28 @@
 						<h5 style="color: red;">Please choose 5 methods</h5>
 					</div>
 					<div class="checkbox">
-						<label> <input type="checkbox" name="collect"
-							value="Open an account"> Open an account
+						<label> <input type="checkbox" name="collect" 
+							value="Open an account" checked> Open an account
 						</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="collect"
-							value="Deposit money"> Deposit money
+							value="Deposit money" checked> Deposit money
 						</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="collect"
-							value="Pay your bills"> Pay your bills
+							value="Pay your bills" checked> Pay your bills
 						</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="collect"
-							value="Apply for a loan"> Apply for a loan
+							value="Apply for a loan" checked> Apply for a loan
 						</label>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox" name="collect"
-							value="Use your credit or debit card"> Use your credit or
+							value="Use your credit or debit card" checked> Use your credit or
 							debit card
 						</label>
 					</div>
@@ -1302,7 +1314,7 @@
 						</div>
 						<div class="radio">
 							<label> <input type="radio" name="collectaffiliate"
-								id="collectaffiliate" value="yes"> Yes
+								id="collectaffiliate" value="yes" checked> Yes
 							</label>
 						</div>
 						<div class="radio">
@@ -1347,7 +1359,7 @@
 							law details) *</label>
 						<div class="radio">
 							<label> <input type="radio" name="isPresentLaw"
-								id="isPresentLaw" value="yes" onclick="showLawArea(this)">
+								id="isPresentLaw" value="yes" onclick="showLawArea(this)" checked>
 								Yes
 							</label>
 						</div>
