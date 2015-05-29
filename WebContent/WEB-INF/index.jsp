@@ -1045,7 +1045,7 @@ function disapearQ5intable(ch) {
 			<input type="text" class="form-control" id="numberOfDays"
 				placeholder="No less than 30 days" name="numOfDays">
 		</div>
-
+<br/>
 
 		<div class="form-group" >
 			<label for="servicecontact">9. What customer service contact information will you provide (select at least one method)? *</label>
@@ -1234,7 +1234,8 @@ function disapearQ5intable(ch) {
 							
 						
                                <div class="form-group">
-								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
+								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus?<span title="It's a company that collects information from various sources and provides consumer credit information on individual consumers for a variety of uses." class="glyphicon glyphicon-question-sign"></span></td>
+						 *</label>
 								
 								<div id="error-opt-13" style="display: none" >
 				    				<h5 style="color: red;">Please choose one option.</h5>
