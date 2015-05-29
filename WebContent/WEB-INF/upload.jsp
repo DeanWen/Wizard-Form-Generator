@@ -321,7 +321,7 @@
 			<form role="form" method="post" onsubmit="return validateForm()">
 				<div class="form-group">
 					<label for="companyName">1. Enter the name of your financial institution: *</label> 
-					    <input type="text" class="form-control" name="companyName" id="companyName" />
+					    <input type="text" class="form-control" name="companyName" id="companyName" value = "${bean.companyName}"/>
 						<div id="error-company" style="display: none" >
 							<h5 style="color: red;">Please fill in your company's name</h5>
 						</div>
@@ -329,13 +329,12 @@
 				
 				<div class="form-group">
 					<label for="reviseDate">2. Enter last revised date (mm/yyyy): *</label> 
-					    <input type="text" class="form-control" name="reviseDate" id="reviseDate" placeholder="Example: 05/2015" />
+					    <input type="text" class="form-control" name="reviseDate" id="reviseDate" placeholder="Example: 05/2015" value = "${bean.reviseDate}"/>
 						<div id="error-Date" style="display: none" >
 							<h5 style="color: red;">Please fill in the revised date</h5>
 						</div>
 				</div>
 							
-				
 				<div class="form-group">
 					<label for="companyName">3. What types of personal information you collect and share? * (Choose exactly 5 options)</label>
 						<div id="error-info-checkboxes" style="display: none">
