@@ -53,6 +53,7 @@ public class SaveAction extends Action {
 					bean.setOpt_out(vals);
 				}
 		    }
+		    
 		    bean.setQuestion1(form.getQuestion1());
 		    bean.setQuestion1b(form.getQuestion1b());
 		    bean.setQuestion2(form.getQuestion2());
@@ -66,10 +67,20 @@ public class SaveAction extends Action {
 		    bean.setQuestion6(form.getQuestion6());
 		    bean.setQuestion6b(form.getQuestion6b());
 		    
-		    bean.setNumOfDays(form.getNumOfDays());
 		    bean.setOptPhone(form.getOptPhone());
 		    bean.setOptWebsite(form.getOptWebsite());
-		    bean.setTwoOrMoreInstitute(form.getTwoOrMoreInstitute());
+		    bean.setOptionsRadios(form.getOptionsRadios());
+		    
+		    bean.setCity(form.getCity());
+		    bean.setAddress(form.getAddress());
+		    bean.setState(form.getState());
+		    bean.setZipcode(form.getZipcode());
+		    bean.setThirdPartyCookie(form.getThirdPartyCookie());
+		    bean.setDntoptput(form.getDntoptput());
+		    bean.setNumOfDays(form.getNumOfDays());
+		    bean.setPhoneText(form.getPhoneText());
+		    bean.setWebsiteText(form.getWebsiteText());
+		    bean.setWhoseNotice(form.getWhoseNotice());
 		    bean.setHowProtect(form.getHowProtect());
 		    
 			if (request.getParameterValues("collect") != null) {
@@ -84,25 +95,11 @@ public class SaveAction extends Action {
 				bean.setLawDetails(form.getLawDetails());
 			}
 			bean.setWhatHappenWhenLimit(form.getWhatHappenWhenLimit());
-			bean.setIsAffiliateProgram(form.getIsAffiliateProgram());
-			if (bean.getIsAffiliateProgram().equalsIgnoreCase("yes")) {
-				bean.setShareAffiliateProgram(form.getShareAffiliateProgram());
-				if (bean.getShareAffiliateProgram().equalsIgnoreCase("yes")) {
-					bean.setAffiliateProgram(form.getAffiliateProgram());
-				}
-			}
-			
-			bean.setShareNoneAffiliateProgram(form.getShareNoneAffiliateProgram());
-		    if (bean.getShareNoneAffiliateProgram().equalsIgnoreCase("yes")) {
-		    	bean.setNoneAffiliateProgram(form.getNoneAffiliateProgram());
-		    }
-		    
-		    bean.setIsJointMarketing(form.getIsJointMarketing());
-		    if (bean.getIsJointMarketing().equalsIgnoreCase("yes")) {
-		    	bean.setJointMarketing(form.getJointMarketing());
-		    }
-		   
+			bean.setAffiliateProgram(form.getAffiliateProgram());
+			bean.setNoneAffiliateProgram(form.getNoneAffiliateProgram());
+			bean.setJointMarketing(form.getJointMarketing());
 		    bean.setStateLaw(form.getStateLaw());
+		    
 		    if (bean.getLawDetails() != null && !bean.getLawDetails().equalsIgnoreCase("-1")) {
 		    	bean.setStateLaw(bean.getLawDetails() + bean.getStateLaw());
 		    }
