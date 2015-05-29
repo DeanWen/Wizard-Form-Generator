@@ -603,8 +603,10 @@ function disapearQ5intable(ch) {
 					        <td width="15%"><input type="checkbox" name="opt_out" value="1" onclick="showPhone(this)"> Phone</td>
 					        <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="showWebsite(this)"> Website</td>
 					        <td width="15%"><input type="checkbox" name="opt_out" value="3" onclick="showMail(this)"> Mail-in</td>
-				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="show3Party(this)"> Third Party Cookie Optout</td>
-				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="showDNTPlugin(this)"> Do-Not-Track Plugin</td>
+				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="show3Party(this)"> Third Party Cookie Optout 
+				                <span title="The opt-out cookie tells the website not to install third party advertiser or other cookies on your browser.&#10;They can only block cookies from a specific server and won't block cookies from other websites" class="glyphicon glyphicon-question-sign"></span></td>
+				            <td width="15%"><input type="checkbox" name="opt_out" value="2" onclick="showDNTPlugin(this)"> Do-Not-Track Plugin
+				            <span title="DNT+ is a free-of-charge browser add-on, trying to many companies from tracking users across the Internet." class="glyphicon glyphicon-question-sign"></span></td>
 				            
 				            </tr>
 			           </table>
