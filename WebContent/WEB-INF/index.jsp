@@ -236,7 +236,7 @@
 		}
 		if(sum12!=5)
 		{
-			alert('haha');
+			
 			document.getElementById("error-opt-12").style.display = "block";
 			return false;
 		}
@@ -254,20 +254,21 @@
 				sum13++;
 			}
 		}
-		if(sum12!=5)
+		if(sum13!=5)
 		{
 			alert('haha');
-			document.getElementById("error-opt-12").style.display = "block";
+			document.getElementById("error-opt-13").style.display = "block";
 			return false;
 		}
 		else
 		{
-			document.getElementById("error-opt-12").style.display = "none";
+			document.getElementById("error-opt-13").style.display = "none";
 		}
 		
 		
 		
-		collectaffiliate
+		
+		
 		
 		
 		
@@ -1209,7 +1210,7 @@ function disapearQ5intable(ch) {
                                <div class="form-group">
 								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
 								
-								<div id="error-opt-12" style="display: none" >
+								<div id="error-opt-13" style="display: none" >
 				    				<h5 style="color: red;">You mush choose one option.</h5>
 			    				</div>	
 								<div class="radio">
@@ -1296,12 +1297,12 @@ function disappearLawArea(ch) {
 								<label for="why">16. What happens when users limit sharing for an account that is jointly held with someone else?</label>
 								<div class="radio">
 									<label> <input type="radio" name="whatHappenWhenLimit"
-										value="Your choices apply to everyone on the account" checked> Your choices apply to everyone on the account
+										value="1" checked> Your choices apply to everyone on the account
 									</label>
 								</div>
 								<div class="radio">
 									<label> <input type="radio" name="whatHappenWhenLimit"
-										 value="Your choices will apply to everyone on the account - unless you tell us otherwise"> Your choices will apply to everyone on the account - unless you tell us otherwise
+										 value="2"> Your choices will apply to everyone on the account - unless you tell us otherwise
 									</label>
 								</div>
 							</div>
