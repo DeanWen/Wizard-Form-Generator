@@ -412,21 +412,8 @@
 					</div>
 			</div>
 					
-					 <div class="form-group">
-						<label for="">4. Do you have affiliate? *</label>
-						<div class="radio">
-							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="yes"> Yes
-							</label>
-						</div>
-						<div class="radio">
-							<label> <input type="radio" name="isAffiliateProgram" id="isAffiliateProgram" value="no"> No
-							</label>
-						</div>
-					</div>
-					
-					
 					<div class="form-group">	
-						<label for="">5. Please select "Yes" if any of the following statement is true: *</label>
+						<label for="">4. Please select "Yes" if any of the following statement is true: *</label>
 						<div id="error-affiliatemarkettocus" style="display: none" >
 				    		<h5 style="color: red;">You must select at least one box.</h5>
 			    		</div>
@@ -436,11 +423,11 @@
 				            <li>Your organization provides the affiliate marketing notice separately.</li>
 			            </ul>
 						<div class="radio">
-							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="yes" onclick="showQ5intable(this)"> Yes
+							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="yes" onclick="disapearQ5intable(this)"> Yes
 							</label>
 						</div>
 						<div class="radio">
-							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="no" onclick="disapearQ5intable(this)"> No
+							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="no" onclick="showQ5intable(this)"> No
 							</label>
 						</div>
 					</div>
@@ -723,8 +710,10 @@ function disapearQ5intable(ch) {
 
 			document.getElementById("share2").disabled = "true";
 			//document.getElementById("question1b").disabled = "true";
+			document.getElementById("jointMarketing").style.display = "none";
 		} else {
 			document.getElementById("question2b").disabled = false;
+			document.getElementById("jointMarketing").style.display = "block";
 		}
 
 		if (myselect == "Yes") {
@@ -732,7 +721,7 @@ function disapearQ5intable(ch) {
 			document.getElementById("share2").selected = "true";
 			document.getElementById("noShare2").disabled = "true";
 			document.getElementById("no2").disabled = false;
-
+			document.getElementById("jointMarketing").style.display = "block";
 		}
 	}
 	function changeQ3() {
@@ -805,8 +794,10 @@ function disapearQ5intable(ch) {
 			document.getElementById("noShare6").disabled = false;
 			document.getElementById("share6").disabled = "true";
 			//document.getElementById("question6b").disabled = "true";
+			document.getElementById("noneAffiliateProgram").style.display = "none";
 		} else {
 			document.getElementById("question6b").disabled = false;
+			document.getElementById("noneAffiliateProgram").style.display = "block";
 		}
 
 		if (myselect == "Yes") {
@@ -814,7 +805,7 @@ function disapearQ5intable(ch) {
 			document.getElementById("share6").selected = "true";
 			document.getElementById("noShare6").disabled = "true";
 			//document.getElementById("no6").disabled = false;
-
+			document.getElementById("noneAffiliateProgram").style.display = "block";
 		}
 	}
 </script>
@@ -1308,17 +1299,7 @@ function disappearLawArea(ch) {
 							</label>
 						</div>
 					</div>
-					<script>
-						$("input[name='shareAffiliateProgram']").change(function() {
-
-							if ($(this).val() == "yes") {
-								$("#affiliateProgram").show();
-							} else {
-								$("#affiliateProgram").hide();
-							}
-
-						});
-					</script>
+					
 					
 					<div class="form-group" id="affiliateProgram" style="display: none">
 					<label for="">Please list your affiliates you share with below? *</label>
@@ -1332,19 +1313,7 @@ function disappearLawArea(ch) {
 						<label for="">Others:</label>
 						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
 					</div>
-					<div class="form-group">
-						<label for="">19. Do you share information with non-affiliates? *</label>
-						<div class="radio">
-							<label> <input type="radio" name="shareNoneAffiliateProgram"
-								id="shareNoneAffiliateProgram" value="yes"> Yes
-							</label>
-						</div>
-						<div class="radio">
-							<label> <input type="radio" name="shareNoneAffiliateProgram"
-								id="shareNoneAffiliateProgram" value="no"> No
-							</label>
-						</div>
-					</div>
+					
 					<script>
 						$("input[name='shareNoneAffiliateProgram']")
 								.change(function() {
@@ -1357,36 +1326,14 @@ function disappearLawArea(ch) {
 
 								});
 					</script>
-					<div class="form-group" id="noneAffiliateProgram"
-						style="display: none;">
-						<label for="noneAffiliateProgram">Please list your non-affiliates below?</label>
+					<div class="form-group" id="noneAffiliateProgram" style="display: none;">
+						<label for="noneAffiliateProgram">19. Please list your non-affiliates below?</label>
 						<textarea class="form-control" rows="3" name="noneAffiliateProgram" id="noneAffiliateProgram"
 						 placeholder="Categories of companies, such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations"></textarea>
 					</div>
-					<div class="form-group">
-						<label for="isJointMarketing">20. Do you engage in joint marketing?</label>
-						<div class="radio">
-							<label> <input type="radio" name="isJointMarketing" id="isJointMarketing" value="yes"> Yes
-							</label>
-						</div>
-						<div class="radio">
-							<label> <input type="radio" name="isJointMarketing" id="isJointMarketing" value="no"> No
-							</label>
-						</div>
-					</div>
-					<script>
-						$("input[name='isJointMarketing']").change(function() {
-
-							if ($(this).val() == "yes") {
-								$("#jointMarketing").show();
-							} else {
-								$("#jointMarketing").hide();
-							}
-
-						});
-					</script>
+					
 					<div class="form-group" id="jointMarketing" style="display: none;">
-						<label for="">Please list your joint marketing partners below?</label>
+						<label for="">20. Please list your joint marketing partners below?</label>
 						<textarea class="form-control" rows="3" name="jointMarketing" placeholder="list categories of companies, such as credit card companies"></textarea>
 					</div>
 
