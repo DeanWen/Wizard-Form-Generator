@@ -869,18 +869,25 @@ function disapearQ5intable(ch) {
 			document.getElementById("share3").disabled = "true";
 			//document.getElementById("question1b").disabled = "true";
 			
+			
 		} else{
 			document.getElementById("share3").disabled = false;
 			document.getElementById("share3").selected = "true";
 			document.getElementById("noShare3").disabled = "true";
 			document.getElementById("no3").disabled = false;
-
+			document.getElementById("affiliateProgram").style.display = "block";
+			
 		} 
+		if(document.getElementById("Q5").style.display == "none" && myselect == "No" && ans4 == "No"){
+			alert("haha");
+			document.getElementById("affiliateProgram").style.display = "none";
+		}
 		if (myselect == "No" && ans4 == "No" && ans5 == "No" ) { 
-			alert(ans4+ ans5 + myselect +"haha" );
+			//alert(ans4+ ans5 + myselect +"haha" );
 			
 			document.getElementById("affiliateProgram").style.display = "none";
 		}
+		
 	}
 	function changeQ4() {
 		var myselect = document.getElementById("question4").value;
@@ -900,8 +907,12 @@ function disapearQ5intable(ch) {
 			document.getElementById("share4").selected = "true";
 			document.getElementById("noShare4").disabled = "true";
 			//document.getElementById("no4").disabled = false;
-
+			document.getElementById("affiliateProgram").style.display = "block";
 		}
+		if(document.getElementById("Q5").style.display == "none" && myselect == "No" && ans3 == "No"){
+			document.getElementById("affiliateProgram").style.display = "none";
+		}
+		
 		if (myselect == "No" && ans3 == "No" && ans5 == "No") { 
 			//alert(ans3+ ans5 + myselect +"haha" );
 			document.getElementById("affiliateProgram").style.display = "none";
@@ -923,7 +934,7 @@ function disapearQ5intable(ch) {
 			document.getElementById("share5").selected = "true";
 			document.getElementById("noShare5").disabled = "true";
 			//	document.getElementById("no5").disabled = false;
-
+			document.getElementById("affiliateProgram").style.display = "block";
 		} 
 		if (myselect == "No" && ans4 == "No" && ans3 == "No") { 
 			//alert(ans4+ ans3 + myselect +"haha" );
@@ -1455,13 +1466,10 @@ function disappearLawArea(ch) {
 						<textarea class="form-control" rows="3" name="jointMarketing" id="jointMarketing1" placeholder="list categories of companies, such as credit card companies"></textarea>
 					</div>   
 
-							<div class="form-group" id="law" style="display: block">
-								<label for="stateLaw">20. Please provide other information information.*</label>
-								<div id="error-opt-20" style="display: none" >
-				    				<h5 style="color: red;">Please type in the nameList</h5>
-			    				</div>
-								<textarea name="stateLaw" class="form-control" rows="7" id="stateLaw1"
-								          placeholder="Example: acknowledgment of receipt form." ></textarea>
+
+							<div class="form-group">
+								<label for="stateLaw">20. Please provide other important information.</label>
+								<textarea name="stateLaw" class="form-control" rows="7" placeholder="Example: acknowledgment of receipt form." ></textarea>
 							</div>
 							<script>
 							function ac1() {
