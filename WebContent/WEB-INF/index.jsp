@@ -3,6 +3,9 @@
 <jsp:include page="top.jsp" />
 
 <script>
+
+	
+
 	function validateForm() {
 		
 		if(document.getElementById('companyName').value==''){
@@ -193,23 +196,36 @@
 		}
 		
 		
-		
-		var checkboxes10 = document.getElementsByName('twoOrMoreInstitute');
-		var sum10 = 0;
-		for (var i = 0; i < checkboxes10.length; i++) {
-			if (checkboxes10[i].checked) {
-				sum10++;
-			}
-		}
-		
-		if(sum10<1)
+		if(document.getElementById("phone1").checked==true && document.getElementById('phoneText').value=='')
 		{
-			document.getElementById("error-opt-10").style.display = "block";
+			document.getElementById("error-opt-contactMethod2").style.display = "block";
 			return false;		
 		}else
 		{
-			document.getElementById("error-opt-10").style.display = "none";	
+			document.getElementById("error-opt-contactMethod2").style.display = "none";	
 		}
+		
+		if(document.getElementById("website1").checked==true && document.getElementById('websiteText').value=='')
+		{
+			document.getElementById("error-opt-contactMethod2").style.display = "block";
+			return false;		
+		}else
+		{
+			document.getElementById("error-opt-contactMethod2").style.display = "none";	
+		}
+		
+		
+	
+		
+		var protectContent = document.getElementById('protectWay').value;
+		var protectContentLen = protectContent.split(" ");
+		if (protectContent.length == 0 || protectContentLen > 30) {
+			document.getElementById("error-protect").style.display = "block";
+			return false;
+		} else {
+			document.getElementById("error-protect").style.display = "none";
+		}
+		
 		
 		var checkboxes12 = document.getElementsByName('collect');
 		var sum12 = 0;
@@ -220,6 +236,7 @@
 		}
 		if(sum12!=5)
 		{
+			alert('haha');
 			document.getElementById("error-opt-12").style.display = "block";
 			return false;
 		}
@@ -230,13 +247,27 @@
 		
 		
 		
+		var checkboxes13 = document.getElementsByName('collectaffiliate');
+		var sum13 = 0;
+		for (var i = 0; i < checkboxes13.length; i++) {
+			if (checkboxes13[i].checked) {
+				sum13++;
+			}
+		}
+		if(sum12!=5)
+		{
+			alert('haha');
+			document.getElementById("error-opt-12").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-12").style.display = "none";
+		}
 		
 		
 		
-		
-		
-		
-		
+		collectaffiliate
 		
 		
 		
@@ -992,13 +1023,15 @@ function disapearQ5intable(ch) {
 		<div class="form-group" >
 			<label for="servicecontact">9. What customer service contact information will you provide (select at least one method)? *</label>
 					<div id="error-opt-contactMethod" style="display: none" >
-				    	<h5 style="color: red;">You must select at least one contact method</h5>
+				    	<h5 style="color: red;">Please select at least one contact method</h5>
+			    	</div>
+			    	<div id="error-opt-contactMethod2" style="display: none" >
+				    	<h5 style="color: red;">Please fill in the contact information</h5>
 			    	</div>
 				<table style="width: 100%" >
 				<tr>
 					<td width="15%">
 					    <input name="contactMethod" id="phone1" type="checkbox" value="phone" /> Phone</td>
-					    
 					<td>
 					<input type="text" class="form-control" placeholder="Phone Number" id = "phoneText" name="phoneText"></td>
 				</tr>
@@ -1015,23 +1048,23 @@ function disapearQ5intable(ch) {
 						<div class="form-group">
 							<label for="twoOrMoreInstitute">10. Please list the financial institutions that <strong>jointly</strong> provide this privacy policy. 
 							</label>
-							<textarea class="form-control"" rows="3" name="whoseNotice" 
+							<textarea class="form-control"" rows="3" name="whoseNotice" id="InsititueNotice"
 							placeholder="You can ommit this area if you are the only institution providing this notice; otherwise, jointly parties should be identified clearly." ></textarea>
 							
 						</div>
 					
 						<div class="form-group">
 							<label for="howProtect">11. How do you protect user's personal information? *</label>
-							<div id="error-opt-11" style="display: none" >
+							<div id="error-protect" style="display: none" >
 				    			<h5 style="color: red;">Please type in your ways of protecting user's personal information</h5>
 			    			</div>
-							<textarea class="form-control" rows="3" name="howProtect" 
+							<textarea id="protectWay" class="form-control" rows="3" name="howProtect" 
 							 placeholder="The safeguards practices may include information about the institution’s use of cookies or other measures it uses to 206 safeguard personal information. No more than 30 additional words" ></textarea>
 						</div>
 						<div class="form-group">
 							<label for="collect">12. How do you collect user's personal information? *(Choose exactly 5 options)</label>
 							<div id="error-opt-12" style="display: none" >
-				    			<h5 style="color: red;">You must choose only 5 options</h5>
+				    			<h5 style="color: red;">Please choose 5 methods</h5>
 			    			</div>
 							<div class="checkbox">
 								<label> <input type="checkbox" name="collect" value="Open an account"> Open an account
@@ -1263,7 +1296,7 @@ function disappearLawArea(ch) {
 								<label for="why">16. What happens when users limit sharing for an account that is jointly held with someone else?</label>
 								<div class="radio">
 									<label> <input type="radio" name="whatHappenWhenLimit"
-										value="Yourchoices apply to everyone on the account" checked> Your choices apply to everyone on the account
+										value="Your choices apply to everyone on the account" checked> Your choices apply to everyone on the account
 									</label>
 								</div>
 								<div class="radio">
@@ -1304,9 +1337,9 @@ function disappearLawArea(ch) {
 							</div>
 							
 							<hr>
-							<button type="submit" name="preview" class="btn btn-default"
+							<button type="submit" name="preview" class="btn btn-default" value="generate"
 								onclick="form.action='preview.do';">Preview</button>
-							<button type="submit" name="saveforlater" class="btn btn-default"
+							<button type="submit" name="saveforlater" class="btn btn-default" value="save"
 								onclick="form.action='save.do';">Save for later</button>
 					</form>
 				</div>
