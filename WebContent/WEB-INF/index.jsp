@@ -14,6 +14,7 @@
 		}else{
 			document.getElementById('error-company').style.display = "none";
 		}
+	
 		
 		if(document.getElementById('reviseDate').value==''){
 			document.getElementById('error-Date').style.display = "block";
@@ -22,7 +23,8 @@
 		else{
 			document.getElementById('error-Date').style.display = "none";
 		}
-
+		
+		
 		var sum1 = 0;
 		var checkboxes = document.getElementsByName('personalInfoType');
 		for (var i = 0; i < checkboxes.length; i++) {
@@ -30,6 +32,7 @@
 				sum1++;
 			}
 		}
+		
 		
 		if(sum1!=6)
 		{
@@ -40,6 +43,7 @@
 			document.getElementById("error-info-checkboxes").style.display = "none";
 		}
 		
+		
 		var sum3 = 0;
 		var checkboxes3 = document.getElementsByName('affiliatemarkettocus');
 		for (var i = 0; i < checkboxes3.length; i++) {
@@ -47,6 +51,7 @@
 				sum3++;
 			}
 		}
+		
 		if(sum3<1)
 		{
 			document.getElementById("error-affiliatemarkettocus").style.display = "block";
@@ -66,6 +71,7 @@
 				sum4++;
 			}
 		}
+		
 		if(sum4<1)
 		{
 			document.getElementById("error-opt-outSuper").style.display = "block";
@@ -74,7 +80,7 @@
 		{
 			document.getElementById("error-opt-outSuper").style.display = "none";	
 		}
-		
+	
 		if(document.getElementById("optmethod").style.display == "block")
 		{
 			var checkboxes2 = document.getElementsByName('opt_out');
@@ -98,6 +104,7 @@
 			}
 		}
 		
+		
 	
 		
 		
@@ -113,7 +120,7 @@
 				document.getElementById("errorPhone").style.display = "none";
 			}
 		}
-		
+	
 		
 		if(document.getElementById("websiteArea").style.display == "block")	
 		{
@@ -128,6 +135,7 @@
 			}
 		}
 		
+		
 		if(document.getElementById("mailArea").style.display == "block")	
 		{
 			
@@ -141,6 +149,7 @@
 				document.getElementById("errorMail").style.display = "none";
 			}
 		}
+		
 		
 		
 		/////////////////////////////////////////////////////////////
@@ -178,6 +187,7 @@
 		
 		
 		
+		
 		var sum9 = 0;
 		var checkboxes9 =  document.getElementsByName ('contactMethod');
 		for (var i = 0; i < checkboxes9.length; i++) {
@@ -185,6 +195,7 @@
 				sum9++;
 			}
 		}
+	
 		if(sum9<1)
 		{
 			
@@ -205,6 +216,8 @@
 			document.getElementById("error-opt-contactMethod2").style.display = "none";	
 		}
 		
+	
+		
 		if(document.getElementById("website1").checked==true && document.getElementById('websiteText').value=='')
 		{
 			document.getElementById("error-opt-contactMethod2").style.display = "block";
@@ -213,7 +226,7 @@
 		{
 			document.getElementById("error-opt-contactMethod2").style.display = "none";	
 		}
-		
+	
 		
 	
 		
@@ -303,7 +316,7 @@
 				document.getElementById("error-opt-15_2").style.display = "none";
 			}
 		}
-		
+	
 		
 		
 		if(document.getElementById("affiliateProgram").style.display == "block")
@@ -324,6 +337,7 @@
 			}
 		}
 		
+		
 		if(document.getElementById("noneAffiliateProgram").style.display == "block")
 		{
 			var Content4 = document.getElementById('noneAffiliateProgram1').value;
@@ -338,6 +352,7 @@
 				document.getElementById("error-opt-18").style.display = "none";
 			}
 		}
+		
 		
 		if(document.getElementById("jointMarketing").style.display == "block")
 		{
@@ -355,19 +370,11 @@
 		}
 		
 		
-		if(document.getElementById("stateLaw1").value == '')
-		{
-			document.getElementById("error-opt-20").style.display = "block";
-			return false;
-		}
-		else
-		{
-			document.getElementById("error-opt-20").style.display = "none";
-		}
 		
 		
 		
-		
+	
+		return true;
 		
 		
 		
@@ -706,7 +713,7 @@ function disapearQ5intable(ch) {
 					</thead>
 					<tbody>
 						<tr>
-							<td><strong>(1) Does your organization share information for everyday business purposes? </strong>
+							<td><strong> Does your organization share information for everyday business purposes? </strong>
 							&mdash; Such as to
 								process transactions, maintain customers account(s), respond to
 								court orders and legal investigations, or report to credit
@@ -717,7 +724,7 @@ function disapearQ5intable(ch) {
 							</td>
 						</tr>
 						<tr>
-							<td><strong>(2) Does your organization share
+							<td><strong> Does your organization share
 									information for marketing purposes </strong>&mdash; to such as to offer
 								products and services to customers?</td>
 							<td class="centered-td"><select name="question1"
@@ -731,7 +738,7 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare1">We do not share</option></select></td>
 						</tr>
 						<tr>
-							<td><strong>(3) Does your organization share
+							<td><strong> Does your organization share
 									information to do joint marketing with other financial
 									companies?</strong></td>
 							<td class="centered-td"><select name="question2"
@@ -745,7 +752,7 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare2">We do not share</option></select></td>
 						</tr>
 						<tr>
-							<td><strong>(4) Does your organization share
+							<td><strong> Does your organization share
 									information with affiliates&rsquo; for everyday business
 									purposes? </strong>&mdash; Information about transactions and
 								experiences from customers</td>
@@ -760,7 +767,7 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare3">We do not share</option></select></td>
 						</tr>
 						<tr>
-							<td><strong>(5)Does your organization share
+							<td><strong>Does your organization share
 									information for affiliates&rsquo; everyday business purposes? </strong>&mdash;
 								Information such as creditworthiness</td>
 							<td class="centered-td"><select id="question4"
@@ -775,7 +782,7 @@ function disapearQ5intable(ch) {
 						</tr>
 						
 						<tr id="Q5" style="display: none;">
-							<td><strong>(6)Does your organization share
+							<td><strong>Does your organization share
 									information to affiliates for them marketing to your customers</strong>
 							</td>
 							<td class="centered-td">
@@ -790,7 +797,7 @@ function disapearQ5intable(ch) {
 						</tr>					
 
 						<tr>
-							<td><strong>(7)For nonaffiliates to market to you</strong></td>
+							<td><strong>For nonaffiliates to market to you</strong></td>
 							<td class="centered-td"><select id="question6"
 								name="question6" onchange="changeQ6()"><option
 										value="Yes">Yes</option>
@@ -879,7 +886,7 @@ function disapearQ5intable(ch) {
 			
 		} 
 		if(document.getElementById("Q5").style.display == "none" && myselect == "No" && ans4 == "No"){
-			alert("haha");
+			//alert("haha");
 			document.getElementById("affiliateProgram").style.display = "none";
 		}
 		if (myselect == "No" && ans4 == "No" && ans5 == "No" ) { 
@@ -1475,6 +1482,7 @@ function disappearLawArea(ch) {
 							function ac1() {
 								
 								if (validateForm() != false) {
+									
 									document.testForm.action = "preview.do";
 									document.testForm.submit();
 								}
