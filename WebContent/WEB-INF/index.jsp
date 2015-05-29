@@ -3,6 +3,9 @@
 <jsp:include page="top.jsp" />
 
 <script>
+
+	
+
 	function validateForm() {
 		
 		if(document.getElementById('companyName').value==''){
@@ -114,7 +117,7 @@
 		
 		if(document.getElementById("websiteArea").style.display == "block")	
 		{
-			if(document.getElementById("websitewebsite").value=='')
+			if(document.getElementById("optWebsite").value=='')
 			{
 				document.getElementById("errorWebsite").style.display = "block";
 				return false;	
@@ -184,6 +187,7 @@
 		}
 		if(sum9<1)
 		{
+			
 			document.getElementById("error-opt-contactMethod").style.display = "block";
 			return false;		
 		}else
@@ -192,23 +196,36 @@
 		}
 		
 		
-		
-		var checkboxes10 = document.getElementsByName('twoOrMoreInstitute');
-		var sum10 = 0;
-		for (var i = 0; i < checkboxes10.length; i++) {
-			if (checkboxes10[i].checked) {
-				sum10++;
-			}
-		}
-		
-		if(sum10<1)
+		if(document.getElementById("phone1").checked==true && document.getElementById('phoneText').value=='')
 		{
-			document.getElementById("error-opt-10").style.display = "block";
+			document.getElementById("error-opt-contactMethod2").style.display = "block";
 			return false;		
 		}else
 		{
-			document.getElementById("error-opt-10").style.display = "none";	
+			document.getElementById("error-opt-contactMethod2").style.display = "none";	
 		}
+		
+		if(document.getElementById("website1").checked==true && document.getElementById('websiteText').value=='')
+		{
+			document.getElementById("error-opt-contactMethod2").style.display = "block";
+			return false;		
+		}else
+		{
+			document.getElementById("error-opt-contactMethod2").style.display = "none";	
+		}
+		
+		
+	
+		
+		var protectContent = document.getElementById('protectWay').value;
+		var protectContentLen = protectContent.split(" ");
+		if (protectContent.length == 0 || protectContentLen > 30) {
+			document.getElementById("error-protect").style.display = "block";
+			return false;
+		} else {
+			document.getElementById("error-protect").style.display = "none";
+		}
+		
 		
 		var checkboxes12 = document.getElementsByName('collect');
 		var sum12 = 0;
@@ -219,12 +236,51 @@
 		}
 		if(sum12!=5)
 		{
+			
 			document.getElementById("error-opt-12").style.display = "block";
 			return false;
 		}
 		else
 		{
 			document.getElementById("error-opt-12").style.display = "none";
+		}
+		
+		
+		
+		var checkboxes13 = document.getElementsByName('collectaffiliate');
+		var sum13 = 0;
+		for (var i = 0; i < checkboxes13.length; i++) {
+			if (checkboxes13[i].checked) {
+				sum13++;
+			}
+		}
+		if(sum13<1)
+		{
+			
+			document.getElementById("error-opt-13").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-13").style.display = "none";
+		}
+		
+		var checkboxes14 = document.getElementsByName('isFromCompany');
+		var sum14 = 0;
+		for (var i = 0; i < checkboxes14.length; i++) {
+			if (checkboxes14[i].checked) {
+				sum14++;
+			}
+		}
+		if(sum14<1)
+		{
+			
+			document.getElementById("error-opt-14").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-14").style.display = "none";
 		}
 		
 		
@@ -268,7 +324,7 @@
 					<label for="companyName">1. Enter the name of your financial institution: *</label> 
 					    <input type="text" class="form-control" name="companyName" id="companyName" />
 						<div id="error-company" style="display: none" >
-							<h5 style="color: red;">The field could not be empty</h5>
+							<h5 style="color: red;">Please fill in your company's name</h5>
 						</div>
 				</div>
 				
@@ -276,7 +332,7 @@
 					<label for="reviseDate">2. Enter last revised date (mm/yyyy): *</label> 
 					    <input type="text" class="form-control" name="reviseDate" id="reviseDate" placeholder="Example: 05/2015" />
 						<div id="error-Date" style="display: none" >
-							<h5 style="color: red;">The field could not be empty</h5>
+							<h5 style="color: red;">Please fill in the revised date</h5>
 						</div>
 				</div>
 							
@@ -415,7 +471,7 @@
 					<div class="form-group">	
 						<label for="">4. Please select "Yes" if any of the following statement is true: *</label>
 						<div id="error-affiliatemarkettocus" style="display: none" >
-				    		<h5 style="color: red;">You must select at least one box.</h5>
+				    		<h5 style="color: red;">You must select Yes or No.</h5>
 			    		</div>
 						<ul>
 				            <li>Your organization does not have affiliates (or doesn't disclose personal information to its affiliates)</li>
@@ -434,7 +490,9 @@
 <script>
 function showQ5intable(ch) {
 	if (ch.checked) {
-		document.getElementById("Q5").style.display = "block";
+		
+		document.getElementById("Q5").style.display = "table-row";
+		
 	} else {
 		document.getElementById("Q5").style.display = "none";
 	}
@@ -562,7 +620,7 @@ function disapearQ5intable(ch) {
 					<thead>
 						<tr>
 							<th scope="col">Information</th>
-							<th scope="col">Does ${companyName} share?</th>
+							<th scope="col">Does your company share?</th>
 							<th scope="col">Can you limit this sharing?</th>
 						</tr>
 					</thead>
@@ -649,7 +707,7 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare6">We do not share</option></select></td>
 						</tr>
 						
-						<tr id="Q5" style="display: none">
+						<tr id="Q5" style="display: none;">
 							<td><strong>Does your organization share
 									information to affiliates for them marketing to your customers</strong>&mdash;
 							</td>
@@ -661,6 +719,7 @@ function disapearQ5intable(ch) {
 										id="share5">Yes</option>
 
 									<option value="No" id="noShare5">We do not share</option></select></td>
+									
 						</tr>
 					</tbody>
 				</table>
@@ -948,7 +1007,7 @@ function disapearQ5intable(ch) {
 				<div id="error3party" style="display: none">
 					<h5 style="color: red;">You must fill in the the link for opt-out</h5>
 				</div>
-				<input type="text" class="form-control" placeholder="Link for opt-out" id="3partycookie" name="thirdPartyCookie">
+				<input type="text" class="form-control" placeholder="Link for opt-out" id="thirdPartyCookie" name="thirdPartyCookie">
 			</div>
 			<br />
 		</div>
@@ -988,13 +1047,15 @@ function disapearQ5intable(ch) {
 		<div class="form-group" >
 			<label for="servicecontact">9. What customer service contact information will you provide (select at least one method)? *</label>
 					<div id="error-opt-contactMethod" style="display: none" >
-				    	<h5 style="color: red;">You must select at least one contact method</h5>
+				    	<h5 style="color: red;">Please select at least one contact method</h5>
+			    	</div>
+			    	<div id="error-opt-contactMethod2" style="display: none" >
+				    	<h5 style="color: red;">Please fill in the contact information</h5>
 			    	</div>
 				<table style="width: 100%" >
 				<tr>
 					<td width="15%">
 					    <input name="contactMethod" id="phone1" type="checkbox" value="phone" /> Phone</td>
-					    
 					<td>
 					<input type="text" class="form-control" placeholder="Phone Number" id = "phoneText" name="phoneText"></td>
 				</tr>
@@ -1011,23 +1072,23 @@ function disapearQ5intable(ch) {
 						<div class="form-group">
 							<label for="twoOrMoreInstitute">10. Please list the financial institutions that <strong>jointly</strong> provide this privacy policy. 
 							</label>
-							<textarea class="form-control"" rows="3" name="whoseNotice" 
+							<textarea class="form-control"" rows="3" name="whoseNotice" id="InsititueNotice"
 							placeholder="You can ommit this area if you are the only institution providing this notice; otherwise, jointly parties should be identified clearly." ></textarea>
 							
 						</div>
 					
 						<div class="form-group">
 							<label for="howProtect">11. How do you protect user's personal information? *</label>
-							<div id="error-opt-11" style="display: none" >
+							<div id="error-protect" style="display: none" >
 				    			<h5 style="color: red;">Please type in your ways of protecting user's personal information</h5>
 			    			</div>
-							<textarea class="form-control" rows="3" name="howProtect" 
+							<textarea id="protectWay" class="form-control" rows="3" name="howProtect" 
 							 placeholder="The safeguards practices may include information about the institution’s use of cookies or other measures it uses to 206 safeguard personal information. No more than 30 additional words" ></textarea>
 						</div>
 						<div class="form-group">
 							<label for="collect">12. How do you collect user's personal information? *(Choose exactly 5 options)</label>
 							<div id="error-opt-12" style="display: none" >
-				    			<h5 style="color: red;">You must choose only 5 options</h5>
+				    			<h5 style="color: red;">Please choose 5 methods</h5>
 			    			</div>
 							<div class="checkbox">
 								<label> <input type="checkbox" name="collect" value="Open an account"> Open an account
@@ -1172,8 +1233,8 @@ function disapearQ5intable(ch) {
                                <div class="form-group">
 								<label for="collectaffiliate">13. Do you collect information from affiliates and/or credit bureaus? *</label>
 								
-								<div id="error-opt-12" style="display: none" >
-				    				<h5 style="color: red;">You mush choose one option.</h5>
+								<div id="error-opt-13" style="display: none" >
+				    				<h5 style="color: red;">Please choose one option.</h5>
 			    				</div>	
 								<div class="radio">
 									<label> <input type="radio" name="collectaffiliate" id="collectaffiliate" value="yes"> Yes
@@ -1204,6 +1265,9 @@ function disapearQ5intable(ch) {
 							</script>
 							<div class="form-group" style="display: none" id="isFromCompany">
 								<label for="isFromAff">14. Do you collect information from other companies? </label>
+								<div id="error-opt-14" style="display: none" >
+				    				<h5 style="color: red;">Please choose one option.</h5>
+			    				</div>	
 								<div class="radio">
 									<label> <input type="radio" name="isFromCompany" id="isFromCompany" value="yes"> Yes
 									</label>
@@ -1259,12 +1323,12 @@ function disappearLawArea(ch) {
 								<label for="why">16. What happens when users limit sharing for an account that is jointly held with someone else?</label>
 								<div class="radio">
 									<label> <input type="radio" name="whatHappenWhenLimit"
-										value="Yourchoices apply to everyone on the account" checked> Your choices apply to everyone on the account
+										value="1" checked> Your choices apply to everyone on the account
 									</label>
 								</div>
 								<div class="radio">
 									<label> <input type="radio" name="whatHappenWhenLimit"
-										 value="Your choices will apply to everyone on the account - unless you tell us otherwise"> Your choices will apply to everyone on the account - unless you tell us otherwise
+										 value="2"> Your choices will apply to everyone on the account - unless you tell us otherwise
 									</label>
 								</div>
 							</div>
@@ -1273,13 +1337,13 @@ function disappearLawArea(ch) {
 					<label for="">17. Please list your affiliates you share with below? *</label>
 					<br/>
 						<label for="">Financial Companies:</label>
-						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+						<textarea class="form-control" rows="3" name="affiliate"></textarea>
 						
 						<label for="">Nonfinancial Companies</label>
-						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+						<textarea class="form-control" rows="3" name="noneaffiliate"></textarea>
 						
 						<label for="">Others:</label>
-						<textarea class="form-control" rows="3" name="affiliateProgram"></textarea>
+						<textarea class="form-control" rows="3" name="others"></textarea>
 					</div>
 					
 					<div class="form-group" id="noneAffiliateProgram" >
@@ -1300,9 +1364,9 @@ function disappearLawArea(ch) {
 							</div>
 							
 							<hr>
-							<button type="submit" name="preview" class="btn btn-default"
+							<button type="submit" name="preview" class="btn btn-default" value="generate"
 								onclick="form.action='preview.do';">Preview</button>
-							<button type="submit" name="saveforlater" class="btn btn-default"
+							<button type="submit" name="saveforlater" class="btn btn-default" value="save"
 								onclick="form.action='save.do';">Save for later</button>
 					</form>
 				</div>
