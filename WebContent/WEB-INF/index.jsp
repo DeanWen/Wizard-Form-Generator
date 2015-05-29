@@ -273,6 +273,7 @@
 				sum15++;
 			}
 		}
+		
 		if(sum15<1)
 		{
 			
@@ -288,7 +289,7 @@
 		
 		
 		
-		if(document.getElementById("lawarea").style.display = "block")
+		if(document.getElementById("lawarea").style.display == "block")
 		{
 			var lawContent = document.getElementById('lawDetails').value;
 			var lawLen = lawContent.split(" ");
@@ -301,9 +302,67 @@
 			{
 				document.getElementById("error-opt-15_2").style.display = "none";
 			}
+		}
+		
+		
+		
+		if(document.getElementById("affiliateProgram").style.display == "block")
+		{
+			var Content1 = document.getElementById('affiliate1').value;
+			var Content2 = document.getElementById('noneaffiliate1').value;
+			var Content3 = document.getElementById('others1').value;
+			var len1 = Content1.split(" ");
+			var len2 = Content2.split(" ");
+			var len3 = Content3.split(" ");
 			
-			
-			
+			if(len1 == 0 && len2 ==0 && len3 ==0)
+			{
+				document.getElementById("error-opt-17").style.display = "block";
+				return false;
+			}else{
+				document.getElementById("error-opt-17").style.display = "none";
+			}
+		}
+		
+		if(document.getElementById("noneAffiliateProgram").style.display == "block")
+		{
+			var Content4 = document.getElementById('noneAffiliateProgram1').value;
+			var len4 = Content4.split(" ");
+			if(len4 == 0)
+			{
+				document.getElementById("error-opt-18").style.display = "block";
+				return false;
+			}
+			else
+			{
+				document.getElementById("error-opt-18").style.display = "none";
+			}
+		}
+		
+		if(document.getElementById("jointMarketing").style.display == "block")
+		{
+			var Content5 = document.getElementById('jointMarketing1').value;
+			var len5 = Content5.split(" ");
+			if(len5 == 0)
+			{
+				document.getElementById("error-opt-19").style.display = "block";
+				return false;
+			}
+			else
+			{
+				document.getElementById("error-opt-19").style.display = "none";
+			}
+		}
+		
+		
+		if(document.getElementById("stateLaw1").value == '')
+		{
+			document.getElementById("error-opt-20").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-20").style.display = "none";
 		}
 		
 		
@@ -313,24 +372,7 @@
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		
 	
 		
@@ -355,7 +397,7 @@
 		
 		<div class="content">
 
-			<form role="form" method="post" onsubmit="return validateForm()">
+			<form role="form" method="post" name="testForm">
 				<div class="form-group">
 					<label for="companyName">1. Enter the name of your financial institution: *</label> 
 					    <input type="text" class="form-control" name="companyName" id="companyName" />
@@ -1354,7 +1396,7 @@ function disappearLawArea(ch) {
 								<div class="content-row" id="lawarea" style="display: none">
 								<label for="isPresentLaw">Please provide law details here:</label>
 								  <div id="error-opt-15_2" style="display: none" >
-				    				<h5 style="color: red;">Please provide all lists</h5>
+				    				<h5 style="color: red;">Please provide all details</h5>
 			    				</div>
 								<div class="radio">
 									<label>
@@ -1381,39 +1423,64 @@ function disappearLawArea(ch) {
 
 					<div class="form-group" id="affiliateProgram" style="display: block">
 					<label for="">17. Please list your affiliates you share with below? *</label>
+					 <div id="error-opt-17" style="display: none" >
+				    				<h5 style="color: red;">Please type in the nameList</h5>
+			    	</div>
 					<br/>
 						<label for="">Financial Companies:</label>
-						<textarea class="form-control" rows="3" name="affiliate"></textarea>
+						<textarea class="form-control" rows="3" name="affiliate" id="affiliate1"></textarea>
 						
 						<label for="">Nonfinancial Companies</label>
-						<textarea class="form-control" rows="3" name="noneaffiliate"></textarea>
+						<textarea class="form-control" rows="3" name="noneaffiliate" id="noneaffiliate1"></textarea>
 						
 						<label for="">Others:</label>
-						<textarea class="form-control" rows="3" name="others"></textarea>
+						<textarea class="form-control" rows="3" name="others" id="others1"></textarea>
 					</div>
 					
-					<div class="form-group" id="noneAffiliateProgram" >
+					<div class="form-group" id="noneAffiliateProgram" style="display: block" >
+					
 						<label for="noneAffiliateProgram">18. Please list your non-affiliates below?*</label>
-						<textarea class="form-control" rows="3" name="noneAffiliateProgram" id="noneAffiliateProgram"
+							 <div id="error-opt-18" style="display: none" >
+				    				<h5 style="color: red;">Please type in the nameList</h5>
+			    			</div>
+						<textarea class="form-control" rows="3" name="noneAffiliateProgram" id="noneAffiliateProgram1"
 						 placeholder="Categories of companies, such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations"></textarea>
 					</div>
 					
-					<div class="form-group" id="jointMarketing" >
+					<div class="form-group" id="jointMarketing"  style="display: block">
 						<label for="">19. Please list your joint marketing partners below?*</label>
-						<textarea class="form-control" rows="3" name="jointMarketing" placeholder="list categories of companies, such as credit card companies"></textarea>
+						<div id="error-opt-19" style="display: none" >
+				    				<h5 style="color: red;">Please type in the nameList</h5>
+			    			</div>
+						<textarea class="form-control" rows="3" name="jointMarketing" id="jointMarketing1" placeholder="list categories of companies, such as credit card companies"></textarea>
 					</div>   
 
-							<div class="form-group">
+							<div class="form-group" id="law" style="display: block">
 								<label for="stateLaw">20. Please provide other information information.*</label>
-								<textarea name="stateLaw" class="form-control" rows="7" 
+								<div id="error-opt-20" style="display: none" >
+				    				<h5 style="color: red;">Please type in the nameList</h5>
+			    				</div>
+								<textarea name="stateLaw" class="form-control" rows="7" id="stateLaw1"
 								          placeholder="Example: acknowledgment of receipt form." ></textarea>
 							</div>
-							
+							<script>
+							function ac1() {
+								
+								if (validateForm() != false) {
+									document.testForm.action = "preview.do";
+									document.testForm.submit();
+								}
+							}
+							function ac2() {
+								document.testForm.action = "save.do";
+								document.testForm.submit();
+							}
+						</script>
 							<hr>
-							<button type="submit" name="preview" class="btn btn-default" value="generate"
-								onclick="form.action='preview.do';">Preview</button>
-							<button type="submit" name="saveforlater" class="btn btn-default" value="save"
-								onclick="form.action='save.do';">Save for later</button>
+							<button type="button" name="preview" class="btn btn-primary"
+								onclick="ac1();">Preview</button>
+							<button type="button" name="saveforlater" class="btn btn-primary"
+								onclick="ac2();">Save for later</button>
 					</form>
 				</div>
 		</div>
