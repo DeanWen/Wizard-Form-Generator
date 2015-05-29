@@ -91,7 +91,7 @@
        <tr>
         <td><b>For our everyday business purpose - </b>such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus</td>
         <td class="centered-td">Yes</td>
-        <td class="centered-td">No</td>
+        <td class="centered-td">Yes｀</td>
        </tr>
       </tbody>
       <tbody>
@@ -396,7 +396,7 @@
    </div>
    
    <c:choose>
-   <c:when test = "${bean.city != '-1'}">
+   <c:when test = "${bean.zipcode != '-1'}">
    		<div class="content-section">
 			<div class="content-row">
 				<h3>Mail-in Form</h3>
