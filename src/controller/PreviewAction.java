@@ -90,7 +90,11 @@ public class PreviewAction extends Action {
 				bean.setLawDetails(form.getLawDetails());
 			}
 			bean.setWhatHappenWhenLimit(form.getWhatHappenWhenLimit());
-			bean.setAffiliateProgram(form.getAffiliateProgram());
+			
+			bean.setAffiliate(form.getAffiliate());
+			bean.setNoneaffiliate(form.getNoneaffiliate());
+			bean.setOthers(form.getOthers());
+			
 			bean.setNoneAffiliateProgram(form.getNoneAffiliateProgram());
 			bean.setJointMarketing(form.getJointMarketing());
 		    bean.setStateLaw(form.getStateLaw());

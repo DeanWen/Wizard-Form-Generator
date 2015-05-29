@@ -47,7 +47,9 @@ public class QuestionairBean implements Serializable {
 	String isPresentLaw;
 	String lawDetails;
 	String whatHappenWhenLimit;
-	String affiliateProgram;
+	String affiliate;
+	String noneaffiliate;
+	String others;
 	String noneAffiliateProgram;
 	String jointMarketing;
 	String stateLaw;
@@ -91,7 +93,9 @@ public class QuestionairBean implements Serializable {
 		this.isPresentLaw = "-1";
 		this.lawDetails = "-1";
 		this.whatHappenWhenLimit = "-1";
-		this.affiliateProgram = "-1";
+		this.affiliate = "-1";
+		this.noneaffiliate = "-1";
+		this.others = "-1";
 		this.noneAffiliateProgram = "-1";
 		this.jointMarketing = "-1";
 		this.stateLaw = "-1";
@@ -401,13 +405,7 @@ public class QuestionairBean implements Serializable {
 		this.whatHappenWhenLimit = whatHappenWhenLimit;
 	}
 
-	public String getAffiliateProgram() {
-		return affiliateProgram;
-	}
 
-	public void setAffiliateProgram(String affiliateProgram) {
-		this.affiliateProgram = affiliateProgram;
-	}
 
 	public String getNoneAffiliateProgram() {
 		return noneAffiliateProgram;
@@ -431,5 +429,29 @@ public class QuestionairBean implements Serializable {
 
 	public void setStateLaw(String stateLaw) {
 		this.stateLaw = stateLaw;
+	}
+
+	public String getAffiliate() {
+		return affiliate;
+	}
+
+	public void setAffiliate(String affiliate) {
+		this.affiliate = affiliate;
+	}
+
+	public String getNoneaffiliate() {
+		return noneaffiliate;
+	}
+
+	public void setNoneaffiliate(String noneaffiliate) {
+		this.noneaffiliate = noneaffiliate;
+	}
+
+	public String getOthers() {
+		return others;
+	}
+
+	public void setOthers(String others) {
+		this.others = others;
 	}
 }
