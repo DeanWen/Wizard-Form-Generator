@@ -265,23 +265,59 @@
 			document.getElementById("error-opt-13").style.display = "none";
 		}
 		
-		var checkboxes14 = document.getElementsByName('isFromCompany');
-		var sum14 = 0;
-		for (var i = 0; i < checkboxes14.length; i++) {
-			if (checkboxes14[i].checked) {
-				sum14++;
+		
+		var checkboxes15 = document.getElementsByName('isPresentLaw');
+		var sum15 = 0;
+		for (var i = 0; i < checkboxes15.length; i++) {
+			if (checkboxes15[i].checked) {
+				sum15++;
 			}
 		}
-		if(sum14<1)
+		if(sum15<1)
 		{
 			
-			document.getElementById("error-opt-14").style.display = "block";
+			document.getElementById("error-opt-15").style.display = "block";
 			return false;
 		}
 		else
 		{
-			document.getElementById("error-opt-14").style.display = "none";
+			document.getElementById("error-opt-15").style.display = "none";
 		}
+		
+		
+		
+		
+		
+		if(document.getElementById("lawarea").style.display = "block")
+		{
+			var lawContent = document.getElementById('lawDetails').value;
+			var lawLen = lawContent.split(" ");
+			if (lawLen == 0)
+			{
+				document.getElementById("error-opt-15_2").style.display = "block";
+				return false;
+			}
+			else
+			{
+				document.getElementById("error-opt-15_2").style.display = "none";
+			}
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -1282,6 +1318,9 @@ function disapearQ5intable(ch) {
 							<div class="form-group">
 								<label for="isPresentLaw">15. Would you like to refer to state privacy law provisions? 
 								    (If choose yes, you should provide law details) *</label>
+								    <div id="error-opt-15" style="display: none" >
+				    				<h5 style="color: red;">Please choose one option.</h5>
+			    				</div>
 								<div class="radio">
 									<label>
 									     <input type="radio" name="isPresentLaw" id="isPresentLaw" value="yes" onclick="showLawArea(this)"> Yes
@@ -1311,9 +1350,12 @@ function disappearLawArea(ch) {
 </script>
 								<div class="content-row" id="lawarea" style="display: none">
 								<label for="isPresentLaw">Please provide law details here:</label>
+								  <div id="error-opt-15_2" style="display: none" >
+				    				<h5 style="color: red;">Please provide all lists</h5>
+			    				</div>
 								<div class="radio">
 									<label>
-					                    <textarea class="form-control"" rows="3" name="lawDetails"></textarea>
+					                    <textarea class="form-control" rows="3" name="lawDetails" id="lawDetails"></textarea>
 									</label>
 								</div>
 								
@@ -1348,18 +1390,18 @@ function disappearLawArea(ch) {
 					</div>
 					
 					<div class="form-group" id="noneAffiliateProgram" >
-						<label for="noneAffiliateProgram">18. Please list your non-affiliates below?</label>
+						<label for="noneAffiliateProgram">18. Please list your non-affiliates below?*</label>
 						<textarea class="form-control" rows="3" name="noneAffiliateProgram" id="noneAffiliateProgram"
 						 placeholder="Categories of companies, such as mortgage companies, insurance companies, direct marketing companies, and nonprofit organizations"></textarea>
 					</div>
 					
 					<div class="form-group" id="jointMarketing" >
-						<label for="">19. Please list your joint marketing partners below?</label>
+						<label for="">19. Please list your joint marketing partners below?*</label>
 						<textarea class="form-control" rows="3" name="jointMarketing" placeholder="list categories of companies, such as credit card companies"></textarea>
 					</div>   
 
 							<div class="form-group">
-								<label for="stateLaw">20. Please provide other information information.</label>
+								<label for="stateLaw">20. Please provide other information information.*</label>
 								<textarea name="stateLaw" class="form-control" rows="7" 
 								          placeholder="Example: acknowledgment of receipt form." ></textarea>
 							</div>
