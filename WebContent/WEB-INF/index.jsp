@@ -557,7 +557,7 @@
 				            <li>Your organization provides the affiliate marketing notice separately.</li>
 			            </ul>
 						<div class="radio">
-							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="yes" onclick="disapearQ5intable(this)"> Yes
+							<label> <input type="radio" name="affiliatemarkettocus" id="affiliatemarkettocus" value="yes" onclick="disapearQ5intable(this)" checked> Yes
 							</label>
 						</div>
 						<div class="radio">
@@ -706,7 +706,7 @@ function disapearQ5intable(ch) {
 					</thead>
 					<tbody>
 						<tr>
-							<td><strong>Does your organization share information for everyday business purposes? </strong>
+							<td><strong>(1) Does your organization share information for everyday business purposes? </strong>
 							&mdash; Such as to
 								process transactions, maintain customers account(s), respond to
 								court orders and legal investigations, or report to credit
@@ -717,7 +717,7 @@ function disapearQ5intable(ch) {
 							</td>
 						</tr>
 						<tr>
-							<td><strong>Does your organization share
+							<td><strong>(2) Does your organization share
 									information for marketing purposes </strong>&mdash; to such as to offer
 								products and services to customers?</td>
 							<td class="centered-td"><select name="question1"
@@ -731,7 +731,7 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare1">We do not share</option></select></td>
 						</tr>
 						<tr>
-							<td><strong> Does your organization share
+							<td><strong>(3) Does your organization share
 									information to do joint marketing with other financial
 									companies?</strong></td>
 							<td class="centered-td"><select name="question2"
@@ -745,7 +745,7 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare2">We do not share</option></select></td>
 						</tr>
 						<tr>
-							<td><strong>Does your organization share
+							<td><strong>(4) Does your organization share
 									information with affiliates&rsquo; for everyday business
 									purposes? </strong>&mdash; Information about transactions and
 								experiences from customers</td>
@@ -760,8 +760,8 @@ function disapearQ5intable(ch) {
 									<option value="No" id="noShare3">We do not share</option></select></td>
 						</tr>
 						<tr>
-							<td><strong>Does your organization share
-									information for affiliates&rsquo; &rsquo;everyday business purposes? </strong>&mdash;
+							<td><strong>(5)Does your organization share
+									information for affiliates&rsquo; everyday business purposes? </strong>&mdash;
 								Information such as creditworthiness</td>
 							<td class="centered-td"><select id="question4"
 								name="question4" onchange="changeQ4()"><option
@@ -775,8 +775,8 @@ function disapearQ5intable(ch) {
 						</tr>
 						
 						<tr id="Q5" style="display: none;">
-							<td><strong>Does your organization share
-									information to affiliates for them marketing to your customers</strong>&mdash;
+							<td><strong>(6)Does your organization share
+									information to affiliates for them marketing to your customers</strong>
 							</td>
 							<td class="centered-td">
 							    <select id="question5" name="question5" onchange="changeQ5()">
@@ -790,7 +790,7 @@ function disapearQ5intable(ch) {
 						</tr>					
 
 						<tr>
-							<td><strong>For nonaffiliates to market to you</strong></td>
+							<td><strong>(7)For nonaffiliates to market to you</strong></td>
 							<td class="centered-td"><select id="question6"
 								name="question6" onchange="changeQ6()"><option
 										value="Yes">Yes</option>
@@ -1164,7 +1164,7 @@ function disapearQ5intable(ch) {
 				    			<h5 style="color: red;">Please type in your ways of protecting user's personal information</h5>
 			    			</div>
 							<textarea id="protectWay" class="form-control" rows="3" name="howProtect" 
-							 placeholder="The safeguards practices may include information about the institution’s use of cookies or other measures it uses to 206 safeguard personal information. No more than 30 additional words" ></textarea>
+							 placeholder="The safeguards practices may include information about the institutions&rsquo; use of cookies or other measures it uses to safeguard personal information. No more than 30 additional words" ></textarea>
 						</div>
 						<div class="form-group">
 							<label for="collect">12. How do you collect user's personal information? *(Choose exactly 5 options)</label>
