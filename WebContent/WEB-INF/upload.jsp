@@ -3,218 +3,351 @@
 <jsp:include page="top.jsp" />
 
 <script>
-	function validateForm() {
-
-		if (document.getElementById('companyName').value == '') {
-			document.getElementById('error-company').style.display = "block";
-			return false;
-		} else {
-			document.getElementById('error-company').style.display = "none";
-		}
-
-		if (document.getElementById('reviseDate').value == '') {
-			document.getElementById('error-Date').style.display = "block";
-			return false;
-		} else {
-			document.getElementById('error-Date').style.display = "none";
-		}
-
-		var sum1 = 0;
-		var checkboxes = document.getElementsByName('personalInfoType');
-		for (var i = 0; i < checkboxes.length; i++) {
-			if (checkboxes[i].checked) {
-				sum1++;
-			}
-		}
-
-		if (sum1 != 6) {
-			document.getElementById("error-info-checkboxes").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-info-checkboxes").style.display = "none";
-		}
-
-		var sum3 = 0;
-		var checkboxes3 = document.getElementsByName('affiliatemarkettocus');
-		for (var i = 0; i < checkboxes3.length; i++) {
-			if (checkboxes3[i].checked) {
-				sum3++;
-			}
-		}
-		if (sum3 < 1) {
-			document.getElementById("error-affiliatemarkettocus").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-affiliatemarkettocus").style.display = "none";
-		}
-
-		var sum4 = 0;
-		var checkboxes21 = document.getElementsByName('isoptout');
-		for (var i = 0; i < checkboxes21.length; i++) {
-			if (checkboxes21[i].checked) {
-				sum4++;
-			}
-		}
-		if (sum4 < 1) {
-			document.getElementById("error-opt-outSuper").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-opt-outSuper").style.display = "none";
-		}
-
-		if (document.getElementById("optmethod").style.display == "block") {
-			var checkboxes2 = document.getElementsByName('opt_out');
-			var sum2 = 0;
-			for (var i = 0; i < checkboxes2.length; i++) {
-
-				if (checkboxes2[i].checked) {
-					sum2++;
-				}
-			}
-
-			if (sum2 < 1) {
-				document.getElementById("error-opt-out").style.display = "block";
-				return false;
-			} else {
-				document.getElementById("error-opt-out").style.display = "none";
-			}
-		}
-
-		if (document.getElementById("phoneArea").style.display == "block") {
-			if (document.getElementById("phonephone").value == '') {
-				document.getElementById("errorPhone").style.display = "block";
-				return false;
-			} else {
-				document.getElementById("errorPhone").style.display = "none";
-			}
-		}
-
-		if (document.getElementById("websiteArea").style.display == "block") {
-			if (document.getElementById("optWebsite").value == '') {
-				document.getElementById("errorWebsite").style.display = "block";
-				return false;
-			} else {
-				document.getElementById("errorWebsite").style.display = "none";
-			}
-		}
-
-		if (document.getElementById("mailArea").style.display == "block") {
-
-			if (document.getElementById("city").value == ''
-					|| document.getElementById("Address").value == ''
-					|| document.getElementById("zipcode").value == '') {
-				document.getElementById("errorMail").style.display = "block";
-				return false;
-			} else {
-				document.getElementById("errorMail").style.display = "none";
-			}
-		}
-
-		/////////////////////////////////////////////////////////////
-
-		if (document.getElementById("begindate").style.display == "block") {
-
-			if (document.getElementById("numberOfDays").value == '') {
-				document.getElementById("error-begindate").style.display = "block";
-				return false;
-			} else {
-				document.getElementById("error-begindate").style.display = "none";
-			}
-
-			if (document.getElementById("numberOfDays").value < 30) {
-				document.getElementById("error-begindate").style.display = "block";
-				return false;
-			} else {
-				document.getElementById("error-begindate").style.display = "none";
-			}
-		}
-
-		var sum9 = 0;
-		var checkboxes9 = document.getElementsByName('contactMethod');
-		for (var i = 0; i < checkboxes9.length; i++) {
-			if (checkboxes9[i].checked) {
-				sum9++;
-			}
-		}
-		if (sum9 < 1) {
-
-			document.getElementById("error-opt-contactMethod").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-opt-contactMethod").style.display = "none";
-		}
-
-		if (document.getElementById("phone1").checked == true
-				&& document.getElementById('phoneText').value == '') {
-			document.getElementById("error-opt-contactMethod2").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-opt-contactMethod2").style.display = "none";
-		}
-
-		if (document.getElementById("website1").checked == true
-				&& document.getElementById('websiteText').value == '') {
-			document.getElementById("error-opt-contactMethod2").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-opt-contactMethod2").style.display = "none";
-		}
-
-		var protectContent = document.getElementById('protectWay').value;
-		var protectContentLen = protectContent.split(" ");
-		if (protectContent.length == 0 || protectContentLen > 30) {
-			document.getElementById("error-protect").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-protect").style.display = "none";
-		}
-
-		var checkboxes12 = document.getElementsByName('collect');
-		var sum12 = 0;
-		for (var i = 0; i < checkboxes12.length; i++) {
-			if (checkboxes12[i].checked) {
-				sum12++;
-			}
-		}
-		if (sum12 != 5) {
-
-			document.getElementById("error-opt-12").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-opt-12").style.display = "none";
-		}
-
-		var checkboxes13 = document.getElementsByName('collectaffiliate');
-		var sum13 = 0;
-		for (var i = 0; i < checkboxes13.length; i++) {
-			if (checkboxes13[i].checked) {
-				sum13++;
-			}
-		}
-		if (sum13 < 1) {
-
-			document.getElementById("error-opt-13").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-opt-13").style.display = "none";
-		}
-
-		var checkboxes14 = document.getElementsByName('isFromCompany');
-		var sum14 = 0;
-		for (var i = 0; i < checkboxes14.length; i++) {
-			if (checkboxes14[i].checked) {
-				sum14++;
-			}
-		}
-		if (sum14 < 1) {
-
-			document.getElementById("error-opt-14").style.display = "block";
-			return false;
-		} else {
-			document.getElementById("error-opt-14").style.display = "none";
-		}
-
+function validateForm() {
+	
+	if(document.getElementById('companyName').value==''){
+		document.getElementById('error-company').style.display = "block";
+		return false;
+	}else{
+		document.getElementById('error-company').style.display = "none";
 	}
+
+	
+	if(document.getElementById('reviseDate').value==''){
+		document.getElementById('error-Date').style.display = "block";
+		return false;
+	}
+	else{
+		document.getElementById('error-Date').style.display = "none";
+	}
+	
+	
+	var sum1 = 0;
+	var checkboxes = document.getElementsByName('personalInfoType');
+	for (var i = 0; i < checkboxes.length; i++) {
+		if (checkboxes[i].checked) {
+			sum1++;
+		}
+	}
+	
+	
+	if(sum1!=6)
+	{
+		document.getElementById("error-info-checkboxes").style.display = "block";
+		return false;
+	}else
+	{
+		document.getElementById("error-info-checkboxes").style.display = "none";
+	}
+	
+	
+	var sum3 = 0;
+	var checkboxes3 = document.getElementsByName('affiliatemarkettocus');
+	for (var i = 0; i < checkboxes3.length; i++) {
+		if (checkboxes3[i].checked) {
+			sum3++;
+		}
+	}
+	
+	if(sum3<1)
+	{
+		document.getElementById("error-affiliatemarkettocus").style.display = "block";
+		return false;
+	}else
+	{
+		document.getElementById("error-affiliatemarkettocus").style.display = "none";
+	}
+	
+	
+	
+	
+	var sum4 = 0;
+	var checkboxes21 = document.getElementsByName('isoptout');
+	for (var i = 0; i < checkboxes21.length; i++) {
+		if (checkboxes21[i].checked) {
+			sum4++;
+		}
+	}
+	
+	if(sum4<1)
+	{
+		document.getElementById("error-opt-outSuper").style.display = "block";
+		return false;		
+	}else
+	{
+		document.getElementById("error-opt-outSuper").style.display = "none";	
+	}
+
+	if(document.getElementById("optmethod").style.display == "block")
+	{
+		var checkboxes2 = document.getElementsByName('opt_out');
+		var sum2 = 0;
+		for (var i = 0; i < checkboxes2.length; i++) {
+			
+			if (checkboxes2[i].checked) {
+				sum2++;
+			}
+		}
+	
+		
+		if(sum2<1)
+		{
+			document.getElementById("error-opt-out").style.display = "block";
+			return false;		
+		}
+		else
+		{
+			document.getElementById("error-opt-out").style.display = "none";
+		}
+	}
+	
+	
+	
+	
+	
+	if(document.getElementById("phoneArea").style.display == "block")	
+	{
+		if(document.getElementById("phonephone").value=='')
+		{
+			document.getElementById("errorPhone").style.display = "block";
+			return false;	
+		}
+		else
+		{
+			document.getElementById("errorPhone").style.display = "none";
+		}
+	}
+
+	
+	if(document.getElementById("websiteArea").style.display == "block")	
+	{
+		if(document.getElementById("optWebsite").value=='')
+		{
+			document.getElementById("errorWebsite").style.display = "block";
+			return false;	
+		}
+		else
+		{
+			document.getElementById("errorWebsite").style.display = "none";
+		}
+	}
+	
+	
+	if(document.getElementById("mailArea").style.display == "block")	
+	{
+		
+		if(document.getElementById("city").value=='' || document.getElementById("Address").value=='' || document.getElementById("zipcode").value=='' )
+		{
+			document.getElementById("errorMail").style.display = "block";
+			return false;	
+		}
+		else
+		{
+			document.getElementById("errorMail").style.display = "none";
+		}
+	}
+	
+	
+	
+	/////////////////////////////////////////////////////////////
+	
+	
+	if(document.getElementById("begindate").style.display == "block")	
+	{
+		
+		if(document.getElementById("numberOfDays").value=='')
+		{
+			document.getElementById("error-begindate").style.display = "block";
+			return false;	
+		}
+		else
+		{
+			document.getElementById("error-begindate").style.display = "none";
+		}
+		
+		if(document.getElementById("numberOfDays").value<30)
+		{
+			document.getElementById("error-begindate").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-begindate").style.display = "none";	
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	var sum9 = 0;
+	var checkboxes9 =  document.getElementsByName ('contactMethod');
+	for (var i = 0; i < checkboxes9.length; i++) {
+		if (checkboxes9[i].checked) {
+			sum9++;
+		}
+	}
+
+	if(sum9<1)
+	{
+		
+		document.getElementById("error-opt-contactMethod").style.display = "block";
+		return false;		
+	}else
+	{
+		document.getElementById("error-opt-contactMethod").style.display = "none";	
+	}
+	
+	
+	if(document.getElementById("phone1").checked==true && document.getElementById('phoneText').value=='')
+	{
+		document.getElementById("error-opt-contactMethod2").style.display = "block";
+		return false;		
+	}else
+	{
+		document.getElementById("error-opt-contactMethod2").style.display = "none";	
+	}
+	
+
+	
+	if(document.getElementById("website1").checked==true && document.getElementById('websiteText').value=='')
+	{
+		document.getElementById("error-opt-contactMethod2").style.display = "block";
+		return false;		
+	}else
+	{
+		document.getElementById("error-opt-contactMethod2").style.display = "none";	
+	}
+
+	
+	
+	
+	var protectContent = document.getElementById('protectWay').value;
+	var protectContentLen = protectContent.split(" ");
+	if (protectContent.length == 0 || protectContentLen > 30) {
+		document.getElementById("error-protect").style.display = "block";
+		return false;
+	} else {
+		document.getElementById("error-protect").style.display = "none";
+	}
+	
+	
+	var checkboxes12 = document.getElementsByName('collect');
+	var sum12 = 0;
+	for (var i = 0; i < checkboxes12.length; i++) {
+		if (checkboxes12[i].checked) {
+			sum12++;
+		}
+	}
+	if(sum12!=5)
+	{
+		
+		document.getElementById("error-opt-12").style.display = "block";
+		return false;
+	}
+	else
+	{
+		document.getElementById("error-opt-12").style.display = "none";
+	}
+	
+	
+	
+	var checkboxes13 = document.getElementsByName('collectaffiliate');
+	var sum13 = 0;
+	for (var i = 0; i < checkboxes13.length; i++) {
+		if (checkboxes13[i].checked) {
+			sum13++;
+		}
+	}
+	if(sum13<1)
+	{
+		
+		document.getElementById("error-opt-13").style.display = "block";
+		return false;
+	}
+	else
+	{
+		document.getElementById("error-opt-13").style.display = "none";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	if(document.getElementById("lawarea").style.display == "block")
+	{
+		var lawContent = document.getElementById('lawDetails').value;
+		var lawLen = lawContent.split(" ");
+		if (lawLen == 0)
+		{
+			document.getElementById("error-opt-15_2").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-15_2").style.display = "none";
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	if(document.getElementById("noneAffiliateProgram").style.display == "block")
+	{
+		var Content4 = document.getElementById('noneAffiliateProgram1').value;
+		var len4 = Content4.split(" ");
+		if(len4 == 0)
+		{
+			document.getElementById("error-opt-18").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-18").style.display = "none";
+		}
+	}
+	
+	
+	
+	
+	if(document.getElementById("jointMarketing").style.display == "block")
+	{
+		var Content5 = document.getElementById('jointMarketing1').value;
+		var len5 = Content5.split(" ");
+		if(len5 == 0)
+		{
+			document.getElementById("error-opt-19").style.display = "block";
+			return false;
+		}
+		else
+		{
+			document.getElementById("error-opt-19").style.display = "none";
+		}
+	}
+	
+
+	
+	return true;
+	
+	
+
+	
+	
+	
+}
 </script>
 <c:set var="bean" value="${uploadBean}" />
 
@@ -242,7 +375,7 @@ $(document).ready(function() {
 
 		<div class="content">
 
-			<form role="form" method="post" onsubmit="return validateForm()">
+			<form role="form" method="post" name="testForm">
 				<div class="form-group">
 					<label for="companyName">1. Enter the name of your
 						financial institution: *</label> <input type="text" class="form-control"
@@ -761,7 +894,7 @@ $(document).ready(function() {
 
 						}
 						if (myselect == "No" && ans4 == "No" && ans5 == "No") {
-							alert(ans4 + ans5 + myselect + "haha");
+							
 
 							document.getElementById("affiliateProgram").style.display = "none";
 						}
@@ -1502,13 +1635,26 @@ $(document).ready(function() {
 								</c:otherwise>
 							</c:choose>
 						</div>
+						
+						<script>
+							function ac1() {
+								if (validateForm() != false) {
+									
+									document.testForm.action = "preview.do";
+									document.testForm.submit();
+								}
+							}
+							function ac2() {
+								document.testForm.action = "save.do";
+								document.testForm.submit();
+							}
+						</script>
 
 						<hr>
-						<button type="submit" name="preview" class="btn btn-default"
-							value="generate" onclick="form.action='preview.do';">Preview</button>
-						<button type="submit" name="saveforlater" class="btn btn-default"
-							value="save" onclick="form.action='save.do';">Save for
-							later</button>
+						<button type="button" name="preview" class="btn btn-primary"
+								onclick="ac1();">Preview</button>
+							<button type="button" name="saveforlater" class="btn btn-primary"
+								onclick="ac2();">Save for later</button>
 			</form>
 		</div>
 	</div>

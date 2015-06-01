@@ -1482,7 +1482,7 @@ function disappearLawArea(ch) {
 							function ac1() {
 								
 								if (validateForm() != false) {
-									
+									alert('haha');
 									document.testForm.action = "preview.do";
 									document.testForm.submit();
 								}
